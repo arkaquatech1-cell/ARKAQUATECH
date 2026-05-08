@@ -2,39 +2,107 @@
 
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 
 import { motion } from "framer-motion";
 
 import {
   ArrowRight,
-  Waves,
   Fish,
+  Waves,
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#03131d] pt-36">
-      {/* BACKGROUND */}
+    <section className="relative min-h-screen overflow-hidden bg-black">
+      {/* VIDEO BACKGROUND */}
 
       <div className="absolute inset-0">
-        {/* MAIN SEA GRADIENT */}
+        {/* VIDEO */}
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#0c4a6e_0%,#03131d_45%,#010b12_100%)]" />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="
+            absolute
+            inset-0
+            h-full
+            w-full
+            object-cover
+            brightness-[0.72]
+            contrast-[1.15]
+            saturate-[1.3]
+          "
+        >
+         <source src="/herosection/seavideo.mp4" type="video/mp4" />
+        </video>
+
+        {/* LIGHT OVERLAY */}
+
+        <div
+          className="
+            absolute
+            inset-0
+            bg-[linear-gradient(to_bottom,rgba(0,0,0,0.28),rgba(0,0,0,0.45))]
+          "
+        />
+
+        {/* CENTER FOCUS LIGHT */}
+
+        <div
+          className="
+            absolute
+            inset-0
+            bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.18),transparent_45%)]
+          "
+        />
 
         {/* TOP LIGHT */}
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_45%)]" />
+        <div
+          className="
+            absolute
+            top-0
+            left-0
+            h-[40%]
+            w-full
+            bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_65%)]
+          "
+        />
 
-        {/* CYAN GLOW */}
+        {/* LEFT GLOW */}
 
         <motion.div
           animate={{
-            x: [0, 80, 0],
-            y: [0, -40, 0],
+            x: [0, 60, 0],
+            y: [0, -30, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+          }}
+          className="
+            absolute
+            top-[-180px]
+            left-[-180px]
+            h-[500px]
+            w-[500px]
+            rounded-full
+            bg-cyan-400/20
+            blur-[140px]
+          "
+        />
+
+        {/* RIGHT GLOW */}
+
+        <motion.div
+          animate={{
+            x: [0, -60, 0],
+            y: [0, 30, 0],
           }}
           transition={{
             duration: 12,
@@ -42,77 +110,53 @@ export default function HeroSection() {
           }}
           className="
             absolute
-            top-[-250px]
-            left-[-250px]
-            w-[700px]
-            h-[700px]
+            bottom-[-180px]
+            right-[-180px]
+            h-[500px]
+            w-[500px]
             rounded-full
-            bg-cyan-400/20
-            blur-[180px]
+            bg-emerald-400/20
+            blur-[140px]
           "
         />
 
-        {/* EMERALD GLOW */}
+        {/* BOTTOM SHADOW */}
 
-        <motion.div
-          animate={{
-            x: [0, -80, 0],
-            y: [0, 40, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-          }}
+        <div
           className="
             absolute
-            bottom-[-250px]
-            right-[-250px]
-            w-[750px]
-            h-[750px]
-            rounded-full
-            bg-emerald-400/20
-            blur-[180px]
+            bottom-0
+            left-0
+            w-full
+            h-[220px]
+            bg-gradient-to-t
+            from-black
+            to-transparent
           "
         />
 
         {/* GRID */}
 
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage:
               "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px)",
             backgroundSize: "90px 90px",
           }}
         />
-
-        {/* WAVE */}
-
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg
-            className="relative block w-[calc(100%+1.3px)] h-[150px]"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M321.39 56.44C191.11 92.35 0 30.19 0 30.19V120h1200V16.48s-197.91 78-358.39 44.92C670.59 27.45 562.84-10.3 321.39 56.44z"
-              fill="rgba(255,255,255,0.03)"
-            />
-          </svg>
-        </div>
       </div>
 
       {/* CONTENT */}
 
-      <div className="relative z-10 max-w-[1550px] mx-auto px-6 lg:px-10 min-h-screen flex items-center">
-        <div className="grid lg:grid-cols-2 gap-24 items-center w-full">
-          {/* LEFT */}
+      <div className="relative z-10 flex min-h-screen items-center justify-center px-6">
+        <div className="mx-auto w-full max-w-[1400px] text-center">
+          {/* BADGE */}
 
           <motion.div
             initial={{
               opacity: 0,
-              y: 60,
+              y: -20,
             }}
             animate={{
               opacity: 1,
@@ -121,420 +165,364 @@ export default function HeroSection() {
             transition={{
               duration: 1,
             }}
+            className="
+              inline-flex
+              items-center
+              gap-3
+              rounded-full
+              border
+              border-white/10
+              bg-white/10
+              px-7
+              py-3
+              backdrop-blur-xl
+            "
           >
-            {/* BADGE */}
+            <div className="relative">
+              <div className="absolute h-4 w-4 rounded-full bg-cyan-300 animate-ping" />
 
-            <motion.div
-              initial={{
-                opacity: 0,
-                scale: 0.8,
-              }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-              }}
-              transition={{
-                delay: 0.3,
-              }}
-              className="
-                inline-flex
-                items-center
-                gap-3
-                rounded-full
-                border
-                border-cyan-300/15
-                bg-white/[0.04]
-                backdrop-blur-2xl
-                px-6
-                py-3
-                shadow-[0_0_50px_rgba(34,211,238,0.12)]
-              "
-            >
-              <div className="relative">
-                <div className="absolute w-4 h-4 rounded-full bg-cyan-300 animate-ping" />
-
-                <div className="relative w-2.5 h-2.5 rounded-full bg-cyan-200" />
-              </div>
-
-              <span className="text-cyan-100 text-sm font-bold tracking-wide uppercase">
-                Smart Marine Infrastructure
-              </span>
-            </motion.div>
-
-            {/* TITLE */}
-
-            <h1
-              className="
-                mt-10
-                text-[58px]
-                md:text-[92px]
-                leading-[0.92]
-                tracking-[-0.06em]
-                font-black
-                text-white
-              "
-            >
-              Next Generation
-              <span
-                className="
-                  block
-                  bg-gradient-to-r
-                  from-cyan-200
-                  via-white
-                  to-emerald-200
-                  bg-clip-text
-                  text-transparent
-                "
-              >
-                Aquaculture
-              </span>
-            </h1>
-
-            {/* DESCRIPTION */}
-
-            <p
-              className="
-                mt-10
-                max-w-2xl
-                text-[18px]
-                md:text-[21px]
-                leading-[2]
-                text-cyan-50/70
-                font-medium
-              "
-            >
-              ARK AQUATECH is a leading aquaculture company
-              delivering advanced Biofloc technology, RAS
-              systems, shrimp farming infrastructure, crab
-              farming solutions, fish farming technology,
-              marine engineering, and smart water treatment
-              systems for sustainable aquaculture growth.
-            </p>
-
-            {/* SEO TAGS */}
-
-            <div className="flex flex-wrap gap-4 mt-10">
-              {[
-                "Biofloc Technology",
-                "RAS Systems",
-                "Shrimp Farming",
-                "Fish Farming",
-                "Water Treatment",
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{
-                    y: -5,
-                  }}
-                  className="
-                    rounded-2xl
-                    border
-                    border-white/10
-                    bg-white/[0.04]
-                    px-5
-                    py-3
-                    backdrop-blur-xl
-                    text-white/80
-                    font-semibold
-                    text-sm
-                    shadow-[0_10px_30px_rgba(0,0,0,0.2)]
-                  "
-                >
-                  {item}
-                </motion.div>
-              ))}
+              <div className="relative h-2.5 w-2.5 rounded-full bg-cyan-200" />
             </div>
 
-            {/* BUTTONS */}
-
-            <div className="flex flex-wrap items-center gap-5 mt-12">
-              {/* BUTTON */}
-
-              <motion.div
-                whileHover={{
-                  scale: 1.05,
-                }}
-                whileTap={{
-                  scale: 0.96,
-                }}
-              >
-                <Link
-                  href="/services"
-                  className="
-                    group
-                    relative
-                    overflow-hidden
-                    flex
-                    items-center
-                    gap-3
-                    rounded-full
-                    px-10
-                    py-5
-                    bg-gradient-to-r
-                    from-cyan-300
-                    via-sky-400
-                    to-emerald-300
-                    text-[#03131d]
-                    font-black
-                    tracking-wide
-                    shadow-[0_15px_60px_rgba(34,211,238,0.35)]
-                  "
-                >
-                  {/* SHINE */}
-
-                  <span
-                    className="
-                      absolute
-                      inset-0
-                      -translate-x-full
-                      group-hover:translate-x-full
-                      transition-transform
-                      duration-1000
-                      bg-gradient-to-r
-                      from-transparent
-                      via-white/40
-                      to-transparent
-                    "
-                  />
-
-                  <span className="relative z-10">
-                    Explore Services
-                  </span>
-
-                  <ArrowRight
-                    className="
-                      relative
-                      z-10
-                      w-5
-                      h-5
-                      transition-transform
-                      duration-300
-                      group-hover:translate-x-1
-                    "
-                  />
-                </Link>
-              </motion.div>
-
-              {/* CONTACT BUTTON */}
-
-              <motion.div
-                whileHover={{
-                  scale: 1.04,
-                }}
-              >
-                <Link
-                  href="/contact"
-                  className="
-                    flex
-                    items-center
-                    gap-4
-                    rounded-full
-                    border
-                    border-white/10
-                    bg-white/[0.04]
-                    px-9
-                    py-5
-                    backdrop-blur-2xl
-                    text-white
-                    font-bold
-                    hover:bg-white/[0.08]
-                    transition-all
-                    duration-300
-                  "
-                >
-                  Contact Us
-                </Link>
-              </motion.div>
-            </div>
-
-            {/* FEATURES */}
-
-            <div className="grid grid-cols-3 gap-5 mt-16">
-              {[
-                {
-                  icon: Fish,
-                  title: "Fish Farming",
-                },
-
-                {
-                  icon: Waves,
-                  title: "Smart RAS",
-                },
-
-                {
-                  icon: ShieldCheck,
-                  title: "Water Safety",
-                },
-              ].map((item, index) => {
-                const Icon = item.icon;
-
-                return (
-                  <motion.div
-                    key={index}
-                    whileHover={{
-                      y: -6,
-                    }}
-                    className="
-                      relative
-                      overflow-hidden
-                      rounded-[28px]
-                      border
-                      border-white/10
-                      bg-white/[0.04]
-                      backdrop-blur-2xl
-                      p-6
-                      text-center
-                    "
-                  >
-                    {/* LIGHT */}
-
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_60%)]" />
-
-                    <div className="relative z-10">
-                      <div
-                        className="
-                          mx-auto
-                          flex
-                          items-center
-                          justify-center
-                          w-16
-                          h-16
-                          rounded-2xl
-                          bg-gradient-to-br
-                          from-cyan-300
-                          to-emerald-300
-                        "
-                      >
-                        <Icon className="text-[#03131d]" />
-                      </div>
-
-                      <h3 className="mt-5 text-white font-black text-lg">
-                        {item.title}
-                      </h3>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
+            <span className="text-sm font-bold uppercase tracking-[0.28em] text-cyan-100">
+              Smart Aquaculture Technology
+            </span>
           </motion.div>
 
-          {/* RIGHT */}
+          {/* HEADING */}
 
-          <motion.div
+          <motion.h1
             initial={{
               opacity: 0,
-              scale: 0.8,
-              rotate: -4,
+              y: 50,
             }}
             animate={{
               opacity: 1,
-              scale: 1,
-              rotate: 0,
+              y: 0,
             }}
             transition={{
               duration: 1,
             }}
-            className="relative flex justify-center"
+            className="
+              mt-10
+              text-[60px]
+              sm:text-[85px]
+              md:text-[120px]
+              lg:text-[140px]
+              leading-[0.88]
+              tracking-[-0.08em]
+              font-black
+              text-white
+            "
           >
-            {/* MAIN GLOW */}
+            Smart Future Of
 
-            <div className="absolute inset-0 bg-cyan-300/20 blur-[140px] rounded-full" />
-
-            {/* CARD */}
-
-            <motion.div
-              animate={{
-                y: [0, -18, 0],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-              }}
+            <span
               className="
-                relative
-                rounded-[45px]
-                overflow-hidden
-                border
-                border-white/10
-                bg-white/[0.05]
-                backdrop-blur-3xl
-                p-10
-                shadow-[0_25px_80px_rgba(0,0,0,0.45)]
+                block
+                bg-gradient-to-r
+                from-cyan-200
+                via-white
+                to-emerald-200
+                bg-clip-text
+                text-transparent
               "
             >
-              {/* LIGHT */}
+              Aquaculture
+            </span>
+          </motion.h1>
 
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_60%)]" />
+          {/* DESCRIPTION */}
 
-              {/* IMAGE */}
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.3,
+              duration: 1,
+            }}
+            className="
+              mx-auto
+              mt-10
+              max-w-4xl
+              text-[18px]
+              md:text-[23px]
+              leading-[2]
+              text-white/75
+              font-medium
+            "
+          >
+            ARK AQUATECH provides advanced Biofloc systems,
+            RAS aquaculture technology, shrimp farming,
+            fish farming solutions, marine infrastructure,
+            industrial water treatment systems, and smart
+            sustainable aquaculture engineering services
+            across India.
+          </motion.p>
 
-              <Image
-                src="/logo.png"
-                alt="ARK AQUATECH"
-                width={700}
-                height={700}
-                className="
-                  relative
-                  z-10
-                  w-full
-                  max-w-[520px]
-                  object-contain
-                  drop-shadow-[0_0_60px_rgba(34,211,238,0.35)]
-                "
-              />
+          {/* SEO TAGS */}
 
-              {/* FLOATING CARD */}
-
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
+            {[
+              "Biofloc Technology",
+              "RAS Systems",
+              "Fish Farming",
+              "Shrimp Farming",
+              "Water Treatment",
+              "Marine Engineering",
+            ].map((item, index) => (
               <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
+                key={index}
+                whileHover={{
+                  y: -5,
                 }}
                 className="
-                  absolute
-                  bottom-8
-                  left-[-50px]
-                  rounded-3xl
+                  rounded-full
                   border
                   border-white/10
-                  bg-[#061924]/90
-                  backdrop-blur-2xl
+                  bg-white/10
                   px-6
-                  py-5
-                  shadow-[0_15px_60px_rgba(0,0,0,0.4)]
+                  py-3
+                  text-sm
+                  font-semibold
+                  text-white
+                  backdrop-blur-xl
                 "
               >
-                <div className="flex items-center gap-4">
+                {item}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* BUTTONS */}
+
+          <div className="mt-14 flex flex-wrap items-center justify-center gap-5">
+            {/* PRIMARY */}
+
+            <motion.div
+              whileHover={{
+                scale: 1.05,
+              }}
+              whileTap={{
+                scale: 0.96,
+              }}
+            >
+              <Link
+                href="/services"
+                className="
+                  group
+                  relative
+                  flex
+                  items-center
+                  gap-3
+                  overflow-hidden
+                  rounded-full
+                  bg-gradient-to-r
+                  from-cyan-300
+                  to-emerald-300
+                  px-10
+                  py-5
+                  text-[#02131d]
+                  font-black
+                  shadow-[0_15px_60px_rgba(34,211,238,0.4)]
+                "
+              >
+                <span
+                  className="
+                    absolute
+                    inset-0
+                    -translate-x-full
+                    bg-gradient-to-r
+                    from-transparent
+                    via-white/40
+                    to-transparent
+                    transition-transform
+                    duration-1000
+                    group-hover:translate-x-full
+                  "
+                />
+
+                <span className="relative z-10">
+                  Explore Services
+                </span>
+
+                <ArrowRight className="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </motion.div>
+
+            {/* SECONDARY */}
+
+            <motion.div
+              whileHover={{
+                scale: 1.04,
+              }}
+            >
+              <Link
+                href="/contact"
+                className="
+                  rounded-full
+                  border
+                  border-white/10
+                  bg-white/10
+                  px-10
+                  py-5
+                  text-white
+                  font-bold
+                  backdrop-blur-xl
+                  transition-all
+                  duration-300
+                  hover:bg-white/20
+                "
+              >
+                Contact Us
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* FEATURE CARDS */}
+
+          <div className="mt-20 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                icon: Fish,
+                title: "Fish Farming",
+                desc: "Advanced sustainable fish farming technology.",
+              },
+
+              {
+                icon: Waves,
+                title: "RAS Technology",
+                desc: "Modern smart recirculating aquaculture systems.",
+              },
+
+              {
+                icon: ShieldCheck,
+                title: "Water Safety",
+                desc: "Industrial water treatment & bio-secure systems.",
+              },
+            ].map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={index}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.02,
+                  }}
+                  className="
+                    rounded-[32px]
+                    border
+                    border-white/10
+                    bg-white/[0.08]
+                    p-8
+                    backdrop-blur-2xl
+                  "
+                >
+                  {/* ICON */}
+
                   <div
                     className="
+                      mx-auto
                       flex
+                      h-16
+                      w-16
                       items-center
                       justify-center
-                      w-14
-                      h-14
                       rounded-2xl
                       bg-gradient-to-br
                       from-cyan-300
                       to-emerald-300
                     "
                   >
-                    <Sparkles className="text-[#03131d]" />
+                    <Icon className="text-[#02131d]" />
                   </div>
 
-                  <div>
-                    <h3 className="text-white font-black text-lg">
-                      Smart Marine
-                    </h3>
+                  {/* TITLE */}
 
-                    <p className="text-cyan-100/70 text-sm">
-                      Sustainable Aquaculture
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
+                  <h3 className="mt-6 text-2xl font-black text-white">
+                    {item.title}
+                  </h3>
+
+                  {/* DESC */}
+
+                  <p className="mt-4 text-sm leading-8 text-white/70">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* FLOATING INFO CARD */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.5,
+              duration: 1,
+            }}
+            className="mt-16 flex justify-center"
+          >
+            <motion.div
+              animate={{
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+              }}
+              className="
+                flex
+                items-center
+                gap-5
+                rounded-[30px]
+                border
+                border-white/10
+                bg-white/[0.08]
+                px-8
+                py-6
+                backdrop-blur-2xl
+              "
+            >
+              <div
+                className="
+                  flex
+                  h-16
+                  w-16
+                  items-center
+                  justify-center
+                  rounded-2xl
+                  bg-gradient-to-br
+                  from-cyan-300
+                  to-emerald-300
+                "
+              >
+                <Sparkles className="text-[#02131d]" />
+              </div>
+
+              <div className="text-left">
+                <h3 className="text-2xl font-black text-white">
+                  Smart Marine
+                </h3>
+
+                <p className="mt-1 text-sm text-white/70">
+                  Sustainable Aquaculture Solutions
+                </p>
+              </div>
             </motion.div>
           </motion.div>
         </div>

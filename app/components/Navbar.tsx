@@ -153,10 +153,10 @@ export default function Navbar() {
                   <div className="absolute inset-0 bg-cyan-300/40 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700" />
 
                   <Image
-                    src="/logo.png"
+                    src="/logo/logo1.png"
                     alt="ARK AQUATECH"
-                    width={72}
-                    height={72}
+                    width={82}
+                    height={82}
                     className="relative object-contain drop-shadow-[0_0_30px_rgba(34,211,238,0.35)]"
                   />
                 </motion.div>
