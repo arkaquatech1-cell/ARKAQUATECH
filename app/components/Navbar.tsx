@@ -155,8 +155,8 @@ export default function Navbar() {
                   <Image
                     src="/logo/logo1.png"
                     alt="ARK AQUATECH"
-                    width={82}
-                    height={82}
+                    width={72}
+                    height={72}
                     className="relative object-contain drop-shadow-[0_0_30px_rgba(34,211,238,0.35)]"
                   />
                 </motion.div>

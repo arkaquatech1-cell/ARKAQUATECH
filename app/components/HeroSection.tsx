@@ -38,7 +38,7 @@ export default function HeroSection() {
             saturate-[1.3]
           "
         >
-         <source src="/herosection/seavideo.mp4" type="video/mp4" />
+         <source src="/herosection/seavideo1.mp4" type="video/mp4" />
         </video>
 
         {/* LIGHT OVERLAY */}
@@ -387,144 +387,16 @@ export default function HeroSection() {
 
           {/* FEATURE CARDS */}
 
-          <div className="mt-20 grid gap-6 md:grid-cols-3">
-            {[
-              {
-                icon: Fish,
-                title: "Fish Farming",
-                desc: "Advanced sustainable fish farming technology.",
-              },
+         
 
-              {
-                icon: Waves,
-                title: "RAS Technology",
-                desc: "Modern smart recirculating aquaculture systems.",
-              },
+       
 
-              {
-                icon: ShieldCheck,
-                title: "Water Safety",
-                desc: "Industrial water treatment & bio-secure systems.",
-              },
-            ].map((item, index) => {
-              const Icon = item.icon;
+        
+           
+              
 
-              return (
-                <motion.div
-                  key={index}
-                  whileHover={{
-                    y: -8,
-                    scale: 1.02,
-                  }}
-                  className="
-                    rounded-[32px]
-                    border
-                    border-white/10
-                    bg-white/[0.08]
-                    p-8
-                    backdrop-blur-2xl
-                  "
-                >
-                  {/* ICON */}
-
-                  <div
-                    className="
-                      mx-auto
-                      flex
-                      h-16
-                      w-16
-                      items-center
-                      justify-center
-                      rounded-2xl
-                      bg-gradient-to-br
-                      from-cyan-300
-                      to-emerald-300
-                    "
-                  >
-                    <Icon className="text-[#02131d]" />
-                  </div>
-
-                  {/* TITLE */}
-
-                  <h3 className="mt-6 text-2xl font-black text-white">
-                    {item.title}
-                  </h3>
-
-                  {/* DESC */}
-
-                  <p className="mt-4 text-sm leading-8 text-white/70">
-                    {item.desc}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* FLOATING INFO CARD */}
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 40,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              delay: 0.5,
-              duration: 1,
-            }}
-            className="mt-16 flex justify-center"
-          >
-            <motion.div
-              animate={{
-                y: [0, -10, 0],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-              }}
-              className="
-                flex
-                items-center
-                gap-5
-                rounded-[30px]
-                border
-                border-white/10
-                bg-white/[0.08]
-                px-8
-                py-6
-                backdrop-blur-2xl
-              "
-            >
-              <div
-                className="
-                  flex
-                  h-16
-                  w-16
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  bg-gradient-to-br
-                  from-cyan-300
-                  to-emerald-300
-                "
-              >
-                <Sparkles className="text-[#02131d]" />
-              </div>
-
-              <div className="text-left">
-                <h3 className="text-2xl font-black text-white">
-                  Smart Marine
-                </h3>
-
-                <p className="mt-1 text-sm text-white/70">
-                  Sustainable Aquaculture Solutions
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
+             
+      
         </div>
       </div>
     </section>

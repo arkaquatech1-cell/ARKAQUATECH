@@ -6,11 +6,13 @@ import { motion } from "framer-motion";
 
 import {
   ShieldCheck,
-  Waves,
+  Globe2,
   Fish,
-  Sparkles,
+  Cpu,
+  Droplets,
+  Building2,
   ArrowRight,
-  Leaf,
+  Sparkles,
 } from "lucide-react";
 
 import Link from "next/link";
@@ -18,44 +20,56 @@ import Link from "next/link";
 const features = [
   {
     icon: ShieldCheck,
-    title: "Advanced Technology",
+    title: "Trusted Engineering Expertise",
     desc:
-      "Modern aquaculture technologies including Biofloc systems, RAS farming, smart filtration, and automated marine infrastructure solutions.",
-  },
-
-  {
-    icon: Waves,
-    title: "Smart Water Management",
-    desc:
-      "Professional industrial water treatment systems with intelligent monitoring and sustainable aquatic ecosystem management.",
+      "ARK AQUATECH delivers reliable engineering, aquaculture, and industrial water management solutions for government, commercial, and private sector projects across India.",
   },
 
   {
     icon: Fish,
-    title: "Commercial Fish Farming",
+    title: "Advanced Aquaculture Systems",
     desc:
-      "Complete fish farming, shrimp farming, and crab farming solutions designed for high productivity and long-term profitability.",
+      "Complete Biofloc farming, RAS aquaculture systems, shrimp farming infrastructure, crab culture systems, and smart fish farming technologies.",
   },
 
   {
-    icon: Leaf,
-    title: "Eco-Friendly Solutions",
+    icon: Cpu,
+    title: "IoT Smart Automation",
     desc:
-      "Sustainable aquaculture engineering focused on eco-friendly marine farming and efficient water recycling systems.",
+      "Modern IoT-based aquaculture monitoring including pH sensors, DO monitoring, smart feeders, remote pump control, and cloud-based farm management.",
+  },
+
+  {
+    icon: Droplets,
+    title: "Industrial Water Solutions",
+    desc:
+      "Industrial RO plants, STP, ETP, WTP systems, water recycling plants, filtration technologies, and sustainable water treatment infrastructure.",
+  },
+
+  {
+    icon: Building2,
+    title: "Civil & Infrastructure Projects",
+    desc:
+      "Commercial civil construction, pump houses, pipelines, water storage structures, industrial infrastructure, and sustainable engineering development works.",
+  },
+
+  {
+    icon: Globe2,
+    title: "Serving India & Global Markets",
+    desc:
+      "Based in Mangalagiri, Andhra Pradesh, ARK AQUATECH provides advanced engineering and aquaculture solutions for clients across India and international markets.",
   },
 ];
 
 export default function WhyChooseUsSection() {
   return (
-    <section className="relative overflow-hidden py-32 bg-[#03131d]">
+    <section className="relative overflow-hidden bg-[#020d14] py-32">
       {/* BACKGROUND */}
 
       <div className="absolute inset-0">
-        {/* MAIN GRADIENT */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,255,200,0.12),transparent_55%)]" />
 
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-950/10 to-transparent" />
-
-        {/* CYAN GLOW */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:90px_90px]" />
 
         <motion.div
           animate={{
@@ -66,19 +80,8 @@ export default function WhyChooseUsSection() {
             duration: 12,
             repeat: Infinity,
           }}
-          className="
-            absolute
-            top-[-220px]
-            left-[-220px]
-            w-[650px]
-            h-[650px]
-            rounded-full
-            bg-cyan-400/10
-            blur-[180px]
-          "
+          className="absolute left-[-250px] top-[-250px] h-[650px] w-[650px] rounded-full bg-cyan-400/10 blur-[180px]"
         />
-
-        {/* EMERALD GLOW */}
 
         <motion.div
           animate={{
@@ -89,302 +92,127 @@ export default function WhyChooseUsSection() {
             duration: 14,
             repeat: Infinity,
           }}
-          className="
-            absolute
-            bottom-[-220px]
-            right-[-220px]
-            w-[650px]
-            h-[650px]
-            rounded-full
-            bg-emerald-400/10
-            blur-[180px]
-          "
-        />
-
-        {/* GRID */}
-
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px)",
-            backgroundSize: "90px 90px",
-          }}
+          className="absolute bottom-[-250px] right-[-250px] h-[650px] w-[650px] rounded-full bg-emerald-400/10 blur-[180px]"
         />
       </div>
 
       {/* CONTENT */}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        {/* TOP */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+        {/* HEADER */}
 
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 60,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
-          viewport={{
-            once: true,
-          }}
-          className="text-center max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
+          viewport={{ once: true }}
+          className="mx-auto max-w-5xl text-center"
         >
-          {/* BADGE */}
+          <div className="inline-flex items-center gap-3 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-6 py-3 backdrop-blur-xl">
+            <Sparkles className="h-5 w-5 text-cyan-300" />
 
-          <div
-            className="
-              inline-flex
-              items-center
-              gap-3
-              rounded-full
-              border
-              border-cyan-300/15
-              bg-white/[0.04]
-              backdrop-blur-xl
-              px-6
-              py-3
-            "
-          >
-            <div className="w-2 h-2 rounded-full bg-cyan-300 animate-pulse" />
-
-            <span className="text-cyan-100 text-sm font-semibold uppercase tracking-wide">
-              Why Choose ARK AQUATECH
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-100">
+              Why Businesses Choose ARK AQUATECH
             </span>
           </div>
 
-          {/* TITLE */}
-
-          <h2
-            className="
-              mt-10
-              text-[50px]
-              md:text-[74px]
-              leading-[0.95]
-              tracking-[-0.05em]
-              font-black
-              text-white
-            "
-          >
-            Smart Marine
+          <h2 className="mt-10 text-5xl font-black leading-[0.95] tracking-[-0.05em] text-white md:text-7xl">
+            India's Leading
             <span className="block bg-gradient-to-r from-cyan-300 via-white to-emerald-300 bg-clip-text text-transparent">
-              Aquaculture Experts
+              Aquaculture Engineering Experts
             </span>
           </h2>
 
-          {/* DESCRIPTION */}
-
-          <p
-            className="
-              mt-8
-              text-lg
-              md:text-xl
-              leading-[2]
-              text-cyan-100/70
-            "
-          >
-            ARK AQUATECH provides advanced aquaculture
-            infrastructure, Biofloc technology, RAS systems,
-            industrial water treatment, shrimp farming, and
-            sustainable marine engineering solutions for
-            modern aquaculture industries across India.
+          <p className="mx-auto mt-10 max-w-4xl text-lg leading-[2] text-cyan-100/70 md:text-xl">
+            ARK AQUATECH specializes in advanced Biofloc
+            farming systems, industrial water treatment,
+            smart aquaculture automation, RAS fish farming,
+            civil engineering infrastructure, marine engineering,
+            and sustainable aquatic solutions for industries,
+            institutions, commercial farms, and government
+            projects across Andhra Pradesh, India, and global
+            aquaculture markets.
           </p>
         </motion.div>
 
         {/* FEATURES */}
 
-        <div className="grid lg:grid-cols-2 gap-8 mt-24">
+        <div className="mt-24 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {features.map((item, index) => {
             const Icon = item.icon;
 
             return (
               <motion.div
                 key={index}
-                initial={{
-                  opacity: 0,
-                  y: 60,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
+                initial={{ opacity: 0, y: 70 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 0.7,
-                  delay: index * 0.1,
+                  delay: index * 0.08,
                 }}
-                viewport={{
-                  once: true,
-                }}
-                whileHover={{
-                  y: -10,
-                }}
-                className="
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-[36px]
-                  border
-                  border-white/10
-                  bg-white/[0.04]
-                  backdrop-blur-3xl
-                  p-8
-                  shadow-[0_15px_50px_rgba(0,0,0,0.25)]
-                "
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+                className="group relative overflow-hidden rounded-[34px] border border-white/10 bg-white/[0.04] p-8 backdrop-blur-2xl"
               >
-                {/* HOVER LIGHT */}
+                {/* HOVER */}
 
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 bg-gradient-to-br from-cyan-300/10 to-emerald-300/10" />
+                <div className="absolute inset-0 opacity-0 transition-all duration-700 group-hover:opacity-100 bg-gradient-to-br from-cyan-400/10 to-emerald-400/10" />
+
+                {/* NUMBER */}
+
+                <div className="absolute right-6 top-5 text-7xl font-black text-white/[0.04]">
+                  0{index + 1}
+                </div>
 
                 {/* ICON */}
 
-                <motion.div
-                  whileHover={{
-                    rotate: 8,
-                    scale: 1.08,
-                  }}
-                  className="
-                    relative
-                    flex
-                    items-center
-                    justify-center
-                    w-20
-                    h-20
-                    rounded-3xl
-                    bg-gradient-to-br
-                    from-cyan-300
-                    via-sky-400
-                    to-emerald-300
-                    text-[#03131d]
-                    shadow-[0_0_40px_rgba(34,211,238,0.35)]
-                  "
-                >
-                  <Icon className="w-10 h-10" />
-                </motion.div>
+                <div className="relative flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-cyan-300 via-sky-400 to-emerald-300 shadow-[0_0_40px_rgba(34,211,238,0.35)]">
+                  <Icon className="h-10 w-10 text-[#021018]" />
+                </div>
 
                 {/* CONTENT */}
 
                 <div className="relative z-10">
-                  <h3
-                    className="
-                      mt-8
-                      text-[30px]
-                      leading-tight
-                      font-black
-                      text-white
-                    "
-                  >
+                  <h3 className="mt-8 text-3xl font-black text-white">
                     {item.title}
                   </h3>
 
-                  <p
-                    className="
-                      mt-5
-                      text-cyan-100/70
-                      leading-[2]
-                      text-[15px]
-                    "
-                  >
+                  <p className="mt-5 text-[15px] leading-[2] text-cyan-100/70">
                     {item.desc}
                   </p>
-                </div>
-
-                {/* NUMBER */}
-
-                <div
-                  className="
-                    absolute
-                    top-5
-                    right-6
-                    text-[90px]
-                    font-black
-                    leading-none
-                    text-white/[0.03]
-                  "
-                >
-                  0{index + 1}
                 </div>
               </motion.div>
             );
           })}
         </div>
 
-        {/* BOTTOM CTA */}
+        {/* BOTTOM SECTION */}
 
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 60,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
-          viewport={{
-            once: true,
-          }}
-          className="
-            relative
-            overflow-hidden
-            rounded-[40px]
-            border
-            border-white/10
-            bg-white/[0.04]
-            backdrop-blur-3xl
-            mt-24
-            p-10
-            md:p-14
-          "
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
+          viewport={{ once: true }}
+          className="relative mt-24 overflow-hidden rounded-[40px] border border-white/10 bg-white/[0.04] p-10 backdrop-blur-3xl md:p-16"
         >
-          {/* LIGHT */}
-
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_60%)]" />
 
-          <div className="relative z-10 grid lg:grid-cols-2 gap-10 items-center">
+          <div className="relative z-10 grid items-center gap-10 lg:grid-cols-2">
             {/* LEFT */}
 
             <div>
-              <div
-                className="
-                  inline-flex
-                  items-center
-                  gap-3
-                  rounded-full
-                  border
-                  border-cyan-300/15
-                  bg-white/[0.04]
-                  px-5
-                  py-2
-                "
-              >
-                <Sparkles className="w-4 h-4 text-cyan-300" />
+              <div className="inline-flex items-center gap-3 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-5 py-2">
+                <Sparkles className="h-4 w-4 text-cyan-300" />
 
-                <span className="text-cyan-100 text-sm font-semibold uppercase tracking-wide">
-                  Sustainable Aquaculture
+                <span className="text-sm font-semibold uppercase tracking-wide text-cyan-100">
+                  Sustainable Engineering Solutions
                 </span>
               </div>
 
-              <h3
-                className="
-                  mt-6
-                  text-[42px]
-                  md:text-[58px]
-                  leading-[0.95]
-                  tracking-[-0.04em]
-                  font-black
-                  text-white
-                "
-              >
+              <h3 className="mt-6 text-4xl font-black leading-[1] text-white md:text-6xl">
                 Future Ready
                 <span className="block bg-gradient-to-r from-cyan-300 via-white to-emerald-300 bg-clip-text text-transparent">
-                  Marine Infrastructure
+                  Smart Marine Infrastructure
                 </span>
               </h3>
             </div>
@@ -392,54 +220,29 @@ export default function WhyChooseUsSection() {
             {/* RIGHT */}
 
             <div>
-              <p
-                className="
-                  text-lg
-                  leading-[2]
-                  text-cyan-100/70
-                "
-              >
-                ARK AQUATECH continues to innovate in smart
-                fish farming, Biofloc systems, industrial RO
-                plants, sustainable marine engineering, and
-                commercial aquaculture infrastructure for
-                modern aquatic businesses.
+              <p className="text-lg leading-[2] text-cyan-100/70">
+                Since 2019, ARK AQUATECH has been delivering
+                modern engineering excellence in aquaculture,
+                water management, industrial infrastructure,
+                IoT automation, RO plants, fish farming,
+                shrimp farming, civil engineering, and smart
+                aquatic ecosystem development with a strong
+                commitment to innovation, sustainability,
+                quality, and long-term customer success.
               </p>
 
-              {/* BUTTON */}
-
               <motion.div
-                whileHover={{
-                  scale: 1.04,
-                }}
-                whileTap={{
-                  scale: 0.96,
-                }}
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
                 className="mt-8"
               >
                 <Link
                   href="/contact"
-                  className="
-                    group
-                    inline-flex
-                    items-center
-                    gap-3
-                    rounded-full
-                    px-8
-                    py-4
-                    bg-gradient-to-r
-                    from-cyan-300
-                    via-sky-400
-                    to-emerald-300
-                    text-[#03131d]
-                    font-black
-                    tracking-wide
-                    shadow-[0_15px_50px_rgba(34,211,238,0.35)]
-                  "
+                  className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-cyan-300 via-sky-400 to-emerald-300 px-8 py-4 font-black tracking-wide text-[#021018] shadow-[0_15px_50px_rgba(34,211,238,0.35)]"
                 >
-                  Contact Our Team
+                  Contact Our Experts
 
-                  <ArrowRight className="group-hover:translate-x-1 transition-all duration-300" />
+                  <ArrowRight className="transition-all duration-300 group-hover:translate-x-1" />
                 </Link>
               </motion.div>
             </div>
