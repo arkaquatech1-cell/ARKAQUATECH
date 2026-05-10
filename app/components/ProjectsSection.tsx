@@ -1,5 +1,3 @@
-// components/home/ProjectsSection.tsx
-
 "use client";
 
 import Image from "next/image";
@@ -12,151 +10,263 @@ import {
   MapPin,
   Sparkles,
   Globe2,
-  Cpu,
 } from "lucide-react";
 
 const projects = [
   {
-    title: "Advanced Biofloc Fish Farming Project",
+    title: "Advanced Biofloc Farming Project",
     location: "Andhra Pradesh, India",
-    image: "/project1.jpg",
+    image:"/images/services1.png",
     desc:
-      "Commercial Biofloc fish farming infrastructure with sustainable aquaculture ecosystem management, HDPE pond lining, aeration systems, and smart water circulation technology.",
+      "Commercial Biofloc infrastructure with sustainable aquatic ecosystem management and smart water circulation systems.",
   },
 
   {
-    title: "Industrial RAS Aquaculture System",
+    title: "Industrial RAS System",
     location: "Telangana, India",
-    image: "/project2.jpg",
+    image:"/images/services2.png",
     desc:
-      "Modern Recirculating Aquaculture System (RAS) designed with intelligent filtration, oxygen balancing, automated monitoring, and industrial water treatment technologies.",
+      "Modern Recirculating Aquaculture System with intelligent filtration and automated monitoring technologies.",
   },
 
   {
-    title: "Shrimp Farming Infrastructure Project",
+    title: "Shrimp Farming Infrastructure",
     location: "Tamil Nadu, India",
-    image: "/project3.jpg",
+  image:"/images/services3.png",
     desc:
-      "High-efficiency shrimp farming infrastructure project developed with advanced marine engineering, smart aquaculture systems, and sustainable aquatic management solutions.",
+      "High-efficiency shrimp farming infrastructure developed with sustainable marine engineering systems.",
   },
 ];
 
 export default function ProjectsSection() {
   return (
-    <section className="relative overflow-hidden bg-[#021018] py-32">
+    <section className="relative overflow-hidden py-16 sm:py-14 lg:py-14">
       {/* BACKGROUND */}
 
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,255,200,0.12),transparent_55%)]" />
+      <div className="absolute inset-0 -z-10">
+        {/* LIGHT */}
 
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:90px_90px]" />
-
-        <motion.div
-          animate={{
-            x: [0, 60, 0],
-            y: [0, -40, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-          }}
-          className="absolute left-[-220px] top-[-220px] h-[650px] w-[650px] rounded-full bg-cyan-400/10 blur-[180px]"
+        <div
+          className="
+            absolute
+            top-[-120px]
+            left-[-120px]
+            w-[300px]
+            h-[300px]
+            rounded-full
+            bg-cyan-400/8
+            blur-[100px]
+          "
         />
 
-        <motion.div
-          animate={{
-            x: [0, -60, 0],
-            y: [0, 40, 0],
+        <div
+          className="
+            absolute
+            bottom-[-120px]
+            right-[-120px]
+            w-[300px]
+            h-[300px]
+            rounded-full
+            bg-emerald-400/8
+            blur-[100px]
+          "
+        />
+
+        {/* GRID */}
+
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px)",
+            backgroundSize: "72px 72px",
           }}
-          transition={{
-            duration: 14,
-            repeat: Infinity,
-          }}
-          className="absolute bottom-[-220px] right-[-220px] h-[650px] w-[650px] rounded-full bg-emerald-400/10 blur-[180px]"
         />
       </div>
 
       {/* CONTENT */}
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         {/* HEADER */}
 
         <motion.div
-          initial={{ opacity: 0, y: 70 }}
+          initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mx-auto max-w-5xl text-center"
+          className="mx-auto max-w-4xl text-center"
         >
           {/* BADGE */}
 
-          <div className="inline-flex items-center gap-3 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-6 py-3 backdrop-blur-xl">
-            <Sparkles className="h-5 w-5 text-cyan-300" />
+          <div
+            className="
+              inline-flex
+              items-center
+              gap-2
+              rounded-full
+              border
+              border-white/10
+              bg-white/[0.03]
+              px-5
+              py-2.5
+              backdrop-blur-md
+            "
+          >
+            <Sparkles className="h-4 w-4 text-cyan-300" />
 
-            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-100">
-              Featured Engineering Projects
+            <span
+              className="
+                text-[11px]
+                uppercase
+                tracking-[0.22em]
+                text-cyan-100/75
+              "
+            >
+              Featured Projects
             </span>
           </div>
 
           {/* TITLE */}
 
-          <h2 className="mt-10 text-5xl font-black leading-[0.95] tracking-[-0.05em] text-white md:text-7xl">
+          <h2
+            className="
+              mt-6
+              text-[34px]
+              sm:text-[48px]
+              lg:text-[62px]
+              leading-[1]
+              tracking-[-0.04em]
+              font-semibold
+              text-white
+            "
+          >
             Smart Aquaculture
-            <span className="block bg-gradient-to-r from-cyan-300 via-white to-emerald-300 bg-clip-text text-transparent">
+            <span
+              className="
+                block
+                mt-2
+                bg-gradient-to-r
+                from-cyan-200
+                via-white
+                to-emerald-200
+                bg-clip-text
+                text-transparent
+              "
+            >
               Infrastructure Projects
             </span>
           </h2>
 
           {/* DESCRIPTION */}
 
-          <p className="mx-auto mt-10 max-w-4xl text-lg leading-[2] text-cyan-100/70 md:text-xl">
-            Explore advanced Biofloc farming systems,
+          <p
+            className="
+              mx-auto
+              mt-7
+              max-w-3xl
+              text-[15px]
+              sm:text-[16px]
+              leading-[1.9]
+              text-white/68
+            "
+          >
+            Explore advanced Biofloc systems,
             industrial RAS aquaculture infrastructure,
-            shrimp farming projects, industrial RO water
-            treatment plants, smart IoT aquaculture
-            automation, civil engineering infrastructure,
-            and sustainable marine engineering projects
-            developed by ARK AQUATECH across Andhra Pradesh,
-            India, and international aquaculture markets.
+            shrimp farming projects, sustainable water
+            treatment plants, and smart aquaculture
+            engineering solutions developed by
+            ARK AQUATECH.
           </p>
         </motion.div>
 
-        {/* PROJECT GRID */}
+        {/* PROJECTS */}
 
-        <div className="mt-24 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div
+          className="
+            mt-14
+            grid
+            gap-5
+            sm:grid-cols-2
+            xl:grid-cols-3
+          "
+        >
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 70 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.7,
-                delay: index * 0.08,
+                duration: 0.5,
+                delay: index * 0.06,
               }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-              className="group relative overflow-hidden rounded-[36px] border border-white/10 bg-white/[0.04] backdrop-blur-3xl shadow-[0_15px_50px_rgba(0,0,0,0.25)]"
+              whileHover={{ y: -5 }}
+              className="
+                group
+                overflow-hidden
+                rounded-[28px]
+                border
+                border-white/10
+                bg-white/[0.03]
+                backdrop-blur-md
+              "
             >
               {/* IMAGE */}
 
-              <div className="relative h-[320px] overflow-hidden">
+              <div className="relative h-[250px] overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="
+                    object-cover
+                    transition-transform
+                    duration-700
+                    group-hover:scale-105
+                  "
                 />
 
                 {/* OVERLAY */}
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#021018] via-[#021018]/20 to-transparent" />
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-gradient-to-t
+                    from-[#061018]
+                    via-[#061018]/20
+                    to-transparent
+                  "
+                />
 
                 {/* LOCATION */}
 
-                <div className="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-4 py-2 backdrop-blur-xl">
-                  <MapPin className="h-4 w-4 text-cyan-300" />
+                <div
+                  className="
+                    absolute
+                    left-4
+                    top-4
+                    flex
+                    items-center
+                    gap-2
+                    rounded-full
+                    border
+                    border-white/10
+                    bg-black/30
+                    px-3
+                    py-1.5
+                    backdrop-blur-md
+                  "
+                >
+                  <MapPin className="h-3.5 w-3.5 text-cyan-300" />
 
-                  <span className="text-sm font-semibold text-white">
+                  <span
+                    className="
+                      text-xs
+                      font-medium
+                      text-white
+                    "
+                  >
                     {project.location}
                   </span>
                 </div>
@@ -164,12 +274,26 @@ export default function ProjectsSection() {
 
               {/* CONTENT */}
 
-              <div className="relative z-10 p-8">
-                <h3 className="text-[30px] font-black leading-tight text-white">
+              <div className="p-6">
+                <h3
+                  className="
+                    text-[24px]
+                    font-semibold
+                    leading-tight
+                    text-white
+                  "
+                >
                   {project.title}
                 </h3>
 
-                <p className="mt-5 text-[15px] leading-[2] text-cyan-100/70">
+                <p
+                  className="
+                    mt-4
+                    text-[14px]
+                    leading-[1.9]
+                    text-white/65
+                  "
+                >
                   {project.desc}
                 </p>
 
@@ -177,54 +301,110 @@ export default function ProjectsSection() {
 
                 <Link
                   href="/projects"
-                  className="group/link mt-8 inline-flex items-center gap-3 font-bold tracking-wide text-cyan-200"
+                  className="
+                    mt-6
+                    inline-flex
+                    items-center
+                    gap-2
+                    text-sm
+                    font-medium
+                    text-cyan-200
+                  "
                 >
                   Explore Project
 
-                  <ArrowUpRight className="h-5 w-5 transition-all duration-300 group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+                  <ArrowUpRight
+                    className="
+                      h-4
+                      w-4
+                      transition-transform
+                      duration-300
+                      group-hover:translate-x-1
+                      group-hover:-translate-y-1
+                    "
+                  />
                 </Link>
-              </div>
-
-              {/* HOVER */}
-
-              <div className="absolute inset-0 opacity-0 transition-all duration-700 group-hover:opacity-100 bg-gradient-to-br from-cyan-400/10 to-emerald-400/10" />
-
-              {/* NUMBER */}
-
-              <div className="absolute right-5 top-5 text-[90px] font-black leading-none text-white/[0.03]">
-                0{index + 1}
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* BOTTOM SECTION */}
+        {/* BOTTOM BLOCK */}
 
         <motion.div
-          initial={{ opacity: 0, y: 70 }}
+          initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="relative mt-24 overflow-hidden rounded-[40px] border border-white/10 bg-white/[0.04] p-10 backdrop-blur-3xl md:p-16"
+          className="
+            mt-16
+            rounded-[32px]
+            border
+            border-white/10
+            bg-white/[0.03]
+            p-7
+            sm:p-10
+            lg:p-12
+            backdrop-blur-md
+          "
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_60%)]" />
-
-          <div className="relative z-10 grid items-center gap-10 lg:grid-cols-2">
+          <div className="grid gap-8 lg:grid-cols-2">
             {/* LEFT */}
 
             <div>
-              <div className="inline-flex items-center gap-3 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-5 py-2">
+              <div
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  rounded-full
+                  border
+                  border-white/10
+                  bg-white/[0.03]
+                  px-4
+                  py-2
+                "
+              >
                 <Globe2 className="h-4 w-4 text-cyan-300" />
 
-                <span className="text-sm font-semibold uppercase tracking-wide text-cyan-100">
-                  Sustainable Marine Innovation
+                <span
+                  className="
+                    text-[11px]
+                    uppercase
+                    tracking-[0.2em]
+                    text-cyan-100/75
+                  "
+                >
+                  Sustainable Innovation
                 </span>
               </div>
 
-              <h3 className="mt-6 text-4xl font-black leading-[1] text-white md:text-6xl">
+              <h3
+                className="
+                  mt-5
+                  text-[30px]
+                  sm:text-[42px]
+                  lg:text-[52px]
+                  leading-[1]
+                  tracking-[-0.04em]
+                  font-semibold
+                  text-white
+                "
+              >
                 Future Ready
-                <span className="block bg-gradient-to-r from-cyan-300 via-white to-emerald-300 bg-clip-text text-transparent">
-                  Engineering Infrastructure
+                <span
+                  className="
+                    block
+                    mt-2
+                    bg-gradient-to-r
+                    from-cyan-200
+                    via-white
+                    to-emerald-200
+                    bg-clip-text
+                    text-transparent
+                  "
+                >
+                  Engineering Projects
                 </span>
               </h3>
             </div>
@@ -232,16 +412,20 @@ export default function ProjectsSection() {
             {/* RIGHT */}
 
             <div>
-              <p className="text-lg leading-[2] text-cyan-100/70">
-                ARK AQUATECH continues to deliver smart
-                aquaculture engineering, industrial water
-                treatment plants, commercial fish farming
-                infrastructure, IoT-based aquaculture
-                automation, Biofloc systems, sustainable
-                marine engineering, and advanced aquatic
-                ecosystem solutions designed for modern
-                aquaculture industries and engineering
-                projects across India.
+              <p
+                className="
+                  text-[15px]
+                  sm:text-[16px]
+                  leading-[1.9]
+                  text-white/68
+                "
+              >
+                ARK AQUATECH continues to develop smart
+                aquaculture systems, industrial water
+                treatment infrastructure, sustainable
+                marine engineering, and intelligent
+                aquatic ecosystem solutions for modern
+                industries across India.
               </p>
             </div>
           </div>
@@ -250,3 +434,4 @@ export default function ProjectsSection() {
     </section>
   );
 }
+``

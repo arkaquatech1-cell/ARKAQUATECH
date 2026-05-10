@@ -1,5 +1,3 @@
-// components/home/CTASection.tsx
-
 "use client";
 
 import Link from "next/link";
@@ -8,109 +6,80 @@ import { motion } from "framer-motion";
 
 import {
   ArrowRight,
+  Phone,
+  Mail,
+  MapPin,
+  CheckCircle2,
   Sparkles,
-  Waves,
-  Fish,
 } from "lucide-react";
+
+const features = [
+  "Advanced Biofloc Systems",
+  "RAS Aquaculture Technology",
+  "Industrial Water Treatment",
+  "Smart Aquaculture Automation",
+];
 
 export default function CTASection() {
   return (
-    <section className="relative overflow-hidden py-32 bg-[#03131d]">
+    <section className="relative overflow-hidden py-12 sm:py-14 lg:py-14">
       {/* BACKGROUND */}
 
-      <div className="absolute inset-0">
-        {/* MAIN OCEAN GRADIENT */}
+      <div className="absolute inset-0 -z-10">
+        {/* LIGHT */}
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#0b3b5a_0%,#03131d_45%,#010b12_100%)]" />
-
-        {/* CYAN GLOW */}
-
-        <motion.div
-          animate={{
-            x: [0, 60, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-          }}
+        <div
           className="
             absolute
-            top-[-220px]
-            left-[-220px]
-            w-[650px]
-            h-[650px]
+            top-[-120px]
+            left-[-120px]
+            w-[300px]
+            h-[300px]
             rounded-full
-            bg-cyan-400/15
-            blur-[180px]
+            bg-cyan-400/8
+            blur-[100px]
           "
         />
 
-        {/* EMERALD GLOW */}
-
-        <motion.div
-          animate={{
-            x: [0, -60, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{
-            duration: 14,
-            repeat: Infinity,
-          }}
+        <div
           className="
             absolute
-            bottom-[-220px]
-            right-[-220px]
-            w-[650px]
-            h-[650px]
+            bottom-[-120px]
+            right-[-120px]
+            w-[300px]
+            h-[300px]
             rounded-full
-            bg-emerald-400/15
-            blur-[180px]
+            bg-emerald-400/8
+            blur-[100px]
           "
         />
 
         {/* GRID */}
 
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.025]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px)",
-            backgroundSize: "90px 90px",
+              "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px)",
+            backgroundSize: "72px 72px",
           }}
         />
-
-        {/* WATER WAVE */}
-
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg
-            className="relative block w-[calc(100%+1.3px)] h-[130px]"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M321.39 56.44C191.11 92.35 0 30.19 0 30.19V120h1200V16.48s-197.91 78-358.39 44.92C670.59 27.45 562.84-10.3 321.39 56.44z"
-              fill="rgba(255,255,255,0.03)"
-            />
-          </svg>
-        </div>
       </div>
 
       {/* CONTENT */}
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <motion.div
           initial={{
             opacity: 0,
-            y: 60,
+            y: 30,
           }}
           whileInView={{
             opacity: 1,
             y: 0,
           }}
           transition={{
-            duration: 0.9,
+            duration: 0.7,
           }}
           viewport={{
             once: true,
@@ -118,306 +87,440 @@ export default function CTASection() {
           className="
             relative
             overflow-hidden
-            rounded-[45px]
+            rounded-[32px]
             border
             border-white/10
-            bg-white/[0.04]
-            backdrop-blur-3xl
-            px-8
-            md:px-16
-            py-20
-            md:py-24
-            shadow-[0_25px_80px_rgba(0,0,0,0.35)]
+            bg-white/[0.03]
+            backdrop-blur-md
           "
         >
-          {/* LIGHT */}
+          {/* OVERLAY */}
 
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_60%)]" />
-
-          {/* FLOATING ICONS */}
-
-          <motion.div
-            animate={{
-              y: [0, -12, 0],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-            }}
+          <div
             className="
               absolute
-              top-10
-              left-10
-              hidden
-              md:flex
-              items-center
-              justify-center
-              w-16
-              h-16
-              rounded-2xl
-              bg-white/[0.05]
-              border
-              border-white/10
-              backdrop-blur-2xl
+              inset-0
+              bg-gradient-to-br
+              from-cyan-400/[0.04]
+              to-emerald-400/[0.04]
             "
-          >
-            <Fish className="text-cyan-300 w-8 h-8" />
-          </motion.div>
+          />
 
-          <motion.div
-            animate={{
-              y: [0, 12, 0],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-            }}
+          {/* GRID */}
+
+          <div
             className="
-              absolute
-              top-16
-              right-12
-              hidden
-              md:flex
-              items-center
-              justify-center
-              w-16
-              h-16
-              rounded-2xl
-              bg-white/[0.05]
-              border
-              border-white/10
-              backdrop-blur-2xl
+              relative
+              z-10
+              grid
+              gap-10
+              lg:grid-cols-[1.2fr_0.8fr]
+              p-7
+              sm:p-10
+              lg:p-14
             "
           >
-            <Waves className="text-emerald-300 w-8 h-8" />
-          </motion.div>
+            {/* LEFT */}
 
-          {/* MAIN CONTENT */}
+            <div>
+              {/* BADGE */}
 
-          <div className="relative z-10 text-center">
-            {/* BADGE */}
+              <div
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  rounded-full
+                  border
+                  border-white/10
+                  bg-white/[0.03]
+                  px-4
+                  py-2
+                "
+              >
+                <Sparkles className="h-4 w-4 text-cyan-300" />
+
+                <span
+                  className="
+                    text-[11px]
+                    uppercase
+                    tracking-[0.2em]
+                    text-cyan-100/75
+                  "
+                >
+                  Smart Aquaculture Solutions
+                </span>
+              </div>
+
+              {/* TITLE */}
+
+              <h2
+                className="
+                  mt-6
+                  text-[36px]
+                  sm:text-[52px]
+                  lg:text-[68px]
+                  leading-[1]
+                  tracking-[-0.04em]
+                  font-semibold
+                  text-white
+                "
+              >
+                Let's Build
+                <span
+                  className="
+                    block
+                    mt-2
+                    bg-gradient-to-r
+                    from-cyan-200
+                    via-white
+                    to-emerald-200
+                    bg-clip-text
+                    text-transparent
+                  "
+                >
+                  Smart Aquaculture
+                </span>
+              </h2>
+
+              {/* DESC */}
+
+              <p
+                className="
+                  mt-7
+                  max-w-2xl
+                  text-[15px]
+                  sm:text-[16px]
+                  leading-[1.9]
+                  text-white/68
+                "
+              >
+                ARK AQUATECH delivers advanced
+                Biofloc systems, RAS aquaculture,
+                industrial water treatment,
+                aquaponics, fish farming
+                infrastructure, and sustainable
+                marine engineering solutions
+                across India.
+              </p>
+
+              {/* FEATURES */}
+
+              <div
+                className="
+                  mt-10
+                  grid
+                  gap-4
+                  sm:grid-cols-2
+                "
+              >
+                {features.map((item, index) => (
+                  <div
+                    key={index}
+                    className="
+                      flex
+                      items-center
+                      gap-3
+                    "
+                  >
+                    <CheckCircle2 className="h-5 w-5 text-cyan-300" />
+
+                    <span
+                      className="
+                        text-[14px]
+                        text-white/75
+                      "
+                    >
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* BUTTONS */}
+
+              <div
+                className="
+                  mt-10
+                  flex
+                  flex-col
+                  sm:flex-row
+                  gap-4
+                "
+              >
+                {/* PRIMARY */}
+
+                <motion.div
+                  whileHover={{
+                    scale: 1.03,
+                  }}
+                  whileTap={{
+                    scale: 0.97,
+                  }}
+                >
+                  <Link
+                    href="/contact"
+                    className="
+                      group
+                      inline-flex
+                      items-center
+                      justify-center
+                      gap-2
+                      rounded-full
+                      bg-cyan-300
+                      px-7
+                      py-4
+                      text-sm
+                      font-semibold
+                      text-[#061018]
+                      transition-all
+                      duration-300
+                      hover:bg-cyan-200
+                    "
+                  >
+                    Get Free Consultation
+
+                    <ArrowRight
+                      className="
+                        h-4
+                        w-4
+                        transition-transform
+                        duration-300
+                        group-hover:translate-x-1
+                      "
+                    />
+                  </Link>
+                </motion.div>
+
+                {/* SECONDARY */}
+
+                <Link
+                  href="/projects"
+                  className="
+                    inline-flex
+                    items-center
+                    justify-center
+                    rounded-full
+                    border
+                    border-white/10
+                    bg-white/[0.03]
+                    px-7
+                    py-4
+                    text-sm
+                    font-medium
+                    text-white
+                    transition-all
+                    duration-300
+                    hover:bg-white/[0.06]
+                  "
+                >
+                  View Projects
+                </Link>
+              </div>
+            </div>
+
+            {/* RIGHT CONTACT CARD */}
 
             <div
               className="
-                inline-flex
-                items-center
-                gap-3
-                rounded-full
+                rounded-[28px]
                 border
-                border-cyan-300/15
-                bg-white/[0.04]
-                px-6
-                py-3
+                border-white/10
+                bg-black/20
+                p-6
+                sm:p-8
                 backdrop-blur-xl
               "
             >
-              <div className="w-2 h-2 rounded-full bg-cyan-300 animate-pulse" />
+              {/* TITLE */}
 
-              <span className="text-cyan-100 text-sm font-semibold tracking-wide uppercase">
-                Smart Aquaculture Solutions
-              </span>
-            </div>
-
-            {/* TITLE */}
-
-            <motion.h2
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.9,
-              }}
-              viewport={{
-                once: true,
-              }}
-              className="
-                mt-10
-                text-[50px]
-                md:text-[78px]
-                leading-[0.95]
-                tracking-[-0.05em]
-                font-black
-                text-white
-              "
-            >
-              Build The Future Of
-              <span
+              <h3
                 className="
-                  block
-                  bg-gradient-to-r
-                  from-cyan-300
-                  via-white
-                  to-emerald-300
-                  bg-clip-text
-                  text-transparent
+                  text-[28px]
+                  font-semibold
+                  leading-tight
+                  text-white
                 "
               >
-                Smart Aquaculture
-              </span>
-            </motion.h2>
+                Contact Information
+              </h3>
 
-            {/* DESCRIPTION */}
+              <p
+                className="
+                  mt-4
+                  text-[14px]
+                  leading-[1.9]
+                  text-white/65
+                "
+              >
+                Connect with ARK AQUATECH
+                for sustainable aquaculture,
+                Biofloc systems, water treatment,
+                and smart engineering solutions.
+              </p>
 
-            <p
-              className="
-                mt-10
-                max-w-4xl
-                mx-auto
-                text-lg
-                md:text-xl
-                leading-[2]
-                text-cyan-100/70
-              "
-            >
-              ARK AQUATECH specializes in advanced Biofloc
-              technology, RAS systems, aquaponics, shrimp
-              farming, fish farming infrastructure, industrial
-              water treatment systems, and sustainable marine
-              engineering solutions for modern aquaculture
-              industries across India.
-            </p>
+              {/* CONTACT ITEMS */}
 
-            {/* FEATURES */}
+              <div className="mt-8 space-y-5">
+                {/* PHONE */}
 
-            <div className="flex flex-wrap justify-center gap-5 mt-12">
-              {[
-                "Biofloc Technology",
-                "RAS Systems",
-                "Fish Farming",
-                "Water Treatment",
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{
-                    y: -5,
-                  }}
+                <div
                   className="
                     flex
-                    items-center
-                    gap-3
+                    items-start
+                    gap-4
                     rounded-2xl
                     border
                     border-white/10
-                    bg-white/[0.04]
-                    px-5
-                    py-3
-                    backdrop-blur-xl
+                    bg-white/[0.03]
+                    p-4
                   "
                 >
-                  <Sparkles className="w-4 h-4 text-cyan-300" />
-
-                  <span className="text-white/80 font-semibold text-sm">
-                    {item}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* BUTTONS */}
-
-            <div className="flex flex-wrap justify-center gap-5 mt-14">
-              {/* PRIMARY BUTTON */}
-
-              <motion.div
-                whileHover={{
-                  scale: 1.05,
-                }}
-                whileTap={{
-                  scale: 0.96,
-                }}
-              >
-                <Link
-                  href="/contact"
-                  className="
-                    group
-                    relative
-                    overflow-hidden
-                    flex
-                    items-center
-                    gap-3
-                    rounded-full
-                    px-10
-                    py-5
-                    bg-gradient-to-r
-                    from-cyan-300
-                    via-sky-400
-                    to-emerald-300
-                    text-[#03131d]
-                    font-black
-                    tracking-wide
-                    shadow-[0_15px_60px_rgba(34,211,238,0.35)]
-                  "
-                >
-                  {/* SHINE */}
-
-                  <span
+                  <div
                     className="
-                      absolute
-                      inset-0
-                      -translate-x-full
-                      group-hover:translate-x-full
-                      transition-transform
-                      duration-1000
-                      bg-gradient-to-r
-                      from-transparent
-                      via-white/40
-                      to-transparent
+                      flex
+                      h-11
+                      w-11
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-cyan-300
                     "
-                  />
+                  >
+                    <Phone className="h-4 w-4 text-[#061018]" />
+                  </div>
 
-                  <span className="relative z-10">
-                    Get Started Today
-                  </span>
+                  <div>
+                    <p className="text-xs text-white/45">
+                      Phone Number
+                    </p>
 
-                  <ArrowRight
-                    className="
-                      relative
-                      z-10
-                      w-5
-                      h-5
-                      transition-transform
-                      duration-300
-                      group-hover:translate-x-1
-                    "
-                  />
-                </Link>
-              </motion.div>
+                    <p className="mt-1 text-sm text-white">
+                      +91 9063289228
+                    </p>
 
-              {/* SECOND BUTTON */}
+                    <p className="text-sm text-white">
+                      +91 7799399555
+                    </p>
+                  </div>
+                </div>
 
-              <motion.div
-                whileHover={{
-                  scale: 1.04,
-                }}
-              >
-                <Link
-                  href="/services"
+                {/* EMAIL */}
+
+                <div
                   className="
                     flex
-                    items-center
-                    gap-3
-                    rounded-full
+                    items-start
+                    gap-4
+                    rounded-2xl
                     border
                     border-white/10
-                    bg-white/[0.04]
-                    px-10
-                    py-5
-                    backdrop-blur-2xl
-                    text-white
-                    font-bold
-                    hover:bg-white/[0.08]
-                    transition-all
-                    duration-300
+                    bg-white/[0.03]
+                    p-4
                   "
                 >
-                  Explore Services
-                </Link>
-              </motion.div>
+                  <div
+                    className="
+                      flex
+                      h-11
+                      w-11
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-cyan-300
+                    "
+                  >
+                    <Mail className="h-4 w-4 text-[#061018]" />
+                  </div>
+
+                  <div>
+                    <p className="text-xs text-white/45">
+                      Email Address
+                    </p>
+
+                    <p className="mt-1 text-sm text-white break-all">
+                      arkaquatech@gmail.com
+                    </p>
+                  </div>
+                </div>
+
+                {/* ADDRESS */}
+
+                <div
+                  className="
+                    flex
+                    items-start
+                    gap-4
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-white/[0.03]
+                    p-4
+                  "
+                >
+                  <div
+                    className="
+                      flex
+                      h-11
+                      w-11
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-cyan-300
+                    "
+                  >
+                    <MapPin className="h-4 w-4 text-[#061018]" />
+                  </div>
+
+                  <div>
+                    <p className="text-xs text-white/45">
+                      Office Address
+                    </p>
+
+                    <p
+                      className="
+                        mt-1
+                        text-sm
+                        leading-[1.8]
+                        text-white
+                      "
+                    >
+                      Auto Nagar,
+                      Mangalagiri,
+                      Guntur,
+                      Andhra Pradesh,
+                      India - 522503
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* SMALL CTA */}
+
+              <Link
+                href="/contact"
+                className="
+                  mt-8
+                  inline-flex
+                  w-full
+                  items-center
+                  justify-center
+                  rounded-2xl
+                  border
+                  border-white/10
+                  bg-white/[0.04]
+                  px-6
+                  py-4
+                  text-sm
+                  font-medium
+                  text-white
+                  transition-all
+                  duration-300
+                  hover:bg-white/[0.08]
+                "
+              >
+                Contact Our Team
+              </Link>
             </div>
           </div>
         </motion.div>

@@ -1,5 +1,3 @@
-// components/home/TechnologySection.tsx
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -18,134 +16,102 @@ const technologies = [
     icon: Cpu,
     title: "Smart Automation",
     desc:
-      "AI-powered aquaculture automation systems for intelligent monitoring, feeding control, and water management.",
+      "AI-powered aquaculture automation systems for monitoring, feeding control, and intelligent water management.",
   },
 
   {
     icon: Waves,
     title: "RAS Technology",
     desc:
-      "Advanced Recirculating Aquaculture Systems with automated filtration and oxygen balancing infrastructure.",
+      "Advanced Recirculating Aquaculture Systems with filtration and oxygen balancing infrastructure.",
   },
 
   {
     icon: Droplets,
     title: "Water Treatment",
     desc:
-      "Industrial RO plants, filtration systems, and smart water purification technologies for marine farming.",
+      "Industrial RO plants, filtration systems, and smart water purification technologies.",
   },
 
   {
     icon: ShieldCheck,
-    title: "Water Quality Sensors",
+    title: "Quality Sensors",
     desc:
-      "Real-time monitoring systems for pH balance, oxygen control, temperature, and aquatic ecosystem stability.",
+      "Real-time monitoring systems for pH balance, oxygen control, and aquatic ecosystem stability.",
   },
 
   {
     icon: Activity,
     title: "Smart Monitoring",
     desc:
-      "IoT-enabled dashboards and remote monitoring solutions for modern aquaculture infrastructure management.",
+      "IoT-enabled dashboards and remote monitoring systems for modern aquaculture management.",
   },
 
   {
     icon: Sparkles,
     title: "Eco Engineering",
     desc:
-      "Sustainable marine engineering systems designed for eco-friendly fish farming and aquaculture productivity.",
+      "Sustainable marine engineering systems designed for eco-friendly aquaculture productivity.",
   },
 ];
 
 export default function TechnologySection() {
   return (
-    <section className="relative overflow-hidden py-32 bg-[#03131d]">
+    <section className="relative overflow-hidden py-16 sm:py-16 lg:py-14">
       {/* BACKGROUND */}
 
-      <div className="absolute inset-0">
-        {/* MAIN GRADIENT */}
+      <div className="absolute inset-0 -z-10">
+        {/* LIGHT */}
 
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-950/10 to-transparent" />
-
-        {/* CYAN GLOW */}
-
-        <motion.div
-          animate={{
-            x: [0, 60, 0],
-            y: [0, -40, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-          }}
+        <div
           className="
             absolute
-            top-[-220px]
-            left-[-220px]
-            w-[650px]
-            h-[650px]
+            top-[-120px]
+            left-[-120px]
+            w-[300px]
+            h-[300px]
             rounded-full
-            bg-cyan-400/10
-            blur-[180px]
+            bg-cyan-400/8
+            blur-[100px]
           "
         />
 
-        {/* EMERALD GLOW */}
-
-        <motion.div
-          animate={{
-            x: [0, -60, 0],
-            y: [0, 40, 0],
-          }}
-          transition={{
-            duration: 14,
-            repeat: Infinity,
-          }}
+        <div
           className="
             absolute
-            bottom-[-220px]
-            right-[-220px]
-            w-[650px]
-            h-[650px]
+            bottom-[-120px]
+            right-[-120px]
+            w-[300px]
+            h-[300px]
             rounded-full
-            bg-emerald-400/10
-            blur-[180px]
+            bg-emerald-400/8
+            blur-[100px]
           "
         />
 
         {/* GRID */}
 
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.025]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px)",
-            backgroundSize: "90px 90px",
+              "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px)",
+            backgroundSize: "72px 72px",
           }}
         />
       </div>
 
       {/* CONTENT */}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         {/* HEADER */}
 
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 60,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
-          viewport={{
-            once: true,
-          }}
-          className="text-center max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="mx-auto max-w-4xl text-center"
         >
           {/* BADGE */}
 
@@ -153,19 +119,26 @@ export default function TechnologySection() {
             className="
               inline-flex
               items-center
-              gap-3
+              gap-2
               rounded-full
               border
-              border-cyan-300/15
-              bg-white/[0.04]
-              backdrop-blur-xl
-              px-6
-              py-3
+              border-white/10
+              bg-white/[0.03]
+              px-5
+              py-2.5
+              backdrop-blur-md
             "
           >
-            <Sparkles className="w-4 h-4 text-cyan-300" />
+            <Sparkles className="h-4 w-4 text-cyan-300" />
 
-            <span className="text-cyan-100 text-sm font-semibold uppercase tracking-wide">
+            <span
+              className="
+                text-[11px]
+                uppercase
+                tracking-[0.22em]
+                text-cyan-100/75
+              "
+            >
               Smart Technology
             </span>
           </div>
@@ -174,119 +147,133 @@ export default function TechnologySection() {
 
           <h2
             className="
-              mt-10
-              text-[50px]
-              md:text-[74px]
-              leading-[0.95]
-              tracking-[-0.05em]
-              font-black
+              mt-6
+              text-[34px]
+              sm:text-[48px]
+              lg:text-[62px]
+              leading-[1]
+              tracking-[-0.04em]
+              font-semibold
               text-white
             "
           >
             Advanced Marine
-            <span className="block bg-gradient-to-r from-cyan-300 via-white to-emerald-300 bg-clip-text text-transparent">
+            <span
+              className="
+                block
+                mt-2
+                bg-gradient-to-r
+                from-cyan-200
+                via-white
+                to-emerald-200
+                bg-clip-text
+                text-transparent
+              "
+            >
               Technology Systems
             </span>
           </h2>
 
-          {/* SEO CONTENT */}
+          {/* DESCRIPTION */}
 
           <p
             className="
-              mt-8
-              text-lg
-              md:text-xl
-              leading-[2]
-              text-cyan-100/70
+              mx-auto
+              mt-7
+              max-w-3xl
+              text-[15px]
+              sm:text-[16px]
+              leading-[1.9]
+              text-white/68
             "
           >
-            ARK AQUATECH delivers next-generation aquaculture
-            technology including AI-powered monitoring,
-            Biofloc systems, RAS infrastructure, industrial
-            water treatment, smart aquatic sensors, and
+            ARK AQUATECH delivers next-generation
+            aquaculture technology including AI-powered
+            monitoring, Biofloc systems, industrial water
+            treatment, smart aquatic sensors, and
             sustainable marine engineering solutions.
           </p>
         </motion.div>
 
-        {/* TECHNOLOGY GRID */}
+        {/* GRID */}
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mt-24">
+        <div
+          className="
+            mt-14
+            grid
+            gap-5
+            sm:grid-cols-2
+            xl:grid-cols-3
+          "
+        >
           {technologies.map((item, index) => {
             const Icon = item.icon;
 
             return (
               <motion.div
                 key={index}
-                initial={{
-                  opacity: 0,
-                  y: 60,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{
-                  duration: 0.7,
-                  delay: index * 0.1,
+                  duration: 0.5,
+                  delay: index * 0.06,
                 }}
-                viewport={{
-                  once: true,
-                }}
-                whileHover={{
-                  y: -12,
-                }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
                 className="
                   group
                   relative
                   overflow-hidden
-                  rounded-[36px]
+                  rounded-[28px]
                   border
                   border-white/10
-                  bg-white/[0.04]
-                  backdrop-blur-3xl
-                  p-8
-                  shadow-[0_15px_50px_rgba(0,0,0,0.25)]
+                  bg-white/[0.03]
+                  p-6
+                  backdrop-blur-md
                 "
               >
-                {/* LIGHT */}
+                {/* HOVER */}
 
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 bg-gradient-to-br from-cyan-300/10 to-emerald-300/10" />
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    opacity-0
+                    transition-all
+                    duration-500
+                    group-hover:opacity-100
+                    bg-gradient-to-br
+                    from-cyan-400/[0.04]
+                    to-emerald-400/[0.04]
+                  "
+                />
 
                 {/* ICON */}
 
-                <motion.div
-                  whileHover={{
-                    rotate: 8,
-                    scale: 1.08,
-                  }}
+                <div
                   className="
                     relative
                     flex
+                    h-14
+                    w-14
                     items-center
                     justify-center
-                    w-20
-                    h-20
-                    rounded-3xl
-                    bg-gradient-to-br
-                    from-cyan-300
-                    via-sky-400
-                    to-emerald-300
-                    text-[#03131d]
-                    shadow-[0_0_40px_rgba(34,211,238,0.35)]
+                    rounded-2xl
+                    bg-cyan-300
                   "
                 >
-                  <Icon className="w-10 h-10" />
-                </motion.div>
+                  <Icon className="h-6 w-6 text-[#061018]" />
+                </div>
 
                 {/* CONTENT */}
 
                 <div className="relative z-10">
                   <h3
                     className="
-                      mt-8
-                      text-[28px]
+                      mt-5
+                      text-[22px]
+                      font-semibold
                       leading-tight
-                      font-black
                       text-white
                     "
                   >
@@ -295,86 +282,67 @@ export default function TechnologySection() {
 
                   <p
                     className="
-                      mt-5
-                      text-cyan-100/70
-                      leading-[2]
-                      text-[15px]
+                      mt-4
+                      text-[14px]
+                      leading-[1.9]
+                      text-white/65
                     "
                   >
                     {item.desc}
                   </p>
-                </div>
-
-                {/* NUMBER */}
-
-                <div
-                  className="
-                    absolute
-                    top-5
-                    right-5
-                    text-[90px]
-                    font-black
-                    leading-none
-                    text-white/[0.03]
-                  "
-                >
-                  0{index + 1}
                 </div>
               </motion.div>
             );
           })}
         </div>
 
-        {/* BOTTOM INFO */}
+        {/* BOTTOM BLOCK */}
 
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 60,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
-          viewport={{
-            once: true,
-          }}
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
           className="
-            relative
-            overflow-hidden
-            rounded-[40px]
+            mt-16
+            rounded-[32px]
             border
             border-white/10
-            bg-white/[0.04]
-            backdrop-blur-3xl
-            mt-24
-            p-10
-            md:p-14
+            bg-white/[0.03]
+            p-7
+            sm:p-10
+            lg:p-12
+            backdrop-blur-md
           "
         >
-          {/* LIGHT */}
-
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_60%)]" />
-
-          <div className="relative z-10 grid lg:grid-cols-2 gap-10 items-center">
+          <div className="grid gap-8 lg:grid-cols-2">
             {/* LEFT */}
 
             <div>
               <h3
                 className="
-                  text-[42px]
-                  md:text-[58px]
-                  leading-[0.95]
+                  text-[30px]
+                  sm:text-[42px]
+                  lg:text-[52px]
+                  leading-[1]
                   tracking-[-0.04em]
-                  font-black
+                  font-semibold
                   text-white
                 "
               >
                 Future Ready
-                <span className="block bg-gradient-to-r from-cyan-300 via-white to-emerald-300 bg-clip-text text-transparent">
+                <span
+                  className="
+                    block
+                    mt-2
+                    bg-gradient-to-r
+                    from-cyan-200
+                    via-white
+                    to-emerald-200
+                    bg-clip-text
+                    text-transparent
+                  "
+                >
                   Smart Aquaculture
                 </span>
               </h3>
@@ -385,14 +353,15 @@ export default function TechnologySection() {
             <div>
               <p
                 className="
-                  text-lg
-                  leading-[2]
-                  text-cyan-100/70
+                  text-[15px]
+                  sm:text-[16px]
+                  leading-[1.9]
+                  text-white/68
                 "
               >
                 ARK AQUATECH combines intelligent marine
-                engineering, automated water systems,
-                industrial filtration technology, smart fish
+                engineering, industrial filtration,
+                automated water systems, smart fish
                 farming infrastructure, and sustainable
                 aquaculture innovation for modern aquatic
                 businesses.

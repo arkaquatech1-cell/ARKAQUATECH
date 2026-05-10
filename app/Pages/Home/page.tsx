@@ -1,47 +1,61 @@
 // app/page.tsx
 
 import AboutSection from "@/app/components/AboutSection";
-import BlogSection from "@/app/components/BlogSection";
+
 import CTASection from "@/app/components/CTASection";
+
 import FAQSection from "@/app/components/FAQSection";
+
 import HeroSection from "@/app/components/HeroSection";
+
+
+
 import ProjectsSection from "@/app/components/ProjectsSection";
+
 import ServicesSection from "@/app/components/ServicesSection";
+
 import StatsSection from "@/app/components/StatsSection";
+
 import TechnologySection from "@/app/components/TechnologySection";
+
 import TestimonialsSection from "@/app/components/TestimonialsSection";
+
 import WhyChooseUsSection from "@/app/components/WhyChooseUsSection";
+
+
+
+
 
 
 
 export const metadata = {
   title:
-    "ARK AQUATECH | Smart Aquaculture & Marine Engineering Solutions",
+    "ARK AQUATECH | Biofloc, RAS & Smart Aquaculture Solutions India",
 
   description:
-    "ARK AQUATECH provides advanced Biofloc technology, RAS systems, fish farming, shrimp farming, industrial water treatment, sustainable aquaculture infrastructure, and smart marine engineering solutions across India.",
+    "ARK AQUATECH is a leading aquaculture engineering company in India specializing in Biofloc fish farming, RAS systems, industrial RO plants, water treatment, IoT automation, shrimp farming infrastructure, and smart marine engineering solutions.",
 
   keywords: [
-    "Biofloc Technology",
-    "RAS Systems",
-    "Fish Farming",
-    "Shrimp Farming",
-    "Aquaculture Company",
-    "Marine Engineering",
-    "Water Treatment",
-    "Aquaculture Infrastructure",
+    "Biofloc Fish Farming",
+    "RAS Systems India",
+    "Aquaculture Engineering",
     "Industrial RO Plants",
-    "Aquaponics",
+    "Shrimp Farming",
+    "Fish Farming Andhra Pradesh",
+    "Water Treatment Solutions",
     "Smart Aquaculture",
-    "Aquaculture India",
+    "Marine Engineering",
+    "Commercial Aquaculture",
+    "IoT Aquaculture",
+    "Sustainable Fish Farming",
   ],
 
   openGraph: {
     title:
-      "ARK AQUATECH | Smart Aquaculture Solutions",
+      "ARK AQUATECH | Smart Aquaculture Engineering Solutions",
 
     description:
-      "Advanced aquaculture technologies including Biofloc systems, RAS farming, industrial water treatment, marine infrastructure, and sustainable aquatic engineering.",
+      "Advanced Biofloc systems, RAS aquaculture, industrial water treatment, fish farming infrastructure, and marine engineering solutions across India.",
 
     images: [
       {
@@ -51,62 +65,67 @@ export const metadata = {
       },
     ],
   },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function HomePage() {
   return (
     <main className="relative overflow-hidden bg-[#03131d]">
-
-
-
-
-      {/* HERO SECTION */}
+      {/* HERO */}
 
       <HeroSection />
 
-      {/* ABOUT SECTION */}
+      {/* ABOUT */}
 
       <AboutSection />
 
-      {/* SERVICES SECTION */}
+      {/* SERVICES */}
 
       <ServicesSection />
+
+
+
+   
 
       {/* WHY CHOOSE US */}
 
       <WhyChooseUsSection />
 
-      {/* PROJECTS SECTION */}
-
-      <ProjectsSection />
-
-      {/* TECHNOLOGY SECTION */}
+      {/* TECHNOLOGY */}
 
       <TechnologySection />
 
-      {/* STATS SECTION */}
-
-      <StatsSection />
-
-      {/* TESTIMONIALS SECTION */}
-
-      <TestimonialsSection />
-
-      {/* FAQ SECTION */}
-
-      <FAQSection />
-
-      {/* BLOG SECTION */}
-
-      <BlogSection />
-
-      {/* CTA SECTION */}
-
-      <CTASection />
+      {/* PROCESS */}
 
    
 
+      {/* PROJECTS */}
 
+      <ProjectsSection />
+
+      {/* STATS */}
+
+      <StatsSection />
+
+      {/* TESTIMONIALS */}
+
+      <TestimonialsSection />
+
+      {/* BLOGS */}
+
+ 
+
+      {/* FAQ */}
+
+      <FAQSection />
+
+      {/* CTA */}
+
+      <CTASection />
     </main>
   );
 }

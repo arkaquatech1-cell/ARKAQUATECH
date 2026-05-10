@@ -1,27 +1,17 @@
-// components/home/HeroSection.tsx
-
 "use client";
 
 import Link from "next/link";
 
 import { motion } from "framer-motion";
 
-import {
-  ArrowRight,
-  Fish,
-  Waves,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black">
-      {/* VIDEO BACKGROUND */}
+    <section className="relative min-h-screen overflow-hidden bg-[#061018]">
+      {/* VIDEO BG */}
 
       <div className="absolute inset-0">
-        {/* VIDEO */}
-
         <video
           autoPlay
           muted
@@ -33,189 +23,131 @@ export default function HeroSection() {
             h-full
             w-full
             object-cover
-            brightness-[0.72]
-            contrast-[1.15]
-            saturate-[1.3]
+            brightness-[0.48]
+            contrast-[1.05]
           "
         >
-         <source src="/herosection/seavideo1.mp4" type="video/mp4" />
+          <source
+            src="/herosection/seavideo1.mp4"
+            type="video/mp4"
+          />
         </video>
 
-        {/* LIGHT OVERLAY */}
+        {/* DARK OVERLAY */}
+
+      
+
+        {/* SOFT GRADIENT */}
 
         <div
           className="
             absolute
             inset-0
-            bg-[linear-gradient(to_bottom,rgba(0,0,0,0.28),rgba(0,0,0,0.45))]
+            bg-gradient-to-b
+            from-[#061018]/30
+            via-[#061018]/55
+            to-[#061018]
           "
         />
 
-        {/* CENTER FOCUS LIGHT */}
-
-        <div
-          className="
-            absolute
-            inset-0
-            bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.18),transparent_45%)]
-          "
-        />
-
-        {/* TOP LIGHT */}
+        {/* LIGHT EFFECT */}
 
         <div
           className="
             absolute
             top-0
-            left-0
-            h-[40%]
-            w-full
-            bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_65%)]
-          "
-        />
-
-        {/* LEFT GLOW */}
-
-        <motion.div
-          animate={{
-            x: [0, 60, 0],
-            y: [0, -30, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-          }}
-          className="
-            absolute
-            top-[-180px]
-            left-[-180px]
-            h-[500px]
-            w-[500px]
+            left-1/2
+            -translate-x-1/2
+            w-[600px]
+            h-[300px]
+            bg-cyan-400/10
+            blur-[120px]
             rounded-full
-            bg-cyan-400/20
-            blur-[140px]
-          "
-        />
-
-        {/* RIGHT GLOW */}
-
-        <motion.div
-          animate={{
-            x: [0, -60, 0],
-            y: [0, 30, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-          }}
-          className="
-            absolute
-            bottom-[-180px]
-            right-[-180px]
-            h-[500px]
-            w-[500px]
-            rounded-full
-            bg-emerald-400/20
-            blur-[140px]
-          "
-        />
-
-        {/* BOTTOM SHADOW */}
-
-        <div
-          className="
-            absolute
-            bottom-0
-            left-0
-            w-full
-            h-[220px]
-            bg-gradient-to-t
-            from-black
-            to-transparent
           "
         />
 
         {/* GRID */}
 
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.025]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px)",
-            backgroundSize: "90px 90px",
+              "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px)",
+            backgroundSize: "70px 70px",
           }}
         />
       </div>
 
       {/* CONTENT */}
 
-      <div className="relative z-10 flex min-h-screen items-center justify-center px-6">
-        <div className="mx-auto w-full max-w-[1400px] text-center">
+      <div
+        className="
+          relative
+          z-10
+          flex
+          items-center
+          justify-center
+          min-h-screen
+          px-5
+          sm:px-6
+          lg:px-8
+        "
+      >
+        <div className="mx-auto max-w-6xl text-center">
           {/* BADGE */}
 
           <motion.div
-            initial={{
-              opacity: 0,
-              y: -20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 1,
-            }}
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
             className="
               inline-flex
               items-center
-              gap-3
+              gap-2
               rounded-full
               border
               border-white/10
-              bg-white/10
-              px-7
-              py-3
-              backdrop-blur-xl
+              bg-white/5
+              px-5
+              py-2.5
+              backdrop-blur-md
             "
           >
-            <div className="relative">
-              <div className="absolute h-4 w-4 rounded-full bg-cyan-300 animate-ping" />
+            <div className="h-2 w-2 rounded-full bg-cyan-300 animate-pulse" />
 
-              <div className="relative h-2.5 w-2.5 rounded-full bg-cyan-200" />
-            </div>
-
-            <span className="text-sm font-bold uppercase tracking-[0.28em] text-cyan-100">
-              Smart Aquaculture Technology
+            <span
+              className="
+                text-[10px]
+                sm:text-xs
+                uppercase
+                tracking-[0.22em]
+                text-cyan-100/80
+                font-medium
+              "
+            >
+              Smart Aquaculture & Water Engineering
             </span>
           </motion.div>
 
           {/* HEADING */}
 
           <motion.h1
-            initial={{
-              opacity: 0,
-              y: 50,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 1,
-            }}
+            initial={{ opacity: 0, y: 35 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="
-              mt-10
-              text-[60px]
-              sm:text-[85px]
-              md:text-[120px]
-              lg:text-[140px]
-              leading-[0.88]
-              tracking-[-0.08em]
-              font-black
+              mt-8
+              text-[38px]
+              sm:text-[52px]
+              md:text-[72px]
+              lg:text-[92px]
+              leading-[0.95]
+              tracking-[-0.05em]
+              font-semibold
               text-white
             "
           >
-            Smart Future Of
+            Sustainable Future Of
 
             <span
               className="
@@ -228,175 +160,174 @@ export default function HeroSection() {
                 text-transparent
               "
             >
-              Aquaculture
+              Smart Aquaculture
             </span>
           </motion.h1>
 
           {/* DESCRIPTION */}
 
           <motion.p
-            initial={{
-              opacity: 0,
-              y: 40,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
-              delay: 0.3,
-              duration: 1,
+              delay: 0.2,
+              duration: 0.8,
             }}
             className="
               mx-auto
-              mt-10
-              max-w-4xl
-              text-[18px]
-              md:text-[23px]
-              leading-[2]
-              text-white/75
-              font-medium
+              mt-7
+              max-w-3xl
+              text-[15px]
+              sm:text-[17px]
+              md:text-[18px]
+              leading-[1.9]
+              text-white/70
+              font-normal
             "
           >
-            ARK AQUATECH provides advanced Biofloc systems,
+            ARK AQUATECH delivers advanced Biofloc systems,
             RAS aquaculture technology, shrimp farming,
-            fish farming solutions, marine infrastructure,
-            industrial water treatment systems, and smart
-            sustainable aquaculture engineering services
-            across India.
+            fish farming, industrial water treatment,
+            aquaponics, and sustainable aquaculture
+            engineering solutions across India and
+            international markets.
           </motion.p>
 
           {/* SEO TAGS */}
 
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
+          <div
+            className="
+              mt-10
+              flex
+              flex-wrap
+              items-center
+              justify-center
+              gap-3
+            "
+          >
             {[
-              "Biofloc Technology",
-              "RAS Systems",
+              "Biofloc Systems",
+              "RAS Technology",
               "Fish Farming",
               "Shrimp Farming",
               "Water Treatment",
-              "Marine Engineering",
+              "Aquaculture Engineering",
             ].map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                whileHover={{
-                  y: -5,
-                }}
                 className="
                   rounded-full
                   border
                   border-white/10
-                  bg-white/10
-                  px-6
-                  py-3
-                  text-sm
-                  font-semibold
-                  text-white
-                  backdrop-blur-xl
+                  bg-white/[0.04]
+                  px-4
+                  py-2
+                  text-[11px]
+                  sm:text-xs
+                  text-white/75
+                  backdrop-blur-sm
                 "
               >
                 {item}
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* BUTTONS */}
 
-          <div className="mt-14 flex flex-wrap items-center justify-center gap-5">
+          <div
+            className="
+              mt-12
+              flex
+              flex-col
+              sm:flex-row
+              items-center
+              justify-center
+              gap-4
+            "
+          >
             {/* PRIMARY */}
 
             <motion.div
-              whileHover={{
-                scale: 1.05,
-              }}
-              whileTap={{
-                scale: 0.96,
-              }}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
             >
               <Link
                 href="/services"
                 className="
                   group
-                  relative
-                  flex
+                  inline-flex
                   items-center
-                  gap-3
-                  overflow-hidden
+                  gap-2
                   rounded-full
-                  bg-gradient-to-r
-                  from-cyan-300
-                  to-emerald-300
-                  px-10
-                  py-5
-                  text-[#02131d]
-                  font-black
-                  shadow-[0_15px_60px_rgba(34,211,238,0.4)]
+                  bg-cyan-300
+                  px-7
+                  sm:px-8
+                  py-4
+                  text-sm
+                  font-semibold
+                  text-[#061018]
+                  transition-all
+                  duration-300
+                  hover:bg-cyan-200
                 "
               >
-                <span
+                Explore Services
+
+                <ArrowRight
                   className="
-                    absolute
-                    inset-0
-                    -translate-x-full
-                    bg-gradient-to-r
-                    from-transparent
-                    via-white/40
-                    to-transparent
+                    h-4
+                    w-4
                     transition-transform
-                    duration-1000
-                    group-hover:translate-x-full
+                    duration-300
+                    group-hover:translate-x-1
                   "
                 />
-
-                <span className="relative z-10">
-                  Explore Services
-                </span>
-
-                <ArrowRight className="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </motion.div>
 
             {/* SECONDARY */}
 
-            <motion.div
-              whileHover={{
-                scale: 1.04,
-              }}
+            <Link
+              href="/contact"
+              className="
+                inline-flex
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-white/10
+                bg-white/[0.04]
+                px-7
+                sm:px-8
+                py-4
+                text-sm
+                font-medium
+                text-white
+                backdrop-blur-sm
+                transition-all
+                duration-300
+                hover:bg-white/[0.08]
+              "
             >
-              <Link
-                href="/contact"
-                className="
-                  rounded-full
-                  border
-                  border-white/10
-                  bg-white/10
-                  px-10
-                  py-5
-                  text-white
-                  font-bold
-                  backdrop-blur-xl
-                  transition-all
-                  duration-300
-                  hover:bg-white/20
-                "
-              >
-                Contact Us
-              </Link>
-            </motion.div>
+              Contact Us
+            </Link>
           </div>
 
-          {/* FEATURE CARDS */}
+          {/* TRUST TEXT */}
 
-         
-
-       
-
-        
-           
-              
-
-             
-      
+          <div
+            className="
+              mt-14
+              text-xs
+              sm:text-sm
+              text-white/45
+              tracking-wide
+            "
+          >
+            Trusted Aquaculture & Water Engineering
+            Solutions Across India
+          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,3 @@
-// components/home/BlogSection.tsx
-
 "use client";
 
 import Image from "next/image";
@@ -23,7 +21,7 @@ const blogs = [
     date: "May 2026",
 
     desc:
-      "Discover how Biofloc technology improves water quality, increases fish production, and reduces farming costs for sustainable aquaculture businesses.",
+      "Discover how Biofloc technology improves water quality and supports sustainable fish farming infrastructure.",
   },
 
   {
@@ -35,7 +33,7 @@ const blogs = [
     date: "May 2026",
 
     desc:
-      "Learn how advanced Recirculating Aquaculture Systems help commercial fish farming with automated filtration and smart water recycling.",
+      "Learn how advanced RAS systems improve commercial aquaculture with smart filtration and water recycling.",
   },
 
   {
@@ -47,99 +45,77 @@ const blogs = [
     date: "May 2026",
 
     desc:
-      "Industrial RO plants and intelligent water management systems are transforming shrimp farming and marine infrastructure projects.",
+      "Industrial RO plants and intelligent water management systems are transforming modern shrimp farming.",
   },
 ];
 
 export default function BlogSection() {
   return (
-    <section className="relative overflow-hidden py-32 bg-[#03131d]">
+    <section className="relative overflow-hidden py-20 sm:py-24 lg:py-28">
       {/* BACKGROUND */}
 
-      <div className="absolute inset-0">
-        {/* MAIN GRADIENT */}
+      <div className="absolute inset-0 -z-10">
+        {/* LIGHT */}
 
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-950/10 to-transparent" />
-
-        {/* CYAN GLOW */}
-
-        <motion.div
-          animate={{
-            x: [0, 60, 0],
-            y: [0, -40, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-          }}
+        <div
           className="
             absolute
-            top-[-220px]
-            left-[-220px]
-            w-[650px]
-            h-[650px]
+            top-[-120px]
+            left-[-120px]
+            w-[300px]
+            h-[300px]
             rounded-full
-            bg-cyan-400/10
-            blur-[180px]
+            bg-cyan-400/8
+            blur-[100px]
           "
         />
 
-        {/* EMERALD GLOW */}
-
-        <motion.div
-          animate={{
-            x: [0, -60, 0],
-            y: [0, 40, 0],
-          }}
-          transition={{
-            duration: 14,
-            repeat: Infinity,
-          }}
+        <div
           className="
             absolute
-            bottom-[-220px]
-            right-[-220px]
-            w-[650px]
-            h-[650px]
+            bottom-[-120px]
+            right-[-120px]
+            w-[300px]
+            h-[300px]
             rounded-full
-            bg-emerald-400/10
-            blur-[180px]
+            bg-emerald-400/8
+            blur-[100px]
           "
         />
 
         {/* GRID */}
 
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.025]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px)",
-            backgroundSize: "90px 90px",
+              "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px)",
+              backgroundSize: "72px 72px",
           }}
         />
       </div>
 
       {/* CONTENT */}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         {/* HEADER */}
 
         <motion.div
           initial={{
             opacity: 0,
-            y: 60,
+            y: 35,
           }}
           whileInView={{
             opacity: 1,
             y: 0,
           }}
           transition={{
-            duration: 0.8,
+            duration: 0.7,
           }}
           viewport={{
             once: true,
           }}
-          className="text-center max-w-4xl mx-auto"
+          className="mx-auto max-w-4xl text-center"
         >
           {/* BADGE */}
 
@@ -147,19 +123,26 @@ export default function BlogSection() {
             className="
               inline-flex
               items-center
-              gap-3
+              gap-2
               rounded-full
               border
-              border-cyan-300/15
-              bg-white/[0.04]
-              backdrop-blur-xl
-              px-6
-              py-3
+              border-white/10
+              bg-white/[0.03]
+              px-5
+              py-2.5
+              backdrop-blur-md
             "
           >
-            <Sparkles className="w-4 h-4 text-cyan-300" />
+            <Sparkles className="h-4 w-4 text-cyan-300" />
 
-            <span className="text-cyan-100 text-sm font-semibold uppercase tracking-wide">
+            <span
+              className="
+                text-[11px]
+                uppercase
+                tracking-[0.22em]
+                text-cyan-100/75
+              "
+            >
               Latest Insights
             </span>
           </div>
@@ -168,79 +151,98 @@ export default function BlogSection() {
 
           <h2
             className="
-              mt-10
-              text-[50px]
-              md:text-[72px]
-              leading-[0.95]
-              tracking-[-0.05em]
-              font-black
+              mt-6
+              text-[34px]
+              sm:text-[48px]
+              lg:text-[62px]
+              leading-[1]
+              tracking-[-0.04em]
+              font-semibold
               text-white
             "
           >
             Aquaculture
-            <span className="block bg-gradient-to-r from-cyan-300 via-white to-emerald-300 bg-clip-text text-transparent">
+            <span
+              className="
+                block
+                mt-2
+                bg-gradient-to-r
+                from-cyan-200
+                via-white
+                to-emerald-200
+                bg-clip-text
+                text-transparent
+              "
+            >
               Blogs & Insights
             </span>
           </h2>
 
-          {/* SEO CONTENT */}
+          {/* DESC */}
 
           <p
             className="
-              mt-8
-              text-lg
-              md:text-xl
-              leading-[2]
-              text-cyan-100/70
+              mx-auto
+              mt-7
+              max-w-3xl
+              text-[15px]
+              sm:text-[16px]
+              leading-[1.9]
+              text-white/68
             "
           >
             Explore the latest insights about Biofloc
-            technology, fish farming, shrimp farming, RAS
-            systems, industrial water treatment, sustainable
-            aquaculture infrastructure, and smart marine
-            engineering solutions from ARK AQUATECH.
+            technology, RAS systems, fish farming,
+            shrimp farming, industrial water treatment,
+            and sustainable aquaculture engineering.
           </p>
         </motion.div>
 
         {/* BLOG GRID */}
 
-        <div className="grid lg:grid-cols-3 gap-8 mt-24">
+        <div
+          className="
+            mt-14
+            grid
+            gap-5
+            sm:grid-cols-2
+            xl:grid-cols-3
+          "
+        >
           {blogs.map((blog, index) => (
             <motion.div
               key={index}
               initial={{
                 opacity: 0,
-                y: 60,
+                y: 25,
               }}
               whileInView={{
                 opacity: 1,
                 y: 0,
               }}
               transition={{
-                duration: 0.7,
-                delay: index * 0.1,
+                duration: 0.5,
+                delay: index * 0.06,
               }}
               viewport={{
                 once: true,
               }}
               whileHover={{
-                y: -12,
+                y: -5,
               }}
               className="
                 group
-                relative
                 overflow-hidden
-                rounded-[36px]
+                rounded-[28px]
                 border
                 border-white/10
-                bg-white/[0.04]
-                backdrop-blur-3xl
-                shadow-[0_15px_50px_rgba(0,0,0,0.25)]
+                bg-white/[0.03]
+                backdrop-blur-md
               "
             >
               {/* IMAGE */}
 
-              <div className="relative overflow-hidden h-[320px]">
+              <div className="relative h-[240px] overflow-hidden">
                 <Image
                   src={blog.image}
                   alt={blog.title}
@@ -249,21 +251,30 @@ export default function BlogSection() {
                     object-cover
                     transition-transform
                     duration-700
-                    group-hover:scale-110
+                    group-hover:scale-105
                   "
                 />
 
                 {/* OVERLAY */}
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#03131d] via-[#03131d]/20 to-transparent" />
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-gradient-to-t
+                    from-[#061018]
+                    via-[#061018]/20
+                    to-transparent
+                  "
+                />
 
                 {/* DATE */}
 
                 <div
                   className="
                     absolute
-                    top-5
-                    left-5
+                    left-4
+                    top-4
                     flex
                     items-center
                     gap-2
@@ -271,14 +282,20 @@ export default function BlogSection() {
                     border
                     border-white/10
                     bg-black/30
-                    backdrop-blur-xl
-                    px-4
-                    py-2
+                    px-3
+                    py-1.5
+                    backdrop-blur-md
                   "
                 >
-                  <CalendarDays className="w-4 h-4 text-cyan-300" />
+                  <CalendarDays className="h-3.5 w-3.5 text-cyan-300" />
 
-                  <span className="text-white text-sm font-semibold">
+                  <span
+                    className="
+                      text-xs
+                      font-medium
+                      text-white
+                    "
+                  >
                     {blog.date}
                   </span>
                 </div>
@@ -286,12 +303,12 @@ export default function BlogSection() {
 
               {/* CONTENT */}
 
-              <div className="p-8">
+              <div className="p-6">
                 <h3
                   className="
-                    text-[28px]
+                    text-[24px]
                     leading-tight
-                    font-black
+                    font-semibold
                     text-white
                   "
                 >
@@ -300,10 +317,10 @@ export default function BlogSection() {
 
                 <p
                   className="
-                    mt-5
-                    text-cyan-100/70
-                    leading-[2]
-                    text-[15px]
+                    mt-4
+                    text-[14px]
+                    leading-[1.9]
+                    text-white/65
                   "
                 >
                   {blog.desc}
@@ -314,104 +331,90 @@ export default function BlogSection() {
                 <Link
                   href="/blogs"
                   className="
-                    group/link
+                    mt-6
                     inline-flex
                     items-center
-                    gap-3
-                    mt-8
+                    gap-2
+                    text-sm
+                    font-medium
                     text-cyan-200
-                    font-bold
-                    tracking-wide
                   "
                 >
                   Read More
 
                   <ArrowUpRight
                     className="
-                      w-5
-                      h-5
+                      h-4
+                      w-4
                       transition-transform
                       duration-300
-                      group-hover/link:translate-x-1
-                      group-hover/link:-translate-y-1
+                      group-hover:translate-x-1
+                      group-hover:-translate-y-1
                     "
                   />
                 </Link>
-              </div>
-
-              {/* HOVER LIGHT */}
-
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 bg-gradient-to-br from-cyan-300/10 to-emerald-300/10" />
-
-              {/* NUMBER */}
-
-              <div
-                className="
-                  absolute
-                  top-5
-                  right-5
-                  text-[90px]
-                  font-black
-                  leading-none
-                  text-white/[0.03]
-                "
-              >
-                0{index + 1}
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* BOTTOM SEO BLOCK */}
+        {/* BOTTOM BLOCK */}
 
         <motion.div
           initial={{
             opacity: 0,
-            y: 60,
+            y: 35,
           }}
           whileInView={{
             opacity: 1,
             y: 0,
           }}
           transition={{
-            duration: 0.8,
+            duration: 0.7,
           }}
           viewport={{
             once: true,
           }}
           className="
-            relative
-            overflow-hidden
-            rounded-[40px]
+            mt-16
+            rounded-[32px]
             border
             border-white/10
-            bg-white/[0.04]
-            backdrop-blur-3xl
-            mt-24
-            p-10
-            md:p-14
+            bg-white/[0.03]
+            p-7
+            sm:p-10
+            lg:p-12
+            backdrop-blur-md
           "
         >
-          {/* LIGHT */}
-
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_60%)]" />
-
-          <div className="relative z-10 grid lg:grid-cols-2 gap-10 items-center">
+          <div className="grid gap-8 lg:grid-cols-2">
             {/* LEFT */}
 
             <div>
               <h3
                 className="
-                  text-[42px]
-                  md:text-[58px]
-                  leading-[0.95]
+                  text-[30px]
+                  sm:text-[42px]
+                  lg:text-[52px]
+                  leading-[1]
                   tracking-[-0.04em]
-                  font-black
+                  font-semibold
                   text-white
                 "
               >
                 Smart Marine
-                <span className="block bg-gradient-to-r from-cyan-300 via-white to-emerald-300 bg-clip-text text-transparent">
+                <span
+                  className="
+                    block
+                    mt-2
+                    bg-gradient-to-r
+                    from-cyan-200
+                    via-white
+                    to-emerald-200
+                    bg-clip-text
+                    text-transparent
+                  "
+                >
                   Knowledge Hub
                 </span>
               </h3>
@@ -422,17 +425,17 @@ export default function BlogSection() {
             <div>
               <p
                 className="
-                  text-lg
-                  leading-[2]
-                  text-cyan-100/70
+                  text-[15px]
+                  sm:text-[16px]
+                  leading-[1.9]
+                  text-white/68
                 "
               >
-                Stay updated with the latest innovations in
-                Biofloc technology, fish farming systems,
-                shrimp farming infrastructure, industrial
-                water treatment, RAS technology, and smart
-                aquaculture engineering solutions from
-                ARK AQUATECH.
+                Stay updated with the latest
+                innovations in Biofloc technology,
+                fish farming systems, industrial water
+                treatment, RAS technology, and smart
+                aquaculture engineering solutions.
               </p>
             </div>
           </div>
