@@ -60,38 +60,76 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-[#061018]">
-      {/* BACKGROUND */}
+    <footer className="relative overflow-hidden border-t border-white/10">
 
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+      {/* VIDEO BACKGROUND */}
+
+      <div className="absolute inset-0 -z-20 overflow-hidden">
+
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="
+            absolute
+            inset-0
+            h-full
+            w-full
+            object-cover
+            brightness-[0.35]
+            contrast-[1.1]
+            saturate-[1.2]
+          "
+        >
+          <source
+            src="/images/file.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        {/* OCEAN OVERLAY */}
+
+        
+
+        {/* EXTRA DARK LAYER */}
+
+       
+
+        {/* BLUE GLOW */}
+
         <div
           className="
             absolute
             top-[-120px]
             left-[-120px]
-            h-[300px]
-            w-[300px]
+            h-[320px]
+            w-[320px]
             rounded-full
-            bg-cyan-400/10
+            bg-cyan-400/20
             blur-[120px]
           "
         />
+
+        {/* GREEN GLOW */}
 
         <div
           className="
             absolute
             bottom-[-120px]
             right-[-120px]
-            h-[300px]
-            w-[300px]
+            h-[320px]
+            w-[320px]
             rounded-full
-            bg-emerald-400/10
+            bg-emerald-400/15
             blur-[120px]
           "
         />
 
+        {/* GRID */}
+
         <div
-          className="absolute inset-0 opacity-[0.025]"
+          className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage:
               "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px)",
@@ -100,9 +138,22 @@ export default function Footer() {
         />
       </div>
 
-      {/* CONTAINER */}
+      {/* EXTRA BLUR OVERLAY */}
+
+      <div
+        className="
+          absolute
+          inset-0
+          -z-10
+          bg-black/10
+          backdrop-blur-[2px]
+        "
+      />
+
+      {/* MAIN CONTAINER */}
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
         {/* FOOTER GRID */}
 
         <div
@@ -117,20 +168,25 @@ export default function Footer() {
           {/* COMPANY */}
 
           <div>
+
             <Link
               href="/"
               className="flex items-center gap-4"
             >
+              {/* LOGO */}
+
               <div
                 className="
                   relative
-                  h-[68px]
-                  w-[68px]
+                  h-[72px]
+                  w-[72px]
                   overflow-hidden
                   rounded-2xl
                   border
                   border-white/10
-                  bg-white/[0.03]
+                  bg-white/10
+                  shadow-[0_10px_30px_rgba(0,0,0,0.2)]
+                  backdrop-blur-xl
                 "
               >
                 <Image
@@ -141,11 +197,14 @@ export default function Footer() {
                 />
               </div>
 
+              {/* BRAND */}
+
               <div>
                 <h2
                   className="
-                    text-[22px]
-                    font-semibold
+                    text-[24px]
+                    font-bold
+                    tracking-tight
                     text-white
                   "
                 >
@@ -158,7 +217,7 @@ export default function Footer() {
                     text-[10px]
                     uppercase
                     tracking-[0.28em]
-                    text-cyan-100/60
+                    text-cyan-100/70
                   "
                 >
                   Smart Aquaculture
@@ -166,23 +225,29 @@ export default function Footer() {
               </div>
             </Link>
 
+            {/* DESCRIPTION */}
+
             <p
               className="
                 mt-6
                 text-[14px]
                 leading-[1.9]
-                text-white/65
+                text-white/70
               "
             >
               Advanced aquaculture engineering,
-              Biofloc systems, industrial water
-              treatment, and smart marine
-              infrastructure solutions.
+              Biofloc fish farming,
+              industrial water treatment,
+              RAS technology,
+              smart automation,
+              and sustainable marine infrastructure
+              solutions across India.
             </p>
 
             {/* SOCIAL */}
 
             <div className="mt-8 flex gap-3">
+
               {socialLinks.map((item, index) => (
                 <Link
                   key={index}
@@ -196,12 +261,15 @@ export default function Footer() {
                     rounded-xl
                     border
                     border-white/10
-                    bg-white/[0.03]
-                    text-white/65
+                    bg-white/10
+                    text-white/70
+                    shadow-[0_8px_25px_rgba(0,0,0,0.15)]
+                    backdrop-blur-xl
                     transition-all
                     duration-300
-                    hover:bg-white/[0.06]
+                    hover:bg-white/15
                     hover:text-white
+                    hover:scale-[1.05]
                   "
                 >
                   {item.icon}
@@ -213,11 +281,19 @@ export default function Footer() {
           {/* QUICK LINKS */}
 
           <div>
-            <h3 className="text-[20px] font-semibold text-white">
+
+            <h3
+              className="
+                text-[22px]
+                font-semibold
+                text-white
+              "
+            >
               Quick Links
             </h3>
 
             <ul className="mt-6 space-y-4">
+
               {quickLinks.map((item, index) => (
                 <li key={index}>
                   <Link
@@ -227,7 +303,7 @@ export default function Footer() {
                       items-center
                       gap-2
                       text-sm
-                      text-white/65
+                      text-white/70
                       transition-all
                       duration-300
                       hover:text-white
@@ -245,11 +321,19 @@ export default function Footer() {
           {/* SERVICES */}
 
           <div>
-            <h3 className="text-[20px] font-semibold text-white">
+
+            <h3
+              className="
+                text-[22px]
+                font-semibold
+                text-white
+              "
+            >
               Services
             </h3>
 
             <ul className="mt-6 space-y-4">
+
               {services.map((service, index) => (
                 <li
                   key={index}
@@ -258,7 +342,7 @@ export default function Footer() {
                     items-center
                     gap-2
                     text-sm
-                    text-white/65
+                    text-white/70
                   "
                 >
                   <Waves className="h-3.5 w-3.5 text-emerald-300" />
@@ -272,12 +356,34 @@ export default function Footer() {
           {/* CONTACT */}
 
           <div>
-            <h3 className="text-[20px] font-semibold text-white">
+
+            <h3
+              className="
+                text-[22px]
+                font-semibold
+                text-white
+              "
+            >
               Contact
             </h3>
 
             <div className="mt-6 space-y-5">
-              <div className="flex gap-4">
+
+              {/* PHONE */}
+
+              <div
+                className="
+                  flex
+                  gap-4
+                  rounded-2xl
+                  border
+                  border-white/10
+                  bg-white/10
+                  p-4
+                  shadow-[0_8px_25px_rgba(0,0,0,0.15)]
+                  backdrop-blur-xl
+                "
+              >
                 <Phone className="mt-1 h-4 w-4 text-cyan-300" />
 
                 <div>
@@ -291,7 +397,21 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              {/* EMAIL */}
+
+              <div
+                className="
+                  flex
+                  gap-4
+                  rounded-2xl
+                  border
+                  border-white/10
+                  bg-white/10
+                  p-4
+                  shadow-[0_8px_25px_rgba(0,0,0,0.15)]
+                  backdrop-blur-xl
+                "
+              >
                 <Mail className="mt-1 h-4 w-4 text-cyan-300" />
 
                 <div>
@@ -305,7 +425,21 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              {/* ADDRESS */}
+
+              <div
+                className="
+                  flex
+                  gap-4
+                  rounded-2xl
+                  border
+                  border-white/10
+                  bg-white/10
+                  p-4
+                  shadow-[0_8px_25px_rgba(0,0,0,0.15)]
+                  backdrop-blur-xl
+                "
+              >
                 <MapPin className="mt-1 h-4 w-4 text-cyan-300" />
 
                 <div>
@@ -332,7 +466,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* BOTTOM */}
+        {/* BOTTOM BAR */}
 
         <div
           className="
@@ -348,16 +482,18 @@ export default function Footer() {
             md:flex-row
           "
         >
-          <p className="text-xs text-white/45">
-            © 2026 ARK AQUATECH. All Rights Reserved.
+          <p className="text-xs text-white/50">
+            © 2026 ARK AQUATECH.
+            All Rights Reserved.
           </p>
 
           <div className="flex items-center gap-5">
+
             <Link
               href="/privacy-policy"
               className="
                 text-xs
-                text-white/45
+                text-white/50
                 transition-all
                 duration-300
                 hover:text-white
@@ -370,7 +506,7 @@ export default function Footer() {
               href="/terms"
               className="
                 text-xs
-                text-white/45
+                text-white/50
                 transition-all
                 duration-300
                 hover:text-white

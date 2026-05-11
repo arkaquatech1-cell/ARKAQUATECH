@@ -11,7 +11,9 @@ import {
   Plus,
   Minus,
   Sparkles,
-  Globe2,
+  ShieldCheck,
+  Waves,
+  Droplets,
 } from "lucide-react";
 
 const faqs = [
@@ -20,7 +22,7 @@ const faqs = [
       "What is Biofloc Technology in aquaculture farming?",
 
     answer:
-      "Biofloc Technology is an advanced aquaculture system that improves water quality, reduces water exchange, and supports sustainable fish and shrimp farming.",
+      "Biofloc Technology is an advanced aquaculture farming system that improves water quality, reduces water exchange, enhances fish growth, and supports sustainable fish and shrimp farming infrastructure.",
   },
 
   {
@@ -28,7 +30,7 @@ const faqs = [
       "What are RAS Systems in commercial fish farming?",
 
     answer:
-      "RAS systems are modern aquaculture solutions with intelligent filtration, oxygen balancing, automated monitoring, and continuous water recycling.",
+      "RAS systems (Recirculating Aquaculture Systems) are modern fish farming technologies with intelligent filtration, oxygen balancing, smart monitoring, and continuous water recycling for commercial aquaculture projects.",
   },
 
   {
@@ -36,7 +38,7 @@ const faqs = [
       "Does ARK AQUATECH provide shrimp farming infrastructure?",
 
     answer:
-      "Yes. We provide shrimp farming systems including Biofloc infrastructure, pond lining, aeration systems, and smart aquaculture automation.",
+      "Yes. ARK AQUATECH provides complete shrimp farming infrastructure including Biofloc systems, HDPE pond lining, aeration systems, smart automation, and sustainable aquaculture engineering solutions.",
   },
 
   {
@@ -44,7 +46,7 @@ const faqs = [
       "Do you provide industrial RO water treatment plants?",
 
     answer:
-      "Yes. We design and install industrial RO plants, STP, ETP, WTP systems, and sustainable water treatment infrastructure.",
+      "Yes. We design and install industrial RO plants, STP plants, ETP systems, WTP systems, and advanced industrial water treatment infrastructure across India.",
   },
 
   {
@@ -52,7 +54,7 @@ const faqs = [
       "What aquaculture services does ARK AQUATECH provide?",
 
     answer:
-      "We provide Biofloc systems, RAS aquaculture, smart automation, industrial water treatment, and sustainable marine engineering solutions.",
+      "We provide Biofloc fish farming systems, RAS aquaculture technology, industrial water treatment, aquaponics, smart automation, oxygen management systems, and sustainable marine engineering solutions.",
   },
 
   {
@@ -60,7 +62,7 @@ const faqs = [
       "Why choose ARK AQUATECH for engineering projects?",
 
     answer:
-      "ARK AQUATECH specializes in sustainable aquaculture infrastructure, smart marine technology, industrial engineering, and modern aquatic ecosystem solutions.",
+      "ARK AQUATECH specializes in sustainable aquaculture infrastructure, advanced marine engineering, smart water treatment systems, industrial automation, and future-ready aquatic ecosystem solutions.",
   },
 ];
 
@@ -68,45 +70,60 @@ export default function FAQSection() {
   const [active, setActive] = useState<number | null>(0);
 
   return (
-    <section className="relative overflow-hidden py-20 sm:py-24 lg:py-28">
-      {/* BACKGROUND */}
+    <section
+      className="
+        relative
+        overflow-hidden
+        py-20
+        sm:py-14
+        lg:py-16
+        bg-gradient-to-br
+        from-[#f5f7ff]
+        via-[#eef4ff]
+        to-[#f3fff6]
+      "
+    >
+      {/* PREMIUM BACKGROUND */}
 
-      <div className="absolute inset-0 -z-10">
-        {/* LIGHT */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+
+        {/* BLUE GLOW */}
 
         <div
           className="
             absolute
-            top-[-120px]
+            top-[-150px]
             left-[-120px]
-            w-[300px]
-            h-[300px]
+            h-[420px]
+            w-[420px]
             rounded-full
-            bg-cyan-400/8
-            blur-[100px]
+            bg-[#15176B]/15
+            blur-[120px]
           "
         />
 
+        {/* GREEN GLOW */}
+
         <div
           className="
             absolute
-            bottom-[-120px]
+            bottom-[-180px]
             right-[-120px]
-            w-[300px]
-            h-[300px]
+            h-[380px]
+            w-[380px]
             rounded-full
-            bg-emerald-400/8
-            blur-[100px]
+            bg-[#63C96A]/20
+            blur-[120px]
           "
         />
 
         {/* GRID */}
 
         <div
-          className="absolute inset-0 opacity-[0.025]"
+          className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px)",
+              "linear-gradient(rgba(21,23,107,0.08) 1px, transparent 1px), linear-gradient(to right, rgba(21,23,107,0.08) 1px, transparent 1px)",
             backgroundSize: "72px 72px",
           }}
         />
@@ -115,6 +132,7 @@ export default function FAQSection() {
       {/* CONTENT */}
 
       <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
+
         {/* HEADER */}
 
         <motion.div
@@ -133,21 +151,23 @@ export default function FAQSection() {
               gap-2
               rounded-full
               border
-              border-white/10
-              bg-white/[0.03]
+              border-[#15176B]/10
+              bg-white/80
               px-5
               py-2.5
-              backdrop-blur-md
+              shadow-lg
+              backdrop-blur-xl
             "
           >
-            <Sparkles className="h-4 w-4 text-cyan-300" />
+            <Sparkles className="h-4 w-4 text-[#63C96A]" />
 
             <span
               className="
                 text-[11px]
                 uppercase
                 tracking-[0.22em]
-                text-cyan-100/75
+                font-semibold
+                text-[#15176B]
               "
             >
               Frequently Asked Questions
@@ -158,14 +178,14 @@ export default function FAQSection() {
 
           <h2
             className="
-              mt-6
-              text-[34px]
-              sm:text-[48px]
-              lg:text-[62px]
-              leading-[1]
-              tracking-[-0.04em]
-              font-semibold
-              text-white
+              mt-7
+              text-[38px]
+              sm:text-[54px]
+              lg:text-[68px]
+              leading-[0.95]
+              tracking-[-0.05em]
+              font-black
+              text-[#0F172A]
             "
           >
             Aquaculture &
@@ -174,9 +194,9 @@ export default function FAQSection() {
                 block
                 mt-2
                 bg-gradient-to-r
-                from-cyan-200
-                via-white
-                to-emerald-200
+                from-[#63C96A]
+                via-[#15176B]
+                to-[#63C96A]
                 bg-clip-text
                 text-transparent
               "
@@ -185,30 +205,33 @@ export default function FAQSection() {
             </span>
           </h2>
 
-          {/* DESCRIPTION */}
+          {/* SEO DESCRIPTION */}
 
           <p
             className="
               mx-auto
-              mt-7
+              mt-8
               max-w-3xl
-              text-[15px]
-              sm:text-[16px]
+              text-[16px]
               leading-[1.9]
-              text-white/68
+              text-slate-600
             "
           >
-            Learn more about Biofloc systems,
-            commercial RAS aquaculture, industrial
-            water treatment, smart automation,
-            sustainable marine engineering, and
-            advanced aquatic ecosystem solutions.
+            Learn more about Biofloc fish farming,
+            commercial RAS aquaculture systems,
+            industrial RO water treatment plants,
+            smart aquaculture automation,
+            sustainable marine engineering,
+            aquaponics infrastructure,
+            wastewater treatment systems,
+            oxygen management technology,
+            and modern aquatic ecosystem solutions.
           </p>
         </motion.div>
 
-        {/* FAQ */}
+        {/* FAQ LIST */}
 
-        <div className="mt-14 space-y-4">
+        <div className="mt-16 space-y-5">
           {faqs.map((item, index) => {
             const isOpen = active === index;
 
@@ -224,11 +247,12 @@ export default function FAQSection() {
                 viewport={{ once: true }}
                 className="
                   overflow-hidden
-                  rounded-[24px]
+                  rounded-[28px]
                   border
-                  border-white/10
-                  bg-white/[0.03]
-                  backdrop-blur-md
+                  border-[#15176B]/10
+                  bg-white/75
+                  shadow-[0_10px_40px_rgba(21,23,107,0.06)]
+                  backdrop-blur-xl
                 "
               >
                 {/* QUESTION */}
@@ -243,19 +267,18 @@ export default function FAQSection() {
                     items-center
                     justify-between
                     gap-5
-                    px-5
-                    sm:px-6
-                    py-5
+                    px-6
+                    py-6
                     text-left
                   "
                 >
                   <h3
                     className="
-                      text-[16px]
-                      sm:text-[18px]
-                      font-medium
-                      leading-[1.6]
-                      text-white
+                      text-[17px]
+                      sm:text-[19px]
+                      font-semibold
+                      leading-[1.7]
+                      text-[#0F172A]
                     "
                   >
                     {item.question}
@@ -264,14 +287,17 @@ export default function FAQSection() {
                   <div
                     className="
                       flex
-                      h-10
-                      w-10
-                      min-w-[40px]
+                      h-11
+                      w-11
+                      min-w-[44px]
                       items-center
                       justify-center
-                      rounded-xl
-                      bg-cyan-300
-                      text-[#061018]
+                      rounded-2xl
+                      bg-gradient-to-r
+                      from-[#15176B]
+                      to-[#63C96A]
+                      text-white
+                      shadow-lg
                     "
                   >
                     {isOpen ? (
@@ -304,15 +330,14 @@ export default function FAQSection() {
                       }}
                       className="overflow-hidden"
                     >
-                      <div className="px-5 sm:px-6 pb-6">
-                        <div className="mb-5 h-px bg-white/10" />
+                      <div className="px-6 pb-7">
+                        <div className="mb-5 h-px bg-[#15176B]/10" />
 
                         <p
                           className="
-                            text-[14px]
-                            sm:text-[15px]
+                            text-[15px]
                             leading-[1.9]
-                            text-white/65
+                            text-slate-600
                           "
                         >
                           {item.answer}
@@ -326,14 +351,145 @@ export default function FAQSection() {
           })}
         </div>
 
-        {/* BOTTOM BLOCK */}
+        {/* SEO BOTTOM SECTION */}
 
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="
+            mt-20
+            rounded-[36px]
+            border
+            border-[#15176B]/10
+            bg-white/75
+            p-8
+            sm:p-10
+            lg:p-14
+            shadow-[0_15px_50px_rgba(21,23,107,0.08)]
+            backdrop-blur-xl
+          "
+        >
+          <div className="grid gap-8 md:grid-cols-3">
 
-           
+            {/* CARD 1 */}
 
-       
+            <div
+              className="
+                rounded-3xl
+                border
+                border-[#15176B]/10
+                bg-[#f8fbff]
+                p-6
+              "
+            >
+              <Droplets className="h-10 w-10 text-[#63C96A]" />
 
-       
+              <h3
+                className="
+                  mt-5
+                  text-xl
+                  font-bold
+                  text-[#0F172A]
+                "
+              >
+                Water Treatment
+              </h3>
+
+              <p
+                className="
+                  mt-3
+                  text-sm
+                  leading-[1.9]
+                  text-slate-600
+                "
+              >
+                Industrial RO plants, STP,
+                ETP, WTP systems, and smart
+                water purification solutions.
+              </p>
+            </div>
+
+            {/* CARD 2 */}
+
+            <div
+              className="
+                rounded-3xl
+                border
+                border-[#15176B]/10
+                bg-[#f8fbff]
+                p-6
+              "
+            >
+              <Waves className="h-10 w-10 text-[#63C96A]" />
+
+              <h3
+                className="
+                  mt-5
+                  text-xl
+                  font-bold
+                  text-[#0F172A]
+                "
+              >
+                Biofloc & RAS
+              </h3>
+
+              <p
+                className="
+                  mt-3
+                  text-sm
+                  leading-[1.9]
+                  text-slate-600
+                "
+              >
+                Sustainable fish farming,
+                oxygen balancing,
+                filtration systems,
+                and aquaculture automation.
+              </p>
+            </div>
+
+            {/* CARD 3 */}
+
+            <div
+              className="
+                rounded-3xl
+                border
+                border-[#15176B]/10
+                bg-[#f8fbff]
+                p-6
+              "
+            >
+              <ShieldCheck className="h-10 w-10 text-[#63C96A]" />
+
+              <h3
+                className="
+                  mt-5
+                  text-xl
+                  font-bold
+                  text-[#0F172A]
+                "
+              >
+                Smart Engineering
+              </h3>
+
+              <p
+                className="
+                  mt-3
+                  text-sm
+                  leading-[1.9]
+                  text-slate-600
+                "
+              >
+                Modern marine engineering,
+                aquaculture infrastructure,
+                pond lining,
+                and IoT monitoring systems.
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
