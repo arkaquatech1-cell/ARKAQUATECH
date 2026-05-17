@@ -335,7 +335,7 @@ import {
 
 const stats = [
   {
-    number: "2019+",
+    number: "2010+",
     title: "Established Company",
     desc:
       "Delivering advanced aquaculture engineering, Biofloc systems, and sustainable water infrastructure solutions since 2019.",

@@ -451,7 +451,6 @@ import {
   Sparkles,
   Globe2,
 } from "lucide-react";
-
 const projects = [
   {
     title: "Advanced Biofloc Farming Project",
@@ -478,6 +477,33 @@ const projects = [
 
     desc:
       "High-efficiency shrimp farming infrastructure developed with sustainable marine engineering and smart aquaculture systems.",
+  },
+
+  {
+    title: "Industrial Water Treatment Plant",
+    location: "Karnataka, India",
+    image: "/images/services4.png",
+
+    desc:
+      "Advanced industrial water treatment plant with smart filtration systems, wastewater recycling, and sustainable purification technology.",
+  },
+
+  {
+    title: "HDPE Pond Lining Project",
+    location: "Kerala, India",
+    image: "/images/services5.png",
+
+    desc:
+      "Premium HDPE pond lining solutions designed for aquaculture farms with leak protection and long-lasting water management systems.",
+  },
+
+  {
+    title: "Smart Hatchery Design",
+    location: "Odisha, India",
+    image: "/images/services6.png",
+
+    desc:
+      "Modern hatchery infrastructure with automated water circulation, oxygen systems, and sustainable fish breeding technology.",
   },
 ];
 

@@ -704,32 +704,7 @@ export default function TechnologySection() {
 
                   {/* BUTTON */}
 
-                  <button
-                    className="
-                      mt-7
-                      inline-flex
-                      items-center
-                      gap-2
-                      text-sm
-                      font-semibold
-                      text-[#15176B]
-                      transition-all
-                      duration-300
-                      hover:text-[#63C96A]
-                    "
-                  >
-                    Learn More
-
-                    <ArrowRight
-                      className="
-                        h-4
-                        w-4
-                        transition-transform
-                        duration-300
-                        group-hover:translate-x-1
-                      "
-                    />
-                  </button>
+                 
                 </div>
               </motion.div>
             );
@@ -738,112 +713,6 @@ export default function TechnologySection() {
 
         {/* SEO BLOCK */}
 
-        <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="
-            mt-20
-            overflow-hidden
-            rounded-[36px]
-            border
-            border-[#15176B]/10
-            bg-white/75
-            p-8
-            sm:p-10
-            lg:p-14
-            shadow-[0_15px_50px_rgba(21,23,107,0.08)]
-            backdrop-blur-xl
-          "
-        >
-          <div className="grid gap-10 lg:grid-cols-2">
-
-            {/* LEFT */}
-
-            <div>
-
-              <div
-                className="
-                  inline-flex
-                  items-center
-                  gap-2
-                  rounded-full
-                  bg-[#15176B]/5
-                  px-4
-                  py-2
-                "
-              >
-                <Cpu className="h-4 w-4 text-[#63C96A]" />
-
-                <span
-                  className="
-                    text-xs
-                    font-semibold
-                    uppercase
-                    tracking-[0.18em]
-                    text-[#15176B]
-                  "
-                >
-                  Future Ready Technology
-                </span>
-              </div>
-
-              <h3
-                className="
-                  mt-6
-                  text-[36px]
-                  sm:text-[48px]
-                  lg:text-[58px]
-                  leading-[0.95]
-                  tracking-[-0.05em]
-                  font-black
-                  text-[#0F172A]
-                "
-              >
-                Future Ready
-                <span
-                  className="
-                    block
-                    mt-2
-                    bg-gradient-to-r
-                    from-[#63C96A]
-                    via-[#15176B]
-                    to-[#63C96A]
-                    bg-clip-text
-                    text-transparent
-                  "
-                >
-                  Smart Aquaculture
-                </span>
-              </h3>
-            </div>
-
-            {/* RIGHT */}
-
-            <div className="flex items-center">
-              <p
-                className="
-                  text-[16px]
-                  leading-[1.9]
-                  text-slate-600
-                "
-              >
-                ARK AQUATECH combines intelligent
-                marine engineering,
-                industrial filtration systems,
-                AI-powered monitoring,
-                smart fish farming automation,
-                oxygen management technology,
-                industrial RO plants,
-                IoT dashboards,
-                and sustainable aquaculture
-                innovation for modern aquatic
-                businesses and industries.
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

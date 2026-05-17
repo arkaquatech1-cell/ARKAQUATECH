@@ -5,6 +5,7 @@ import AboutSection from "@/app/components/AboutSection";
 import CTASection from "@/app/components/CTASection";
 
 import FAQSection from "@/app/components/FAQSection";
+import GallerySection from "@/app/components/GallerySection";
 
 import HeroSection from "@/app/components/HeroSection";
 
@@ -89,8 +90,8 @@ export default function HomePage() {
 
 
 
-   
-
+   <GallerySection/>
+     <ProjectsSection />
       {/* WHY CHOOSE US */}
 
       <WhyChooseUsSection />
@@ -105,7 +106,7 @@ export default function HomePage() {
 
       {/* PROJECTS */}
 
-      <ProjectsSection />
+ 
 
       {/* STATS */}
 

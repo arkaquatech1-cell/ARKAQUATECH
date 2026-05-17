@@ -340,7 +340,7 @@ const testimonials = [
   {
     name: "Rajesh Kumar",
     role: "Commercial Fish Farm Owner",
-    image: "/client1.jpg",
+
     review:
       "ARK AQUATECH delivered advanced Biofloc systems with excellent technical support, sustainable infrastructure, and efficient water management solutions for our fish farming business.",
   },
@@ -348,7 +348,7 @@ const testimonials = [
   {
     name: "Srinivas Reddy",
     role: "Shrimp Farming Business",
-    image: "/client2.jpg",
+
     review:
       "Their RAS technology, industrial RO plants, and smart water treatment solutions improved our shrimp farming productivity while reducing operational costs.",
   },
@@ -356,7 +356,7 @@ const testimonials = [
   {
     name: "Venkatesh Chowdary",
     role: "Aquaculture Investor",
-    image: "/client3.jpg",
+
     review:
       "One of the best aquaculture engineering companies for Biofloc fish farming, smart automation, sustainable water infrastructure, and marine engineering.",
   },
@@ -639,24 +639,7 @@ export default function TestimonialsSection() {
 
                 {/* IMAGE */}
 
-                <div
-                  className="
-                    relative
-                    h-14
-                    w-14
-                    overflow-hidden
-                    rounded-2xl
-                    border
-                    border-[#15176B]/10
-                  "
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+             
 
                 {/* USER INFO */}
 
