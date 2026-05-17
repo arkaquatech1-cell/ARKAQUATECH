@@ -209,6 +209,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FloatingFishes from "./components/FloatingFishes";
+import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -433,7 +434,7 @@ export default function RootLayout({
         </main>
 
         {/* FOOTER */}
-
+<WhatsAppFloatingButton/>
         <div className="relative z-[5]">
           <Footer />
         </div>
