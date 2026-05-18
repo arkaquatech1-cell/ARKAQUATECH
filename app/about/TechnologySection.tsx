@@ -49,19 +49,29 @@ const technologies = [
 
 export default function TechnologySection() {
   return (
-    <section className="relative overflow-hidden py-16 sm:py-16 lg:py-16">
-      {/* BG */}
+    <section
+      className="
+        relative
+        overflow-hidden
+        bg-white
+        py-20
+        sm:py-24
+      "
+    >
+      {/* BACKGROUND */}
 
       <div className="absolute inset-0 -z-10 overflow-hidden">
+        {/* GLOW */}
+
         <div
           className="
             absolute
-            top-[-180px]
             left-[-180px]
+            top-[-180px]
             h-[420px]
             w-[420px]
             rounded-full
-            bg-cyan-400/10
+            bg-[#0A6EBD]/10
             blur-[140px]
           "
         />
@@ -74,9 +84,24 @@ export default function TechnologySection() {
             h-[420px]
             w-[420px]
             rounded-full
-            bg-emerald-400/10
+            bg-[#63C96A]/10
             blur-[140px]
           "
+        />
+
+        {/* GRID */}
+
+        <div
+          className="
+            absolute
+            inset-0
+            opacity-[0.03]
+          "
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(10,110,189,0.08) 1px, transparent 1px), linear-gradient(to right, rgba(10,110,189,0.08) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
         />
       </div>
 
@@ -96,21 +121,21 @@ export default function TechnologySection() {
                 gap-2
                 rounded-full
                 border
-                border-cyan-400/20
-                bg-cyan-400/10
-                px-4
-                py-2
+                border-[#0A6EBD]/10
+                bg-[#F4F8FF]
+                px-5
+                py-2.5
               "
             >
-              <Sparkles className="h-4 w-4 text-cyan-300" />
+              <Sparkles className="h-4 w-4 text-[#0A6EBD]" />
 
               <span
                 className="
                   text-[11px]
-                  font-medium
+                  font-semibold
                   uppercase
                   tracking-[0.22em]
-                  text-cyan-100/80
+                  text-[#021B2F]
                 "
               >
                 Smart Technology
@@ -122,24 +147,25 @@ export default function TechnologySection() {
             <h2
               className="
                 mt-8
-                text-[38px]
-                font-semibold
-                leading-[1]
-                tracking-[-0.04em]
-                text-white
-                sm:text-[52px]
-                lg:text-[68px]
+                text-[40px]
+                font-black
+                leading-[0.95]
+                tracking-[-0.05em]
+                text-[#021B2F]
+                sm:text-[56px]
+                lg:text-[72px]
               "
             >
               Advanced Technology For
+
               <span
                 className="
-                  mt-2
+                  mt-3
                   block
                   bg-gradient-to-r
-                  from-cyan-200
-                  via-white
-                  to-emerald-200
+                  from-[#63C96A]
+                  via-[#0A6EBD]
+                  to-[#15176B]
                   bg-clip-text
                   text-transparent
                 "
@@ -148,15 +174,14 @@ export default function TechnologySection() {
               </span>
             </h2>
 
-            {/* DESC */}
+            {/* DESCRIPTION */}
 
             <p
               className="
                 mt-8
-                text-[15px]
+                text-[16px]
                 leading-[2]
-                text-cyan-100/70
-                sm:text-[16px]
+                text-[#4B5563]
               "
             >
               ARK AQUATECH integrates
@@ -170,7 +195,7 @@ export default function TechnologySection() {
 
             {/* TECHNOLOGY LIST */}
 
-            <div className="mt-12 space-y-7">
+            <div className="mt-14 space-y-7">
               {technologies.map((item, index) => {
                 const Icon = item.icon;
 
@@ -180,6 +205,16 @@ export default function TechnologySection() {
                     className="
                       flex
                       gap-5
+                      rounded-[28px]
+                      border
+                      border-[#E5E7EB]
+                      bg-white
+                      p-6
+                      shadow-[0_10px_35px_rgba(0,0,0,0.05)]
+                      transition-all
+                      duration-500
+                      hover:-translate-y-1
+                      hover:shadow-[0_20px_50px_rgba(10,110,189,0.10)]
                     "
                   >
                     {/* ICON */}
@@ -193,10 +228,13 @@ export default function TechnologySection() {
                         items-center
                         justify-center
                         rounded-2xl
-                        bg-cyan-300
+                        bg-gradient-to-r
+                        from-[#0A6EBD]
+                        to-[#15176B]
+                        shadow-lg
                       "
                     >
-                      <Icon className="h-7 w-7 text-[#031018]" />
+                      <Icon className="h-7 w-7 text-white" />
                     </div>
 
                     {/* TEXT */}
@@ -205,9 +243,9 @@ export default function TechnologySection() {
                       <h3
                         className="
                           text-[24px]
-                          font-semibold
+                          font-bold
                           tracking-[-0.03em]
-                          text-white
+                          text-[#021B2F]
                         "
                       >
                         {item.title}
@@ -218,7 +256,7 @@ export default function TechnologySection() {
                           mt-3
                           text-[15px]
                           leading-[1.9]
-                          text-cyan-100/70
+                          text-[#6B7280]
                         "
                       >
                         {item.description}
@@ -230,30 +268,30 @@ export default function TechnologySection() {
             </div>
           </div>
 
-          {/* RIGHT */}
+          {/* RIGHT CARD */}
 
           <div
             className="
               relative
               overflow-hidden
-              rounded-[32px]
+              rounded-[36px]
               border
-              border-white/10
-              bg-white/[0.03]
+              border-[#E5E7EB]
+              bg-white
               p-8
+              shadow-[0_20px_80px_rgba(0,0,0,0.08)]
               sm:p-10
-              backdrop-blur-xl
             "
           >
-            {/* BG */}
+            {/* BACKGROUND */}
 
             <div
               className="
                 absolute
                 inset-0
                 bg-gradient-to-br
-                from-cyan-400/[0.08]
-                to-emerald-400/[0.04]
+                from-[#0A6EBD]/5
+                to-[#63C96A]/5
               "
             />
 
@@ -267,9 +305,10 @@ export default function TechnologySection() {
                   <p
                     className="
                       text-sm
+                      font-medium
                       uppercase
                       tracking-[0.2em]
-                      text-cyan-100/60
+                      text-[#0A6EBD]
                     "
                   >
                     Smart Monitoring
@@ -278,15 +317,26 @@ export default function TechnologySection() {
                   <h3
                     className="
                       mt-3
-                      text-[34px]
-                      font-semibold
-                      leading-[1]
-                      tracking-[-0.04em]
-                      text-white
+                      text-[38px]
+                      font-black
+                      leading-[0.95]
+                      tracking-[-0.05em]
+                      text-[#021B2F]
                     "
                   >
                     Intelligent
-                    <span className="block text-cyan-300">
+
+                    <span
+                      className="
+                        mt-2
+                        block
+                        bg-gradient-to-r
+                        from-[#63C96A]
+                        to-[#0A6EBD]
+                        bg-clip-text
+                        text-transparent
+                      "
+                    >
                       Automation
                     </span>
                   </h3>
@@ -300,21 +350,24 @@ export default function TechnologySection() {
                     items-center
                     justify-center
                     rounded-3xl
-                    bg-cyan-300
+                    bg-gradient-to-r
+                    from-[#0A6EBD]
+                    to-[#15176B]
+                    shadow-xl
                   "
                 >
-                  <Cpu className="h-10 w-10 text-[#031018]" />
+                  <Cpu className="h-10 w-10 text-white" />
                 </div>
               </div>
 
-              {/* DESC */}
+              {/* DESCRIPTION */}
 
               <p
                 className="
                   mt-8
                   text-[15px]
                   leading-[2]
-                  text-cyan-100/70
+                  text-[#6B7280]
                 "
               >
                 Our smart aquaculture systems
@@ -329,23 +382,22 @@ export default function TechnologySection() {
               {/* STATS */}
 
               <div className="mt-12 grid grid-cols-2 gap-5">
-                {/* ITEM */}
-
                 <div
                   className="
-                    rounded-3xl
+                    rounded-[28px]
                     border
-                    border-white/10
-                    bg-black/20
+                    border-[#E5E7EB]
+                    bg-white
                     p-6
+                    shadow-sm
                   "
                 >
                   <h4
                     className="
                       text-[36px]
-                      font-semibold
+                      font-black
                       tracking-[-0.04em]
-                      text-white
+                      text-[#021B2F]
                     "
                   >
                     24/7
@@ -356,30 +408,29 @@ export default function TechnologySection() {
                       mt-2
                       text-sm
                       leading-[1.8]
-                      text-white/65
+                      text-[#6B7280]
                     "
                   >
                     Real-Time Monitoring
                   </p>
                 </div>
 
-                {/* ITEM */}
-
                 <div
                   className="
-                    rounded-3xl
+                    rounded-[28px]
                     border
-                    border-white/10
-                    bg-black/20
+                    border-[#E5E7EB]
+                    bg-white
                     p-6
+                    shadow-sm
                   "
                 >
                   <h4
                     className="
                       text-[36px]
-                      font-semibold
+                      font-black
                       tracking-[-0.04em]
-                      text-white
+                      text-[#021B2F]
                     "
                   >
                     AI
@@ -390,7 +441,7 @@ export default function TechnologySection() {
                       mt-2
                       text-sm
                       leading-[1.8]
-                      text-white/65
+                      text-[#6B7280]
                     "
                   >
                     Smart Automation
@@ -406,9 +457,19 @@ export default function TechnologySection() {
                   inline-flex
                   items-center
                   gap-2
+                  rounded-full
+                  bg-gradient-to-r
+                  from-[#0A6EBD]
+                  to-[#15176B]
+                  px-7
+                  py-4
                   text-sm
-                  font-medium
-                  text-cyan-300
+                  font-semibold
+                  text-white
+                  shadow-[0_15px_35px_rgba(10,110,189,0.25)]
+                  transition-all
+                  duration-300
+                  hover:scale-105
                 "
               >
                 Explore Technology

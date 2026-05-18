@@ -4,7 +4,15 @@ import { Sparkles } from "lucide-react";
 
 export default function AboutHeroSection() {
   return (
-    <section className="relative h-screen min-h-[760px] overflow-hidden">
+    <section
+      className="
+        relative
+        h-screen
+        min-h-[760px]
+        overflow-hidden
+        bg-white
+      "
+    >
       {/* VIDEO BACKGROUND */}
 
       <video
@@ -26,28 +34,11 @@ export default function AboutHeroSection() {
         />
       </video>
 
-      {/* DARK OVERLAY */}
+      {/* WHITE OVERLAY */}
 
-      <div
-        className="
-          absolute
-          inset-0
-          bg-black/65
-        "
-      />
-
+     
       {/* GRADIENT OVERLAY */}
 
-      <div
-        className="
-          absolute
-          inset-0
-          bg-gradient-to-b
-          from-[#031018]/20
-          via-[#031018]/50
-          to-[#031018]
-        "
-      />
 
       {/* GRID EFFECT */}
 
@@ -55,11 +46,11 @@ export default function AboutHeroSection() {
         className="
           absolute
           inset-0
-          opacity-[0.03]
+          opacity-[0.04]
         "
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px)",
+            "linear-gradient(rgba(10,110,189,0.08) 1px, transparent 1px), linear-gradient(to right, rgba(10,110,189,0.08) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
         }}
       />
@@ -76,7 +67,7 @@ export default function AboutHeroSection() {
           -translate-x-1/2
           -translate-y-1/2
           rounded-full
-          bg-cyan-400/10
+          bg-[#0A6EBD]/10
           blur-[140px]
         "
       />
@@ -104,22 +95,23 @@ export default function AboutHeroSection() {
               gap-2
               rounded-full
               border
-              border-cyan-400/20
-              bg-cyan-400/10
-              px-4
-              py-2
+              border-[#0A6EBD]/10
+              bg-white/80
+              px-5
+              py-2.5
+              shadow-lg
               backdrop-blur-xl
             "
           >
-            <Sparkles className="h-4 w-4 text-cyan-300" />
+            <Sparkles className="h-4 w-4 text-[#0A6EBD]" />
 
             <span
               className="
                 text-[11px]
-                font-medium
+                font-semibold
                 uppercase
                 tracking-[0.22em]
-                text-cyan-100/80
+                text-[#021B2F]
               "
             >
               About ARK AQUATECH
@@ -134,23 +126,24 @@ export default function AboutHeroSection() {
               mt-8
               max-w-5xl
               text-[42px]
-              font-semibold
+              font-black
               leading-[0.92]
               tracking-[-0.05em]
-              text-white
+              text-[#021B2F]
               sm:text-[58px]
               lg:text-[84px]
             "
           >
             Smart Aquaculture
+
             <span
               className="
-                mt-2
+                mt-3
                 block
                 bg-gradient-to-r
-                from-cyan-200
-                via-white
-                to-emerald-200
+                from-[#63C96A]
+                via-[#0A6EBD]
+                to-[#15176B]
                 bg-clip-text
                 text-transparent
               "
@@ -166,10 +159,10 @@ export default function AboutHeroSection() {
               mx-auto
               mt-8
               max-w-3xl
-              text-[15px]
+              text-[16px]
               leading-[2]
-              text-cyan-100/70
-              sm:text-[16px]
+              text-[#4B5563]
+              sm:text-[17px]
             "
           >
             ARK AQUATECH specializes in
@@ -185,30 +178,28 @@ export default function AboutHeroSection() {
 
           <div
             className="
-              mt-14
+              mt-16
               grid
-              gap-5
+              gap-6
               sm:grid-cols-3
             "
           >
-            {/* ITEM */}
-
             <div
               className="
-                rounded-[28px]
+                rounded-[30px]
                 border
-                border-white/10
-                bg-white/[0.04]
-                p-6
+                border-white/60
+                bg-white/70
+                p-8
+                shadow-[0_15px_45px_rgba(0,0,0,0.08)]
                 backdrop-blur-xl
               "
             >
               <h3
                 className="
-                  text-[36px]
-                  font-semibold
-                  tracking-[-0.04em]
-                  text-white
+                  text-[42px]
+                  font-black
+                  text-[#021B2F]
                 "
               >
                 250+
@@ -216,34 +207,31 @@ export default function AboutHeroSection() {
 
               <p
                 className="
-                  mt-2
-                  text-sm
-                  leading-[1.8]
-                  text-white/65
+                  mt-3
+                  text-[15px]
+                  text-[#6B7280]
                 "
               >
                 Projects Completed
               </p>
             </div>
 
-            {/* ITEM */}
-
             <div
               className="
-                rounded-[28px]
+                rounded-[30px]
                 border
-                border-white/10
-                bg-white/[0.04]
-                p-6
+                border-white/60
+                bg-white/70
+                p-8
+                shadow-[0_15px_45px_rgba(0,0,0,0.08)]
                 backdrop-blur-xl
               "
             >
               <h3
                 className="
-                  text-[36px]
-                  font-semibold
-                  tracking-[-0.04em]
-                  text-white
+                  text-[42px]
+                  font-black
+                  text-[#021B2F]
                 "
               >
                 12+
@@ -251,34 +239,31 @@ export default function AboutHeroSection() {
 
               <p
                 className="
-                  mt-2
-                  text-sm
-                  leading-[1.8]
-                  text-white/65
+                  mt-3
+                  text-[15px]
+                  text-[#6B7280]
                 "
               >
                 Years Experience
               </p>
             </div>
 
-            {/* ITEM */}
-
             <div
               className="
-                rounded-[28px]
+                rounded-[30px]
                 border
-                border-white/10
-                bg-white/[0.04]
-                p-6
+                border-white/60
+                bg-white/70
+                p-8
+                shadow-[0_15px_45px_rgba(0,0,0,0.08)]
                 backdrop-blur-xl
               "
             >
               <h3
                 className="
-                  text-[36px]
-                  font-semibold
-                  tracking-[-0.04em]
-                  text-white
+                  text-[42px]
+                  font-black
+                  text-[#021B2F]
                 "
               >
                 24/7
@@ -286,10 +271,9 @@ export default function AboutHeroSection() {
 
               <p
                 className="
-                  mt-2
-                  text-sm
-                  leading-[1.8]
-                  text-white/65
+                  mt-3
+                  text-[15px]
+                  text-[#6B7280]
                 "
               >
                 Technical Support
@@ -298,21 +282,6 @@ export default function AboutHeroSection() {
           </div>
         </div>
       </div>
-
-      {/* BOTTOM FADE */}
-
-      <div
-        className="
-          absolute
-          bottom-0
-          left-0
-          h-40
-          w-full
-          bg-gradient-to-t
-          from-[#031018]
-          to-transparent
-        "
-      />
     </section>
   );
 }
