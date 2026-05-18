@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FloatingFishes from "./components/FloatingFishes";
 import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
+import LeadGenerationPopup from "./components/LeadGenerationPopup";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -194,6 +195,7 @@ export default function RootLayout({
         {/* FOOTER */}
 
         <Footer />
+        <LeadGenerationPopup/>
         <WhatsAppFloatingButton/>
           <script
           type="application/ld+json"
