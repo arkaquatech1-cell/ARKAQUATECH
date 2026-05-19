@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 
 import "./globals.css";
 
@@ -94,8 +95,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title:
-      "ARK AQUATECH | Smart Aquaculture Solutions",
+    title: "ARK AQUATECH | Smart Aquaculture Solutions",
 
     description:
       "Advanced Aquaculture, Biofloc, RAS & Water Engineering Services.",
@@ -195,9 +195,32 @@ export default function RootLayout({
         {/* FOOTER */}
 
         <Footer />
-        <LeadGenerationPopup/>
-        <WhatsAppFloatingButton/>
-          <script
+
+        {/* FLOATING BUTTONS */}
+
+        <LeadGenerationPopup />
+        <WhatsAppFloatingButton />
+
+        {/* GOOGLE ANALYTICS */}
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-6RS4EHE03Z"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-6RS4EHE03Z');
+          `}
+        </Script>
+
+        {/* STRUCTURED DATA */}
+
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -228,7 +251,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-
-
-
