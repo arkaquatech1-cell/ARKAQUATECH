@@ -482,7 +482,7 @@ const projects = [
   {
     title: "Industrial Water Treatment Plant",
     location: "Karnataka, India",
-    image: "/images/services4.png",
+    image: "/images/services7.jpg",
 
     desc:
       "Advanced industrial water treatment plant with smart filtration systems, wastewater recycling, and sustainable purification technology.",
@@ -491,7 +491,7 @@ const projects = [
   {
     title: "HDPE Pond Lining Project",
     location: "Kerala, India",
-    image: "/images/services5.png",
+    image: "/images/services8.jpg",
 
     desc:
       "Premium HDPE pond lining solutions designed for aquaculture farms with leak protection and long-lasting water management systems.",
