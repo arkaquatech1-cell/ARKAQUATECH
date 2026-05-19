@@ -8,7 +8,6 @@ import "./globals.css";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import FloatingFishes from "./components/FloatingFishes";
 import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
 import LeadGenerationPopup from "./components/LeadGenerationPopup";
 
@@ -133,11 +132,9 @@ export default function RootLayout({
           flex-col
         "
       >
-        {/* MODERN SOFT BACKGROUND */}
+        {/* BACKGROUND */}
 
         <div className="fixed inset-0 -z-50 overflow-hidden">
-          {/* TOP GLOW */}
-
           <div
             className="
               absolute
@@ -150,8 +147,6 @@ export default function RootLayout({
               rounded-full
             "
           />
-
-          {/* BOTTOM GLOW */}
 
           <div
             className="
@@ -166,8 +161,6 @@ export default function RootLayout({
             "
           />
 
-          {/* LIGHT GRID */}
-
           <div
             className="absolute inset-0 opacity-[0.025]"
             style={{
@@ -176,8 +169,6 @@ export default function RootLayout({
               backgroundSize: "72px 72px",
             }}
           />
-
-          {/* OVERLAY */}
 
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#061018]/20 to-[#061018]" />
         </div>
@@ -218,7 +209,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* STRUCTURED DATA */}
+        {/* ORGANIZATION SCHEMA */}
 
         <script
           type="application/ld+json"
@@ -231,15 +222,18 @@ export default function RootLayout({
               logo: "https://www.arkaquatech.com/logo.png",
               description:
                 "Advanced aquaculture and water engineering company providing Biofloc systems, RAS aquaculture, shrimp farming, hatchery design, HDPE pond lining, and industrial water treatment solutions.",
+
               address: {
                 "@type": "PostalAddress",
                 addressCountry: "India",
               },
+
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+91-9063289228",
                 contactType: "customer support",
               },
+
               sameAs: [
                 "https://www.instagram.com/",
                 "https://www.facebook.com/",
