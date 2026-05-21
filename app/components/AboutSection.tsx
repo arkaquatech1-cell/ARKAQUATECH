@@ -1,7 +1,3 @@
-
-
-
-
 "use client";
 
 import Image from "next/image";
@@ -16,6 +12,9 @@ import {
   Droplets,
   Cpu,
   Waves,
+  Fish,
+  Factory,
+  Leaf,
 } from "lucide-react";
 
 export default function AboutSection() {
@@ -24,13 +23,13 @@ export default function AboutSection() {
       className="
         relative
         overflow-hidden
-        py-18
-        sm:py-16
-        lg:py-16
+        py-20
+        sm:py-24
+        lg:py-28
         bg-gradient-to-br
-        from-[#f5f7ff]
-        via-[#eef4ff]
-        to-[#f3fff6]
+        from-[#f5f9ff]
+        via-[#eef5ff]
+        to-[#f4fff7]
       "
     >
       {/* PREMIUM BACKGROUND */}
@@ -41,13 +40,13 @@ export default function AboutSection() {
         <div
           className="
             absolute
-            top-[-150px]
+            top-[-160px]
             right-[-120px]
-            h-[420px]
-            w-[420px]
+            h-[450px]
+            w-[450px]
             rounded-full
             bg-[#15176B]/15
-            blur-[120px]
+            blur-[130px]
           "
         />
 
@@ -58,11 +57,11 @@ export default function AboutSection() {
             absolute
             bottom-[-180px]
             left-[-100px]
-            h-[380px]
-            w-[380px]
+            h-[420px]
+            w-[420px]
             rounded-full
             bg-[#63C96A]/20
-            blur-[120px]
+            blur-[130px]
           "
         />
 
@@ -90,29 +89,29 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative order-2 lg:order-1"
           >
             <div
               className="
                 overflow-hidden
-                rounded-[32px]
+                rounded-[34px]
                 border
                 border-[#15176B]/10
                 bg-white/70
-                shadow-[0_10px_40px_rgba(21,23,107,0.08)]
+                shadow-[0_15px_50px_rgba(21,23,107,0.10)]
                 backdrop-blur-xl
               "
             >
               <Image
                 src="/images/about.png"
-                alt="ARK Aquatech Water Engineering and Aquaculture Solutions"
+                alt="ARK Aquatech Smart Aquaculture Engineering Solutions India"
                 width={900}
                 height={1000}
                 priority
                 className="
-                  h-[400px]
+                  h-[380px]
                   sm:h-[520px]
-                  lg:h-[650px]
+                  lg:h-[700px]
                   w-full
                   object-cover
                   transition-transform
@@ -123,35 +122,44 @@ export default function AboutSection() {
 
               {/* OVERLAY */}
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#15176B]/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#15176B]/80 via-transparent to-transparent" />
 
-              {/* FLOAT CARD */}
+              {/* FLOATING CARD */}
 
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                viewport={{ once: true }}
                 className="
                   absolute
-                  bottom-6
-                  left-6
-                  right-6
+                  bottom-5
+                  left-5
+                  right-5
                   rounded-3xl
                   border
-                  border-white/40
-                  bg-white/70
-                  p-6
-                  shadow-xl
+                  border-white/30
+                  bg-white/75
+                  p-5
+                  sm:p-6
+                  shadow-2xl
                   backdrop-blur-xl
                 "
               >
                 <span
                   className="
+                    inline-flex
+                    items-center
+                    gap-2
                     text-[11px]
                     uppercase
-                    tracking-[0.25em]
+                    tracking-[0.22em]
                     text-[#63C96A]
-                    font-semibold
+                    font-bold
                   "
                 >
-                  Trusted Engineering Partner
+                  <Sparkles className="h-4 w-4" />
+                  Trusted Aquaculture Engineering Partner
                 </span>
 
                 <h3
@@ -159,7 +167,7 @@ export default function AboutSection() {
                     mt-3
                     text-[24px]
                     sm:text-[32px]
-                    font-bold
+                    font-black
                     leading-tight
                     text-[#0F172A]
                   "
@@ -171,16 +179,18 @@ export default function AboutSection() {
                   className="
                     mt-3
                     text-sm
+                    sm:text-[15px]
                     leading-[1.9]
                     text-slate-600
                   "
                 >
-                  ARK delivers modern fish farming,
-                  RAS technology, industrial water
-                  treatment systems, and sustainable
-                  aquatic engineering solutions.
+                  ARK AQUATECH delivers advanced
+                  Biofloc, RAS, hatchery, pond liner,
+                  and industrial water management
+                  systems for modern fish and shrimp
+                  farming projects across India.
                 </p>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -191,6 +201,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
+            className="order-1 lg:order-2"
           >
             {/* BADGE */}
 
@@ -231,14 +242,14 @@ export default function AboutSection() {
                 mt-7
                 text-[38px]
                 sm:text-[54px]
-                lg:text-[62px]
+                lg:text-[66px]
                 leading-[0.95]
                 tracking-[-0.05em]
                 font-black
                 text-[#0F172A]
               "
             >
-              Advanced Water 
+              Engineering The Future Of
               <span
                 className="
                   mt-2
@@ -251,143 +262,218 @@ export default function AboutSection() {
                   text-transparent
                 "
               >
-                Aquaculture Solutions
+                Smart Aquaculture
               </span>
             </h2>
 
             {/* DESCRIPTION */}
 
             <div className="mt-8 space-y-6">
+
               <p
                 className="
                   text-[16px]
-                  leading-[1.9]
+                  sm:text-[17px]
+                  leading-[2]
                   text-slate-600
                 "
               >
-                ARK AQUATECH is a leading aquaculture
-                engineering and water technology company
-                providing Biofloc systems, RAS fish
-                farming technology, industrial RO plants,
-                aquaponics systems, pond liners, water
-                filtration systems, and smart automation
-                solutions across India.
+                <span className="font-semibold text-[#15176B]">
+                  ARK AQUATECH
+                </span>{" "}
+                is a technology-driven aquaculture
+                engineering and infrastructure company
+                specializing in advanced Biofloc,
+                RAS, SIPNSF, hatchery, pond liner,
+                and water management solutions for
+                modern commercial aquaculture.
               </p>
 
               <p
                 className="
                   text-[16px]
-                  leading-[1.9]
+                  sm:text-[17px]
+                  leading-[2]
                   text-slate-600
                 "
               >
-                We specialize in sustainable aquatic
-                ecosystem engineering with advanced
-                oxygen management, IoT monitoring,
-                aeration technology, wastewater
-                treatment, and commercial aquaculture
-                infrastructure for modern fish and shrimp
-                farming projects.
+                We design intelligent aquaculture
+                ecosystems engineered for sustainable
+                fish and shrimp farming, combining
+                precision engineering, smart water
+                management, aeration systems, oxygen
+                control, and IoT monitoring technology
+                to maximize productivity and operational
+                efficiency.
               </p>
 
-             
+              <p
+                className="
+                  text-[16px]
+                  sm:text-[17px]
+                  leading-[2]
+                  text-slate-600
+                "
+              >
+                From infrastructure development and
+                turnkey project execution to technical
+                consultancy and operational support,
+                we deliver complete end-to-end
+                aquaculture solutions tailored for
+                commercial farmers, hatcheries,
+                entrepreneurs, and industrial
+                aquaculture projects across India.
+              </p>
+
             </div>
 
-           {/* PREMIUM SEO FEATURES */}
+            {/* FEATURES */}
 
-{/* SEO BUTTON TAGS */}
+           
 
-{/* SEO BUTTON TAGS */}
+            {/* SEO BUTTON TAGS */}
 
-<div
-  className="
-    mt-10
-    grid
-    grid-cols-2
-    gap-4
-    sm:grid-cols-3
-  "
->
-  {[
-    "Industrial RO Plants",
-    "Biofloc Fish Farming",
-    "RAS Aquaculture Systems",
-    "Shrimp Farming Setup",
-    "Wastewater Treatment",
-    "Marine Engineering",
-  ].map((item, index) => (
-    <motion.div
-      key={index}
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{
-        delay: index * 0.05,
-      }}
-      viewport={{ once: true }}
-    className="
-  group
-  relative
-  inline-flex
-  items-center
-  justify-center
-  overflow-hidden
-  rounded-full
-  border
-  border-white/40
-  bg-gradient-to-r
-  from-white
-  via-[#f8fbff]
-  to-[#f3fff6]
-  px-4
-  py-2.5
-  text-center
-  shadow-[0_10px_30px_rgba(21,23,107,0.08)]
-  backdrop-blur-xl
-  transition-all
-  duration-300
-  hover:-translate-y-1
-  hover:scale-[1.03]
-  hover:border-[#63C96A]/40
-  hover:shadow-[0_18px_40px_rgba(21,23,107,0.14)]
-"
-    >
-      {/* LIGHT EFFECT */}
+            <div
+              className="
+                mt-10
+                grid
+                grid-cols-2
+                gap-4
+                sm:grid-cols-3
+              "
+            >
+              {[
+                "Biofloc Fish Farming",
+                "RAS Aquaculture",
+                "Shrimp Farming",
+                "Fish Hatchery",
+                "Pond Liner",
+                "Aquaculture India",
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: index * 0.05,
+                  }}
+                  viewport={{ once: true }}
+                  className="
+                    group
+                    relative
+                    inline-flex
+                    items-center
+                    justify-center
+                    overflow-hidden
+                    rounded-full
+                    border
+                    border-white/40
+                    bg-gradient-to-r
+                    from-white
+                    via-[#f8fbff]
+                    to-[#f3fff6]
+                    px-4
+                    py-2.5
+                    text-center
+                    shadow-[0_10px_30px_rgba(21,23,107,0.08)]
+                    backdrop-blur-xl
+                    transition-all
+                    duration-300
+                    hover:-translate-y-1
+                    hover:scale-[1.03]
+                    hover:border-[#63C96A]/40
+                    hover:shadow-[0_18px_40px_rgba(21,23,107,0.14)]
+                  "
+                >
+                  <div
+                    className="
+                      absolute
+                      inset-0
+                      opacity-0
+                      transition-opacity
+                      duration-300
+                      group-hover:opacity-100
+                      bg-gradient-to-r
+                      from-[#15176B]/5
+                      via-[#0A6EBD]/5
+                      to-[#63C96A]/5
+                    "
+                  />
 
-      <div
-        className="
-          absolute
-          inset-0
-          opacity-0
-          transition-opacity
-          duration-300
-          group-hover:opacity-100
-          bg-gradient-to-r
-          from-[#15176B]/5
-          via-[#0A6EBD]/5
-          to-[#63C96A]/5
-        "
-      />
+                  <span
+                    className="
+                      relative
+                      z-10
+                      text-[13px]
+                      sm:text-[14px]
+                      font-semibold
+                      leading-[1.4]
+                      tracking-[-0.01em]
+                      text-[#0F172A]
+                    "
+                  >
+                    {item}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
 
-      {/* TEXT */}
+            {/* BUTTONS */}
 
-      <span
-        className="
-          relative
-          z-10
-          text-[13px]
-          sm:text-[14px]
-          font-semibold
-          leading-[1.4]
-          tracking-[-0.01em]
-          text-[#0F172A]
-        "
-      >
-        {item}
-      </span>
-    </motion.div>
-  ))}
-</div>
+            <div className="mt-12 flex flex-wrap gap-4">
 
+              <Link
+                href="/contact"
+                className="
+                  inline-flex
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-full
+                  bg-gradient-to-r
+                  from-[#15176B]
+                  to-[#0A6EBD]
+                  px-7
+                  py-4
+                  text-sm
+                  font-semibold
+                  text-white
+                  shadow-xl
+                  transition-all
+                  duration-300
+                  hover:scale-[1.03]
+                "
+              >
+                Get Consultation
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+
+              <Link
+                href="/services"
+                className="
+                  inline-flex
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-[#15176B]/15
+                  bg-white/80
+                  px-7
+                  py-4
+                  text-sm
+                  font-semibold
+                  text-[#15176B]
+                  shadow-lg
+                  backdrop-blur-xl
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                "
+              >
+                Explore Services
+              </Link>
+
+            </div>
 
           </motion.div>
         </div>

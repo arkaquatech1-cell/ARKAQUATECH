@@ -451,33 +451,62 @@ import {
   Sparkles,
   Globe2,
 } from "lucide-react";
-const projects = [
+
+  const projects = [
   {
-    title: "Advanced Biofloc Farming Project",
+    title: "Advanced Aquaculture Projects",
     location: "Andhra Pradesh, India",
     image: "/images/services1.png",
 
     desc:
-      "Commercial Biofloc fish farming infrastructure with sustainable aquatic ecosystem management and smart water circulation systems.",
+      "Commercial aquaculture infrastructure projects with smart Biofloc systems, sustainable fish farming technology, and intelligent aquatic ecosystem engineering.",
   },
 
   {
-    title: "Industrial RAS System",
+    title: "Industrial Water Management Solutions",
     location: "Telangana, India",
-    image: "/images/services2.png",
+    image: "/images/services2.jpg",
 
     desc:
-      "Modern Recirculating Aquaculture System with intelligent filtration, oxygen balancing, and automated monitoring technologies.",
+      "Industrial water treatment plants, RO systems, wastewater recycling, smart filtration, and sustainable water management engineering solutions.",
   },
 
   {
-    title: "Shrimp Farming Infrastructure",
+    title: "Smart Hatchery Engineering Systems",
     location: "Tamil Nadu, India",
     image: "/images/services3.png",
 
     desc:
-      "High-efficiency shrimp farming infrastructure developed with sustainable marine engineering and smart aquaculture systems.",
+      "Modern hatchery infrastructure with automated water circulation, oxygen systems, breeding technology, and intelligent hatchery management solutions.",
   },
+
+  {
+    title: "Aquaculture Equipment Solutions",
+    location: "Kerala, India",
+    image: "/images/services10.jpg",
+
+    desc:
+      "Advanced aquaculture equipment including aerators, feeders, pumps, oxygen systems, filtration units, and commercial farming essentials.",
+  },
+
+  {
+    title: "Nutrition & Farm Essentials",
+    location: "Odisha, India",
+    image: "/images/services12.jpg",
+
+    desc:
+      "High-quality nutrition products, aquatic feed management, farm essentials, water supplements, and sustainable aquaculture support solutions.",
+  },
+
+  {
+    title: "Aquaculture Training & Operational Support",
+    location: "Karnataka, India",
+    image: "/images/services11.jpg",
+
+    desc:
+      "Professional aquaculture consultancy, technical training, operational management, BOT services, and smart farm guidance for commercial aquaculture projects.",
+  },
+
 
   // {
   //   title: "Industrial Water Treatment Plant",

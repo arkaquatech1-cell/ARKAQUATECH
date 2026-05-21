@@ -12,6 +12,7 @@ import HeroSection from "@/app/components/HeroSection";
 
 
 import ProjectsSection from "@/app/components/ProjectsSection";
+import ServicesHighlightSection from "@/app/components/ServicesHighlightSection";
 
 import ServicesSection from "@/app/components/ServicesSection";
 
@@ -20,6 +21,7 @@ import StatsSection from "@/app/components/StatsSection";
 import TechnologySection from "@/app/components/TechnologySection";
 
 import TestimonialsSection from "@/app/components/TestimonialsSection";
+import TrustedPartnersSection from "@/app/components/TrustedPartnersSection";
 
 import WhyChooseUsSection from "@/app/components/WhyChooseUsSection";
 
@@ -83,7 +85,7 @@ export default function HomePage() {
       {/* ABOUT */}
 
       <AboutSection />
-
+      <TrustedPartnersSection />
       {/* SERVICES */}
 
       <ServicesSection />
@@ -104,7 +106,7 @@ export default function HomePage() {
 
    
 
-      {/* PROJECTS */}
+
 
  
 
