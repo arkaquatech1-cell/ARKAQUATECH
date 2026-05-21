@@ -6,6 +6,7 @@ import {
   X,
   PhoneCall,
   ArrowRight,
+  Sparkles,
 } from "lucide-react";
 
 export default function LeadGenerationPopup() {
@@ -14,7 +15,7 @@ export default function LeadGenerationPopup() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setOpen(true);
-    }, 12000);
+    }, 8000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -30,7 +31,7 @@ export default function LeadGenerationPopup() {
           fixed
           inset-0
           z-[9998]
-          bg-[#021B2F]/60
+          bg-[#021526]/80
           backdrop-blur-sm
         "
       />
@@ -40,61 +41,29 @@ export default function LeadGenerationPopup() {
       <div
         className="
           fixed
-          left-1/2
-          top-[50%]
+          inset-0
           z-[9999]
-          w-[92%]
-          max-w-2xl
-          max-h-[90vh]
+          flex
+          items-center
+          justify-center
           overflow-y-auto
-          pb-4
-          -translate-x-1/2
-          -translate-y-1/2
+          p-3
+          sm:p-5
         "
       >
         <div
           className="
             relative
+            w-full
+            max-w-5xl
             overflow-hidden
-            rounded-[24px]
-            border
-            border-[#E5E7EB]
+            rounded-[22px]
             bg-white
-            shadow-[0_30px_120px_rgba(0,0,0,0.20)]
-            sm:rounded-[40px]
+            shadow-[0_25px_80px_rgba(0,0,0,0.35)]
+            sm:rounded-[34px]
           "
         >
-          {/* BACKGROUND */}
-
-          <div className="absolute inset-0 overflow-hidden">
-            <div
-              className="
-                absolute
-                left-[-120px]
-                top-[-120px]
-                h-[300px]
-                w-[300px]
-                rounded-full
-                bg-[#0A6EBD]/10
-                blur-[120px]
-              "
-            />
-
-            <div
-              className="
-                absolute
-                bottom-[-120px]
-                right-[-120px]
-                h-[300px]
-                w-[300px]
-                rounded-full
-                bg-[#63C96A]/10
-                blur-[120px]
-              "
-            />
-          </div>
-
-          {/* CLOSE BUTTON */}
+          {/* MOBILE CLOSE BUTTON FIX */}
 
           <button
             onClick={() => setOpen(false)}
@@ -102,34 +71,82 @@ export default function LeadGenerationPopup() {
               absolute
               right-3
               top-3
-              z-20
+              z-[100]
               flex
-              h-9
-              w-9
+              h-10
+              w-10
               items-center
               justify-center
-              rounded-xl
-              bg-[#F4F8FF]
-              text-[#021B2F]
+              rounded-full
+              bg-white
+              shadow-lg
+              text-[#021526]
               transition-all
               duration-300
-              hover:bg-[#E8F0FF]
+              hover:rotate-90
               sm:right-5
               sm:top-5
-              sm:h-11
-              sm:w-11
-              sm:rounded-2xl
+              sm:h-12
+              sm:w-12
             "
           >
-            <X className="h-4 w-4 sm:h-5 sm:w-5" />
+            <X className="h-5 w-5" />
           </button>
 
           {/* CONTENT */}
 
-          <div className="relative z-10 p-5 sm:p-10">
-            {/* TOP */}
+          <div
+            className="
+              grid
+              grid-cols-1
+              lg:grid-cols-2
+            "
+          >
+            {/* LEFT SIDE */}
 
-            <div className="text-center">
+            <div
+              className="
+                relative
+                overflow-hidden
+                bg-gradient-to-br
+                from-[#021526]
+                via-[#0A6EBD]
+                to-[#15176B]
+                px-5
+                py-8
+                text-white
+                sm:px-10
+                sm:py-14
+              "
+            >
+              {/* BG EFFECT */}
+
+              <div
+                className="
+                  absolute
+                  left-[-60px]
+                  top-[-60px]
+                  h-[180px]
+                  w-[180px]
+                  rounded-full
+                  bg-white/10
+                  blur-3xl
+                "
+              />
+
+              <div
+                className="
+                  absolute
+                  bottom-[-80px]
+                  right-[-80px]
+                  h-[220px]
+                  w-[220px]
+                  rounded-full
+                  bg-[#63C96A]/20
+                  blur-3xl
+                "
+              />
+
               {/* BADGE */}
 
               <div
@@ -139,27 +156,24 @@ export default function LeadGenerationPopup() {
                   gap-2
                   rounded-full
                   border
-                  border-[#0A6EBD]/10
-                  bg-[#F4F8FF]
-                  px-3
+                  border-white/10
+                  bg-white/10
+                  px-4
                   py-2
-                  sm:px-5
-                  sm:py-2.5
+                  backdrop-blur
                 "
               >
-                <div className="h-2 w-2 rounded-full bg-[#63C96A]" />
+                <Sparkles className="h-4 w-4 text-[#63C96A]" />
 
                 <span
                   className="
                     text-[10px]
-                    uppercase
-                    tracking-[0.2em]
                     font-semibold
-                    text-[#021B2F]
-                    sm:text-[11px]
+                    uppercase
+                    tracking-[0.18em]
                   "
                 >
-                  Get Free Consultation
+                  Free Consultation
                 </span>
               </div>
 
@@ -168,288 +182,311 @@ export default function LeadGenerationPopup() {
               <h2
                 className="
                   mt-5
-                  text-[28px]
+                  text-[32px]
                   font-black
-                  leading-[1.05]
+                  leading-[1]
                   tracking-[-0.05em]
-                  text-[#021B2F]
                   sm:mt-7
-                  sm:text-[52px]
-                  sm:leading-[0.95]
+                  sm:text-[56px]
                 "
               >
-                Generate Better
-
-                <span
-                  className="
-                    mt-2
-                    block
-                    bg-gradient-to-r
-                    from-[#63C96A]
-                    via-[#0A6EBD]
-                    to-[#15176B]
-                    bg-clip-text
-                    text-transparent
-                  "
-                >
-                  Aquaculture Results
+                Smart
+                <span className="block text-[#63C96A]">
+                  Aquaculture
                 </span>
+                Solutions
               </h2>
 
-              {/* DESCRIPTION */}
+              {/* TEXT */}
 
               <p
                 className="
-                  mx-auto
-                  mt-4
-                  max-w-2xl
+                  mt-5
+                  max-w-lg
                   text-[13px]
-                  leading-[1.8]
-                  text-[#6B7280]
-                  sm:mt-6
-                  sm:text-[16px]
-                  sm:leading-[2]
+                  leading-[1.9]
+                  text-white/80
+                  sm:text-[15px]
                 "
               >
-                Connect with ARK AQUATECH
-                for Biofloc systems,
-                RAS aquaculture,
-                shrimp farming,
-                industrial water treatment,
-                and smart aquaculture engineering solutions.
+                Biofloc systems, RAS aquaculture,
+                shrimp farming, industrial water
+                treatment, and smart engineering
+                solutions for modern aquaculture.
               </p>
+
+              {/* FEATURES */}
+
+              <div className="mt-7 space-y-3 sm:mt-10">
+                <div
+                  className="
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-white/10
+                    p-4
+                    backdrop-blur
+                  "
+                >
+                  <h3 className="text-sm font-bold">
+                    Modern Farm Systems
+                  </h3>
+
+              
+                </div>
+
+                <div
+                  className="
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-white/10
+                    p-4
+                    backdrop-blur
+                  "
+                >
+                  <h3 className="text-sm font-bold">
+                    Smart Water Technology
+                  </h3>
+
+                  <p className="mt-1 text-xs text-white/70 sm:text-sm">
+                    Water treatment & recirculation
+                    systems for better production.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* FORM */}
+            {/* RIGHT SIDE */}
 
-            <form className="mt-8 sm:mt-10">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {/* NAME */}
+            <div
+              className="
+                px-4
+                py-7
+                sm:px-10
+                sm:py-12
+              "
+            >
+              {/* TITLE */}
 
-                <div>
+              <div>
+                <h3
+                  className="
+                    text-[26px]
+                    font-black
+                    leading-[1.1]
+                    tracking-[-0.04em]
+                    text-[#021526]
+                    sm:text-[40px]
+                  "
+                >
+                  Let’s Discuss
+                  <span className="block text-[#0A6EBD]">
+                    Your Project
+                  </span>
+                </h3>
+
+                <p
+                  className="
+                    mt-3
+                    text-[13px]
+                    leading-[1.8]
+                    text-[#6B7280]
+                    sm:text-[15px]
+                  "
+                >
+                  Fill the form and our team will
+                  contact you quickly.
+                </p>
+              </div>
+
+              {/* FORM */}
+
+              <form className="mt-7">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <input
                     type="text"
                     placeholder="Your Name"
                     className="
                       h-12
                       w-full
-                      rounded-xl
+                      rounded-2xl
                       border
                       border-[#E5E7EB]
                       bg-[#F8FAFC]
                       px-4
-                      text-[13px]
-                      text-[#021B2F]
+                      text-sm
                       outline-none
                       transition-all
                       duration-300
                       focus:border-[#0A6EBD]
                       focus:bg-white
-                      sm:h-14
-                      sm:rounded-2xl
-                      sm:px-5
-                      sm:text-sm
                     "
                   />
-                </div>
 
-                {/* COMPANY */}
-
-                <div>
                   <input
                     type="text"
                     placeholder="Company Name"
                     className="
                       h-12
                       w-full
-                      rounded-xl
+                      rounded-2xl
                       border
                       border-[#E5E7EB]
                       bg-[#F8FAFC]
                       px-4
-                      text-[13px]
-                      text-[#021B2F]
+                      text-sm
                       outline-none
                       transition-all
                       duration-300
                       focus:border-[#0A6EBD]
                       focus:bg-white
-                      sm:h-14
-                      sm:rounded-2xl
-                      sm:px-5
-                      sm:text-sm
                     "
                   />
-                </div>
 
-                {/* PHONE */}
-
-                <div>
                   <input
                     type="tel"
                     placeholder="Phone Number"
                     className="
                       h-12
                       w-full
-                      rounded-xl
+                      rounded-2xl
                       border
                       border-[#E5E7EB]
                       bg-[#F8FAFC]
                       px-4
-                      text-[13px]
-                      text-[#021B2F]
+                      text-sm
                       outline-none
                       transition-all
                       duration-300
                       focus:border-[#0A6EBD]
                       focus:bg-white
-                      sm:h-14
-                      sm:rounded-2xl
-                      sm:px-5
-                      sm:text-sm
                     "
                   />
-                </div>
 
-                {/* EMAIL */}
-
-                <div>
                   <input
                     type="email"
                     placeholder="Email Address"
                     className="
                       h-12
                       w-full
-                      rounded-xl
+                      rounded-2xl
                       border
                       border-[#E5E7EB]
                       bg-[#F8FAFC]
                       px-4
-                      text-[13px]
-                      text-[#021B2F]
+                      text-sm
                       outline-none
                       transition-all
                       duration-300
                       focus:border-[#0A6EBD]
                       focus:bg-white
-                      sm:h-14
-                      sm:rounded-2xl
-                      sm:px-5
-                      sm:text-sm
                     "
                   />
                 </div>
-              </div>
 
-              {/* MESSAGE */}
+                {/* MESSAGE */}
 
-              <div className="mt-4 sm:mt-5">
-                <textarea
-                  rows={5}
-                  placeholder="Requirement Message"
-                  className="
-                    w-full
-                    rounded-2xl
-                    border
-                    border-[#E5E7EB]
-                    bg-[#F8FAFC]
-                    px-4
-                    py-4
-                    text-[13px]
-                    text-[#021B2F]
-                    outline-none
-                    transition-all
-                    duration-300
-                    focus:border-[#0A6EBD]
-                    focus:bg-white
-                    sm:px-5
-                    sm:py-5
-                    sm:text-sm
-                  "
-                />
-              </div>
-
-              {/* BUTTONS */}
-
-              <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
-                {/* SUBMIT */}
-
-                <button
-                  type="submit"
-                  className="
-                    group
-                    inline-flex
-                    h-12
-                    flex-1
-                    items-center
-                    justify-center
-                    gap-2
-                    rounded-xl
-                    bg-gradient-to-r
-                    from-[#0A6EBD]
-                    to-[#15176B]
-                    px-6
-                    text-[13px]
-                    font-semibold
-                    text-white
-                    shadow-[0_15px_35px_rgba(10,110,189,0.20)]
-                    transition-all
-                    duration-300
-                    hover:scale-[1.02]
-                    sm:h-14
-                    sm:rounded-2xl
-                    sm:px-8
-                    sm:text-sm
-                  "
-                >
-                  Submit Inquiry
-
-                  <ArrowRight
+                <div className="mt-4">
+                  <textarea
+                    rows={4}
+                    placeholder="Requirement Message"
                     className="
-                      h-4
-                      w-4
-                      transition-transform
+                      w-full
+                      rounded-2xl
+                      border
+                      border-[#E5E7EB]
+                      bg-[#F8FAFC]
+                      px-4
+                      py-4
+                      text-sm
+                      outline-none
+                      transition-all
                       duration-300
-                      group-hover:translate-x-1
+                      focus:border-[#0A6EBD]
+                      focus:bg-white
                     "
                   />
-                </button>
+                </div>
 
-                {/* CALLBACK */}
+                {/* BUTTONS */}
 
-                <button
-                  type="button"
+                <div
                   className="
-                    group
-                    inline-flex
-                    h-12
-                    flex-1
-                    items-center
-                    justify-center
-                    gap-2
-                    rounded-xl
-                    border
-                    border-[#0A6EBD]/10
-                    bg-[#F4F8FF]
-                    px-6
-                    text-[13px]
-                    font-semibold
-                    text-[#021B2F]
-                    transition-all
-                    duration-300
-                    hover:bg-[#EAF2FF]
-                    sm:h-14
-                    sm:rounded-2xl
-                    sm:px-8
-                    sm:text-sm
+                    mt-5
+                    flex
+                    flex-col
+                    gap-3
+                    sm:mt-7
+                    sm:flex-row
                   "
                 >
-                  <PhoneCall className="h-4 w-4 text-[#0A6EBD]" />
+                  <button
+                    type="submit"
+                    className="
+                      group
+                      inline-flex
+                      h-12
+                      flex-1
+                      items-center
+                      justify-center
+                      gap-2
+                      rounded-2xl
+                      bg-gradient-to-r
+                      from-[#0A6EBD]
+                      to-[#15176B]
+                      px-6
+                      text-sm
+                      font-semibold
+                      text-white
+                      shadow-[0_15px_35px_rgba(10,110,189,0.25)]
+                      transition-all
+                      duration-300
+                      hover:-translate-y-1
+                    "
+                  >
+                    Submit Inquiry
 
-                  Request Callback
-                </button>
-              </div>
-            </form>
+                    <ArrowRight
+                      className="
+                        h-4
+                        w-4
+                        transition-transform
+                        duration-300
+                        group-hover:translate-x-1
+                      "
+                    />
+                  </button>
+
+                  <button
+                    type="button"
+                    className="
+                      inline-flex
+                      h-12
+                      flex-1
+                      items-center
+                      justify-center
+                      gap-2
+                      rounded-2xl
+                      border
+                      border-[#0A6EBD]/10
+                      bg-[#F4F8FF]
+                      px-6
+                      text-sm
+                      font-semibold
+                      text-[#021526]
+                      transition-all
+                      duration-300
+                      hover:bg-[#EAF2FF]
+                    "
+                  >
+                    <PhoneCall className="h-4 w-4 text-[#0A6EBD]" />
+
+                    Request Callback
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
