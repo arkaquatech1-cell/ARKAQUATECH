@@ -12,7 +12,7 @@ import HeroSection from "@/app/components/HeroSection";
 
 
 import ProjectsSection from "@/app/components/ProjectsSection";
-import ServicesHighlightSection from "@/app/components/ServicesHighlightSection";
+
 
 import ServicesSection from "@/app/components/ServicesSection";
 
