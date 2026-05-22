@@ -319,6 +319,9 @@
 //   );
 // }
 
+
+
+
 "use client";
 
 import Link from "next/link";
@@ -373,22 +376,26 @@ export default function HeroSection() {
     <section className="relative min-h-screen overflow-hidden bg-black">
       {/* BACKGROUND VIDEO */}
 
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="
-          absolute
-          inset-0
-          h-full
-          w-full
-          object-cover
-        "
-      >
-        <source src="/herosection/seavideo.mp4" type="video/mp4" />
-      </video>
-
+     <video
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="metadata"
+  disablePictureInPicture
+  className="
+    absolute
+    inset-0
+    h-full
+    w-full
+    object-cover
+  "
+>
+  <source
+    src="/herosection/seavideo.mp4"
+    type="video/mp4"
+  />
+</video>
       {/* DARK OVERLAY */}
 
       <div
