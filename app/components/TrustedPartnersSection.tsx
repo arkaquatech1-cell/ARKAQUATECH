@@ -56,16 +56,7 @@ export default function TrustedPartnersSection() {
           Trusted Partners
         </h2>
 
-        <p
-          className="
-            mt-3
-            text-sm
-            text-gray-600
-            sm:text-base
-          "
-        >
-          Auto Scrolling Partner Logos
-        </p>
+       
       </div>
 
       {/* SCROLL AREA */}
