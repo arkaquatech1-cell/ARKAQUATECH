@@ -115,24 +115,11 @@ export default function TrustedPartnersSection() {
             tracking-[-0.04em]
             text-[#0F172A]
             sm:text-[54px]
-            lg:text-[68px]
+            lg:text-[58px]
           "
         >
-          Trusted
-          <span
-            className="
-              block
-              mt-2
-              bg-gradient-to-r
-              from-[#63C96A]
-              via-[#15176B]
-              to-[#63C96A]
-              bg-clip-text
-              text-transparent
-            "
-          >
-            Partners
-          </span>
+          Trusted Partners
+         
         </h2>
 
         <p
