@@ -174,31 +174,6 @@ export default function TrustedPartnersSection() {
 
       {/* CSS */}
 
-      <style jsx>{`
-        .animate-scroll {
-          animation: scroll 22s linear infinite;
-        }
-
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        @media (max-width: 640px) {
-          .animate-scroll {
-            animation: scroll 14s linear infinite;
-          }
-        }
-      `}</style>
     </section>
   );
 }
