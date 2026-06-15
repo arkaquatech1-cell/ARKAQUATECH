@@ -12,20 +12,20 @@ import {
 
 const downloads = [
   {
-    title: "Company Catalogs",
+    title: "Company Profile",
     description:
       "Explore our complete aquaculture engineering catalogs including Biofloc systems, RAS technology, industrial RO plants, hatchery solutions, and smart marine infrastructure.",
     icon: <BookOpen className="h-7 w-7" />,
-    file: "/downloads/company-catalog.pdf",
+    file: "/Files/ARK AQUATECH PROFILE.pdf",
     gradient: "from-[#0A6EBD] to-[#15176B]",
   },
 
   {
-    title: "Product Brochures",
+    title: "Company Brochures",
     description:
       "Download premium product brochures for aerators, oxygen systems, fish tanks, pond liners, filtration systems, and aquaculture equipment.",
     icon: <FolderOpen className="h-7 w-7" />,
-    file: "/downloads/product-brochure.pdf",
+    file: "/Files/ARK AQUATECH  Brocher.pdf",
     gradient: "from-[#63C96A] to-[#0A6EBD]",
   },
 
@@ -34,7 +34,7 @@ const downloads = [
     description:
       "Access technical specifications, installation manuals, engineering layouts, operation guides, and smart aquaculture automation documents.",
     icon: <FileText className="h-7 w-7" />,
-    file: "/downloads/technical-documents.pdf",
+    file: "/Files/Ark Aquatech RAS Broucher.pdf",
     gradient: "from-[#021B2F] to-[#0A6EBD]",
   },
 
@@ -43,7 +43,7 @@ const downloads = [
     description:
       "Stay updated with company announcements, certifications, compliance notices, project updates, and engineering documentation.",
     icon: <ShieldCheck className="h-7 w-7" />,
-    file: "/downloads/company-notices.pdf",
+    file: "/Files/Ark Aquatech Biofloc Tanks.pdf",
     gradient: "from-[#15176B] to-[#63C96A]",
   },
 ];
