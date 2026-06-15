@@ -1,14 +1,62 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-import {
-  X,
-  ArrowRight,
-} from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 
 export default function LeadGenerationPopup() {
   const [open, setOpen] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    const message = `
+*New Consultation Request*
+
+👤 Name: ${formData.name}
+🏢 Company: ${formData.company}
+📞 Phone: ${formData.phone}
+📧 Email: ${formData.email}
+
+📝 Requirement:
+${formData.message}
+`;
+
+    window.open(
+      `https://api.whatsapp.com/send?phone=919063289228&text=${encodeURIComponent(
+        message
+      )}`,
+      "_blank"
+    );
+
+    setOpen(false);
+
+    setFormData({
+      name: "",
+      company: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -151,154 +199,169 @@ export default function LeadGenerationPopup() {
 
             {/* FORM */}
 
-            <form className="mt-8">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="
-                    h-12
-                    w-full
-                    rounded-2xl
-                    border
-                    border-[#E5E7EB]
-                    bg-[#F8FAFC]
-                    px-4
-                    text-sm
-                    outline-none
-                    transition-all
-                    duration-300
-                    focus:border-[#0A6EBD]
-                    focus:bg-white
-                  "
-                />
+          <form onSubmit={handleSubmit} className="mt-8">
+  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <input
+      type="text"
+      name="name"
+      value={formData.name}
+      onChange={handleChange}
+      placeholder="Your Name"
+      required
+      className="
+        h-12
+        w-full
+        rounded-2xl
+        border
+        border-[#E5E7EB]
+        bg-[#F8FAFC]
+        px-4
+        text-sm
+        outline-none
+        transition-all
+        duration-300
+        focus:border-[#0A6EBD]
+        focus:bg-white
+      "
+    />
 
-                <input
-                  type="text"
-                  placeholder="Company Name"
-                  className="
-                    h-12
-                    w-full
-                    rounded-2xl
-                    border
-                    border-[#E5E7EB]
-                    bg-[#F8FAFC]
-                    px-4
-                    text-sm
-                    outline-none
-                    transition-all
-                    duration-300
-                    focus:border-[#0A6EBD]
-                    focus:bg-white
-                  "
-                />
+    <input
+      type="text"
+      name="company"
+      value={formData.company}
+      onChange={handleChange}
+      placeholder="Company Name"
+      className="
+        h-12
+        w-full
+        rounded-2xl
+        border
+        border-[#E5E7EB]
+        bg-[#F8FAFC]
+        px-4
+        text-sm
+        outline-none
+        transition-all
+        duration-300
+        focus:border-[#0A6EBD]
+        focus:bg-white
+      "
+    />
 
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="
-                    h-12
-                    w-full
-                    rounded-2xl
-                    border
-                    border-[#E5E7EB]
-                    bg-[#F8FAFC]
-                    px-4
-                    text-sm
-                    outline-none
-                    transition-all
-                    duration-300
-                    focus:border-[#0A6EBD]
-                    focus:bg-white
-                  "
-                />
+    <input
+      type="tel"
+      name="phone"
+      value={formData.phone}
+      onChange={handleChange}
+      placeholder="Phone Number"
+      required
+      className="
+        h-12
+        w-full
+        rounded-2xl
+        border
+        border-[#E5E7EB]
+        bg-[#F8FAFC]
+        px-4
+        text-sm
+        outline-none
+        transition-all
+        duration-300
+        focus:border-[#0A6EBD]
+        focus:bg-white
+      "
+    />
 
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="
-                    h-12
-                    w-full
-                    rounded-2xl
-                    border
-                    border-[#E5E7EB]
-                    bg-[#F8FAFC]
-                    px-4
-                    text-sm
-                    outline-none
-                    transition-all
-                    duration-300
-                    focus:border-[#0A6EBD]
-                    focus:bg-white
-                  "
-                />
-              </div>
+    <input
+      type="email"
+      name="email"
+      value={formData.email}
+      onChange={handleChange}
+      placeholder="Email Address"
+      required
+      className="
+        h-12
+        w-full
+        rounded-2xl
+        border
+        border-[#E5E7EB]
+        bg-[#F8FAFC]
+        px-4
+        text-sm
+        outline-none
+        transition-all
+        duration-300
+        focus:border-[#0A6EBD]
+        focus:bg-white
+      "
+    />
+  </div>
 
-              {/* MESSAGE */}
+  <div className="mt-4">
+    <textarea
+      rows={4}
+      name="message"
+      value={formData.message}
+      onChange={handleChange}
+      placeholder="Requirement Message"
+      required
+      className="
+        w-full
+        rounded-2xl
+        border
+        border-[#E5E7EB]
+        bg-[#F8FAFC]
+        px-4
+        py-4
+        text-sm
+        outline-none
+        transition-all
+        duration-300
+        focus:border-[#0A6EBD]
+        focus:bg-white
+      "
+    />
+  </div>
 
-              <div className="mt-4">
-                <textarea
-                  rows={4}
-                  placeholder="Requirement Message"
-                  className="
-                    w-full
-                    rounded-2xl
-                    border
-                    border-[#E5E7EB]
-                    bg-[#F8FAFC]
-                    px-4
-                    py-4
-                    text-sm
-                    outline-none
-                    transition-all
-                    duration-300
-                    focus:border-[#0A6EBD]
-                    focus:bg-white
-                  "
-                />
-              </div>
+  <div className="mt-5">
+    <button
+      type="submit"
+      className="
+        group
+        inline-flex
+        h-12
+        w-full
+        items-center
+        justify-center
+        gap-2
+        rounded-2xl
+        bg-gradient-to-r
+        from-[#0A6EBD]
+        to-[#15176B]
+        px-6
+        text-sm
+        font-semibold
+        text-white
+        shadow-[0_15px_35px_rgba(10,110,189,0.25)]
+        transition-all
+        duration-300
+        hover:-translate-y-1
+      "
+    >
+      Submit Inquiry
 
-              {/* BUTTON */}
-
-              <div className="mt-5">
-                <button
-                  type="submit"
-                  className="
-                    group
-                    inline-flex
-                    h-12
-                    w-full
-                    items-center
-                    justify-center
-                    gap-2
-                    rounded-2xl
-                    bg-gradient-to-r
-                    from-[#0A6EBD]
-                    to-[#15176B]
-                    px-6
-                    text-sm
-                    font-semibold
-                    text-white
-                    shadow-[0_15px_35px_rgba(10,110,189,0.25)]
-                    transition-all
-                    duration-300
-                    hover:-translate-y-1
-                  "
-                >
-                  Submit Inquiry
-
-                  <ArrowRight
-                    className="
-                      h-4
-                      w-4
-                      transition-transform
-                      duration-300
-                      group-hover:translate-x-1
-                    "
-                  />
-                </button>
-              </div>
-            </form>
+      <ArrowRight
+        className="
+          h-4
+          w-4
+          transition-transform
+          duration-300
+          group-hover:translate-x-1
+        "
+      />
+    </button>
+  </div>
+</form>
           </div>
         </div>
       </div>
