@@ -3,6 +3,8 @@
 "use client";
 
 import Link from "next/link";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 import {
   Phone,
@@ -13,7 +15,34 @@ import {
   Clock3,
 } from "lucide-react";
 
+
 export default function ContactClient() {
+
+  const form = useRef<HTMLFormElement>(null);
+
+const sendEmail = async (
+  e: React.FormEvent<HTMLFormElement>
+) => {
+  e.preventDefault();
+
+  if (!form.current) return;
+
+  try {
+    await emailjs.sendForm(
+      "service_60tnen7",
+      "template_vx135m",
+      form.current,
+      "QFLRLgmnV8AeJqhgu"
+    );
+
+    alert("Message Sent Successfully!");
+    form.current.reset();
+  } catch (error) {
+    console.error(error);
+    alert("Failed to send message.");
+  }
+};
+
   return (
     <main className="relative overflow-hidden bg-white min-h-screen">
       {/* BACKGROUND */}
@@ -336,111 +365,122 @@ export default function ContactClient() {
 
           {/* FORM */}
 
-          <div
-            className="
-              rounded-[40px]
-              border
-              border-[#E5E7EB]
-              bg-white
-              p-8
-              shadow-[0_20px_80px_rgba(0,0,0,0.08)]
-              sm:p-10
-            "
-          >
-            <h2
-              className="
-                text-[40px]
-                font-black
-                text-[#021B2F]
-              "
-            >
-              Send Message
-            </h2>
+       <div
+  className="
+    rounded-[40px]
+    border
+    border-[#E5E7EB]
+    bg-white
+    p-8
+    shadow-[0_20px_80px_rgba(0,0,0,0.08)]
+    sm:p-10
+  "
+>
+  <h2
+    className="
+      text-[40px]
+      font-black
+      text-[#021B2F]
+    "
+  >
+    Send Message
+  </h2>
 
-            <form className="mt-10 space-y-6">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="
-                  w-full
-                  rounded-2xl
-                  border
-                  border-[#E5E7EB]
-                  bg-[#F8FAFC]
-                  px-6
-                  py-4
-                  outline-none
-                "
-              />
+  <form
+    ref={form}
+    onSubmit={sendEmail}
+    className="mt-10 space-y-6"
+  >
+    <input
+      type="text"
+      name="user_name"
+      placeholder="Your Name"
+      required
+      className="
+        w-full
+        rounded-2xl
+        border
+        border-[#E5E7EB]
+        bg-[#F8FAFC]
+        px-6
+        py-4
+        outline-none
+      "
+    />
 
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="
-                  w-full
-                  rounded-2xl
-                  border
-                  border-[#E5E7EB]
-                  bg-[#F8FAFC]
-                  px-6
-                  py-4
-                  outline-none
-                "
-              />
+    <input
+      type="email"
+      name="user_email"
+      placeholder="Email Address"
+      required
+      className="
+        w-full
+        rounded-2xl
+        border
+        border-[#E5E7EB]
+        bg-[#F8FAFC]
+        px-6
+        py-4
+        outline-none
+      "
+    />
 
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                className="
-                  w-full
-                  rounded-2xl
-                  border
-                  border-[#E5E7EB]
-                  bg-[#F8FAFC]
-                  px-6
-                  py-4
-                  outline-none
-                "
-              />
+    <input
+      type="tel"
+      name="phone"
+      placeholder="Phone Number"
+      required
+      className="
+        w-full
+        rounded-2xl
+        border
+        border-[#E5E7EB]
+        bg-[#F8FAFC]
+        px-6
+        py-4
+        outline-none
+      "
+    />
 
-              <textarea
-                rows={6}
-                placeholder="Write Your Message..."
-                className="
-                  w-full
-                  rounded-2xl
-                  border
-                  border-[#E5E7EB]
-                  bg-[#F8FAFC]
-                  px-6
-                  py-4
-                  outline-none
-                "
-              />
+    <textarea
+      rows={6}
+      name="message"
+      placeholder="Write Your Message..."
+      required
+      className="
+        w-full
+        rounded-2xl
+        border
+        border-[#E5E7EB]
+        bg-[#F8FAFC]
+        px-6
+        py-4
+        outline-none
+      "
+    />
 
-              <button
-                type="submit"
-                className="
-                  inline-flex
-                  items-center
-                  gap-3
-                  rounded-full
-                  bg-gradient-to-r
-                  from-[#0A6EBD]
-                  to-[#15176B]
-                  px-8
-                  py-4
-                  text-sm
-                  font-semibold
-                  text-white
-                "
-              >
-                Send Message
-
-                <ArrowRight className="h-4 w-4" />
-              </button>
-            </form>
-          </div>
+    <button
+      type="submit"
+      className="
+        inline-flex
+        items-center
+        gap-3
+        rounded-full
+        bg-gradient-to-r
+        from-[#0A6EBD]
+        to-[#15176B]
+        px-8
+        py-4
+        text-sm
+        font-semibold
+        text-white
+      "
+    >
+      Send Message
+      <ArrowRight className="h-4 w-4" />
+    </button>
+  </form>
+</div>
         </div>
       </section>
 
