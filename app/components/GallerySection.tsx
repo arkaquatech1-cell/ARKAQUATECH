@@ -11,8 +11,8 @@ const galleryImages = [
   "/Gallery/gallery5.png",
   "/Gallery/gallery6.jpg",
   "/Gallery/gallery7.jpg",
-  "/Gallery/gallery8.jpg",
-  "/Gallery/gallery9.jpg",
+  // "/Gallery/gallery8.jpg",
+  // "/Gallery/gallery9.jpg",
 ];
 
 export default function GallerySection() {
