@@ -97,63 +97,76 @@ export default function CareersPage() {
 
       {/* JOBS */}
 
-      <section className="pb-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-center text-4xl font-black text-[#021B2F] mb-12">
-            Current Open Positions
-          </h2>
+   {/* JOBS */}
 
-          <div className="grid gap-8">
-            {jobs.map((job) => (
-              <div
-                key={job.title}
-                className="rounded-[32px] border border-[#E5E7EB] bg-white p-8 shadow-lg hover:shadow-xl transition"
-              >
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                  <div>
-                    <h3 className="text-2xl font-bold text-[#021B2F]">
-                      {job.title}
-                    </h3>
+<section className="pb-24 px-6">
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-center text-4xl font-black text-[#021B2F] mb-12">
+      Current Open Positions
+    </h2>
 
-                    <div className="mt-4 flex items-center gap-2 text-gray-600">
-                      <MapPin className="h-4 w-4" />
-                      {job.location}
-                    </div>
-                  </div>
+    <div className="grid gap-8">
+      {jobs.map((job) => (
+        <div
+          key={job.title}
+          className="rounded-[32px] border border-[#E5E7EB] bg-white p-8 shadow-lg hover:shadow-xl transition"
+        >
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+            <div>
+              <h3 className="text-2xl font-bold text-[#021B2F]">
+                {job.title}
+              </h3>
 
-                https://api.whatsapp.com/send/?phone=919063289228&text&type=phone_number&app_absent=0
-                </div>
+              <div className="mt-4 flex items-center gap-2 text-gray-600">
+                <MapPin className="h-4 w-4" />
+                {job.location}
               </div>
-            ))}
+            </div>
+
+            <a
+              href="https://api.whatsapp.com/send/?phone=919063289228&text=Hello%20ARK%20Aquatech,%20I%20am%20interested%20in%20applying%20for%20this%20position.&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0A6EBD] to-[#15176B] px-8 py-4 text-white font-semibold hover:scale-105 transition"
+            >
+              Apply Now
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* CTA */}
 
-      <section className="pb-24 px-6">
-        <div className="max-w-5xl mx-auto rounded-[40px] bg-gradient-to-r from-[#0A6EBD] to-[#15176B] p-12 md:p-16 text-center text-white">
-          <Briefcase className="mx-auto h-14 w-14 mb-6" />
+   {/* CTA */}
 
-          <h2 className="text-4xl font-black">
-            Don't See a Suitable Position?
-          </h2>
+<section className="pb-24 px-6">
+  <div className="max-w-5xl mx-auto rounded-[40px] bg-gradient-to-r from-[#0A6EBD] to-[#15176B] p-12 md:p-16 text-center text-white">
+    <Briefcase className="mx-auto h-14 w-14 mb-6" />
 
-          <p className="mt-6 text-lg opacity-90 max-w-2xl mx-auto">
-            We're always looking for talented professionals passionate
-            about aquaculture, engineering, technology, and innovation.
-          </p>
+    <h2 className="text-4xl font-black">
+      Submit Your Resume Today
+    </h2>
 
-          <a
-  href="https://api.whatsapp.com/send/?phone=919063289228&text=Hello%20ARK%20Aquatech,%20I%20would%20like%20to%20share%20my%20resume."
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex mt-8 rounded-full bg-white px-8 py-4 font-semibold text-[#15176B]"
->
-  Send Your Resume
-</a>
-        </div>
-      </section>
+    <p className="mt-6 text-lg opacity-90 max-w-2xl mx-auto">
+      Looking for a rewarding career in aquaculture, engineering,
+      sales, project management, or technology? Send your resume
+      directly to our recruitment team through WhatsApp.
+    </p>
+
+    <a
+      href="https://api.whatsapp.com/send/?phone=919063289228&text=Hello%20ARK%20Aquatech,%20I%20would%20like%20to%20share%20my%20resume.&type=phone_number&app_absent=0"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex mt-8 rounded-full bg-white px-8 py-4 font-semibold text-[#15176B] hover:scale-105 transition"
+    >
+      Send Your Resume
+    </a>
+  </div>
+</section>
     </main>
   );
 }
