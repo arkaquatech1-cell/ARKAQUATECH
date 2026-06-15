@@ -30,7 +30,7 @@ const sendEmail = async (
   try {
     await emailjs.sendForm(
       "service_60tnen7",
-      "template_vx135m",
+      "template_vx135mi",
       form.current,
       "QFLRLgmnV8AeJqhgu"
     );
