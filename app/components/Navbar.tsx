@@ -88,6 +88,10 @@ const navLinks: NavLink[] = [
   {
     title: "Careers",
     href: "/careers",
+  },
+  {
+    title: "Blogs",
+    href: "/blogs",
   }
 ,
   {

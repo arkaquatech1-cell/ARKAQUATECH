@@ -5,35 +5,35 @@ import Image from "next/image";
 const partners = [
   {
     name: "CIBA",
-    logo: "/partners/ciba.jpg",
+    logo: "/partners/CIBA.jpg",
   },
   {
     name: "COCA COLA",
-    logo: "/partners/cocacola.jpg",
+    logo: "/partners/COCA-COLA.jpg",
   },
   {
     name: "NFDB",
-    logo: "/partners/nfdb.jpg",
+    logo: "/partners/NFDB.jpg",
   },
   {
     name: "ICAR",
-    logo: "/partners/icar.jpg",
+    logo: "/partners/ICAR.jpg",
   },
   {
     name: "RGCA",
-    logo: "/partners/rgca.jpg",
+    logo: "/partners/RGCA.jpg",
   },
   {
-    name: "BSR",
-    logo: "/partners/bsr.jpg",
+    name: "FWI",
+    logo: "/partners/FWI.jpg",
   },
   {
-    name: "RECICLAR TECHNOLOGIES",
-    logo: "/partners/reciclar.jpg",
+    name: "AIIMS",
+    logo: "/partners/AIIMS.jpg",
   },
   {
     name: "VARUN HOSPITALITY",
-    logo: "/partners/varun.jpg",
+    logo: "/partners/VARUN.jpg"
   },
 ];
 
@@ -275,3 +275,4 @@ export default function TrustedPartnersSection() {
     </section>
   );
 }
+
