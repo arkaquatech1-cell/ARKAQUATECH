@@ -1,7 +1,388 @@
+// "use client";
+
+// import { useEffect, useState } from "react";
+// import { X, ArrowRight } from "lucide-react";
+
+// export default function LeadGenerationPopup() {
+//   const [open, setOpen] = useState(false);
+
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     company: "",
+//     phone: "",
+//     email: "",
+//     message: "",
+//   });
+
+//   const handleChange = (
+//     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+//   ) => {
+//     setFormData({
+//       ...formData,
+//       [e.target.name]: e.target.value,
+//     });
+//   };
+
+//   const handleSubmit = (
+//     e: React.FormEvent<HTMLFormElement>
+//   ) => {
+//     e.preventDefault();
+
+//     const message = `
+// *New Consultation Request*
+
+// 👤 Name: ${formData.name}
+// 🏢 Company: ${formData.company}
+// 📞 Phone: ${formData.phone}
+// 📧 Email: ${formData.email}
+
+// 📝 Requirement:
+// ${formData.message}
+// `;
+
+//     window.open(
+//       `https://api.whatsapp.com/send?phone=919063289228&text=${encodeURIComponent(
+//         message
+//       )}`,
+//       "_blank"
+//     );
+
+//     setOpen(false);
+
+//     setFormData({
+//       name: "",
+//       company: "",
+//       phone: "",
+//       email: "",
+//       message: "",
+//     });
+//   };
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       setOpen(true);
+//     }, 6000);
+
+//     return () => clearTimeout(timer);
+//   }, []);
+
+//   if (!open) return null;
+
+//   return (
+//     <>
+//       {/* OVERLAY */}
+
+//       <div
+//         className="
+//           fixed
+//           inset-0
+//           z-[9998]
+//           bg-black/60
+//           backdrop-blur-sm
+//         "
+//       />
+
+//       {/* POPUP */}
+
+//       <div
+//         className="
+//           fixed
+//           inset-0
+//           z-[9999]
+//           flex
+//           items-center
+//           justify-center
+//           overflow-y-auto
+//           p-4
+//         "
+//       >
+//         <div
+//           className="
+//             relative
+//             w-full
+//             max-w-xl
+//             overflow-hidden
+//             rounded-[28px]
+//             bg-white
+//             shadow-[0_25px_80px_rgba(0,0,0,0.35)]
+//           "
+//         >
+//           {/* CLOSE BUTTON */}
+
+//           <button
+//             onClick={() => setOpen(false)}
+//             className="
+//               absolute
+//               right-4
+//               top-4
+//               z-50
+//               flex
+//               h-10
+//               w-10
+//               items-center
+//               justify-center
+//               rounded-full
+//               bg-[#F3F4F6]
+//               text-[#021526]
+//               shadow-md
+//               transition-all
+//               duration-300
+//               hover:rotate-90
+//             "
+//           >
+//             <X className="h-5 w-5" />
+//           </button>
+
+//           {/* CONTENT */}
+
+//           <div
+//             className="
+//               px-5
+//               py-8
+//               sm:px-10
+//               sm:py-10
+//             "
+//           >
+//             {/* TITLE */}
+
+//             <div className="text-center">
+//               <span
+//                 className="
+//                   inline-flex
+//                   rounded-full
+//                   bg-[#0A6EBD]/10
+//                   px-4
+//                   py-2
+//                   text-[11px]
+//                   font-bold
+//                   uppercase
+//                   tracking-[0.18em]
+//                   text-[#0A6EBD]
+//                 "
+//               >
+//                 Free Consultation
+//               </span>
+
+//               <h2
+//                 className="
+//                   mt-5
+//                   text-[34px]
+//                   font-black
+//                   leading-[1]
+//                   tracking-[-0.05em]
+//                   text-[#021526]
+//                   sm:text-[48px]
+//                 "
+//               >
+//                 Let’s Discuss
+//                 <span className="block text-[#0A6EBD]">
+//                   Your Project
+//                 </span>
+//               </h2>
+
+//               <p
+//                 className="
+//                   mx-auto
+//                   mt-4
+//                   max-w-md
+//                   text-[14px]
+//                   leading-[1.8]
+//                   text-[#6B7280]
+//                   sm:text-[15px]
+//                 "
+//               >
+//                 Fill the form and our team will
+//                 contact you quickly regarding your
+//                 aquaculture requirements.
+//               </p>
+//             </div>
+
+//             {/* FORM */}
+
+//           <form onSubmit={handleSubmit} className="mt-8">
+//   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+//     <input
+//       type="text"
+//       name="name"
+//       value={formData.name}
+//       onChange={handleChange}
+//       placeholder="Your Name"
+//       required
+//       className="
+//         h-12
+//         w-full
+//         rounded-2xl
+//         border
+//         border-[#E5E7EB]
+//         bg-[#F8FAFC]
+//         px-4
+//         text-sm
+//         outline-none
+//         transition-all
+//         duration-300
+//         focus:border-[#0A6EBD]
+//         focus:bg-white
+//       "
+//     />
+
+//     <input
+//       type="text"
+//       name="company"
+//       value={formData.company}
+//       onChange={handleChange}
+//       placeholder="Company Name"
+//       className="
+//         h-12
+//         w-full
+//         rounded-2xl
+//         border
+//         border-[#E5E7EB]
+//         bg-[#F8FAFC]
+//         px-4
+//         text-sm
+//         outline-none
+//         transition-all
+//         duration-300
+//         focus:border-[#0A6EBD]
+//         focus:bg-white
+//       "
+//     />
+
+//     <input
+//       type="tel"
+//       name="phone"
+//       value={formData.phone}
+//       onChange={handleChange}
+//       placeholder="Phone Number"
+//       required
+//       className="
+//         h-12
+//         w-full
+//         rounded-2xl
+//         border
+//         border-[#E5E7EB]
+//         bg-[#F8FAFC]
+//         px-4
+//         text-sm
+//         outline-none
+//         transition-all
+//         duration-300
+//         focus:border-[#0A6EBD]
+//         focus:bg-white
+//       "
+//     />
+
+//     <input
+//       type="email"
+//       name="email"
+//       value={formData.email}
+//       onChange={handleChange}
+//       placeholder="Email Address"
+//       required
+//       className="
+//         h-12
+//         w-full
+//         rounded-2xl
+//         border
+//         border-[#E5E7EB]
+//         bg-[#F8FAFC]
+//         px-4
+//         text-sm
+//         outline-none
+//         transition-all
+//         duration-300
+//         focus:border-[#0A6EBD]
+//         focus:bg-white
+//       "
+//     />
+//   </div>
+
+//   <div className="mt-4">
+//     <textarea
+//       rows={4}
+//       name="message"
+//       value={formData.message}
+//       onChange={handleChange}
+//       placeholder="Requirement Message"
+//       required
+//       className="
+//         w-full
+//         rounded-2xl
+//         border
+//         border-[#E5E7EB]
+//         bg-[#F8FAFC]
+//         px-4
+//         py-4
+//         text-sm
+//         outline-none
+//         transition-all
+//         duration-300
+//         focus:border-[#0A6EBD]
+//         focus:bg-white
+//       "
+//     />
+//   </div>
+
+//   <div className="mt-5">
+//     <button
+//       type="submit"
+//       className="
+//         group
+//         inline-flex
+//         h-12
+//         w-full
+//         items-center
+//         justify-center
+//         gap-2
+//         rounded-2xl
+//         bg-gradient-to-r
+//         from-[#0A6EBD]
+//         to-[#15176B]
+//         px-6
+//         text-sm
+//         font-semibold
+//         text-white
+//         shadow-[0_15px_35px_rgba(10,110,189,0.25)]
+//         transition-all
+//         duration-300
+//         hover:-translate-y-1
+//       "
+//     >
+//       Submit Inquiry
+
+//       <ArrowRight
+//         className="
+//           h-4
+//           w-4
+//           transition-transform
+//           duration-300
+//           group-hover:translate-x-1
+//         "
+//       />
+//     </button>
+//   </div>
+// </form>
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
+
+
+
 "use client";
 
 import { useEffect, useState } from "react";
-import { X, ArrowRight } from "lucide-react";
+import {
+  X,
+  ArrowRight,
+  MessageCircle,
+  Phone,
+  Mail,
+  User,
+  Building2,
+} from "lucide-react";
 
 export default function LeadGenerationPopup() {
   const [open, setOpen] = useState(false);
@@ -14,6 +395,56 @@ export default function LeadGenerationPopup() {
     message: "",
   });
 
+  /* =========================================================
+     OPEN POPUP AFTER 6 SECONDS
+  ========================================================= */
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setOpen(true);
+    }, 6000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  /* =========================================================
+     DISABLE BODY SCROLL
+  ========================================================= */
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  /* =========================================================
+     ESCAPE KEY CLOSE
+  ========================================================= */
+
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  /* =========================================================
+     INPUT CHANGE
+  ========================================================= */
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -23,29 +454,28 @@ export default function LeadGenerationPopup() {
     });
   };
 
-  const handleSubmit = (
-    e: React.FormEvent<HTMLFormElement>
-  ) => {
+  /* =========================================================
+     SUBMIT TO WHATSAPP
+  ========================================================= */
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const message = `
-*New Consultation Request*
+    const whatsappMessage = `*New ARK AQUATECH Consultation Request*
 
-👤 Name: ${formData.name}
-🏢 Company: ${formData.company}
-📞 Phone: ${formData.phone}
-📧 Email: ${formData.email}
+Name: ${formData.name}
+Company: ${formData.company || "Not provided"}
+Phone: ${formData.phone}
+Email: ${formData.email}
 
-📝 Requirement:
-${formData.message}
-`;
+*Project Requirement:*
+${formData.message}`;
 
-    window.open(
-      `https://api.whatsapp.com/send?phone=919063289228&text=${encodeURIComponent(
-        message
-      )}`,
-      "_blank"
-    );
+    const whatsappURL = `https://wa.me/919063289228?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
+    window.open(whatsappURL, "_blank", "noopener,noreferrer");
 
     setOpen(false);
 
@@ -58,313 +488,517 @@ ${formData.message}
     });
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setOpen(true);
-    }, 6000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   if (!open) return null;
 
   return (
-    <>
-      {/* OVERLAY */}
+    <div
+      className="
+        fixed
+        inset-0
+        z-[9999]
+        flex
+        items-center
+        justify-center
+        overflow-y-auto
+        bg-[#00111F]/75
+        p-3
+        backdrop-blur-md
+        sm:p-5
+      "
+      onMouseDown={(e) => {
+        if (e.target === e.currentTarget) {
+          setOpen(false);
+        }
+      }}
+    >
+      {/* =====================================================
+          POPUP
+      ===================================================== */}
 
       <div
         className="
-          fixed
-          inset-0
-          z-[9998]
-          bg-black/60
-          backdrop-blur-sm
-        "
-      />
-
-      {/* POPUP */}
-
-      <div
-        className="
-          fixed
-          inset-0
-          z-[9999]
-          flex
-          items-center
-          justify-center
-          overflow-y-auto
-          p-4
+          relative
+          my-auto
+          w-full
+          max-w-[620px]
+          overflow-hidden
+          rounded-[24px]
+          bg-white
+          shadow-[0_30px_100px_rgba(0,0,0,0.45)]
+          sm:rounded-[30px]
         "
       >
+        {/* DECORATION */}
+
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[5px] bg-gradient-to-r from-[#63C96A] via-[#0A6EBD] to-[#15176B]" />
+
+        <div className="pointer-events-none absolute -right-24 -top-24 h-[220px] w-[220px] rounded-full bg-[#0A6EBD]/10 blur-[80px]" />
+
+        <div className="pointer-events-none absolute -bottom-24 -left-24 h-[220px] w-[220px] rounded-full bg-[#63C96A]/10 blur-[80px]" />
+
+        {/* =================================================
+            CLOSE
+        ================================================= */}
+
+        <button
+          type="button"
+          onClick={() => setOpen(false)}
+          aria-label="Close consultation popup"
+          className="
+            absolute
+            right-4
+            top-4
+            z-20
+            flex
+            h-9
+            w-9
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-slate-200
+            bg-white
+            text-slate-500
+            shadow-sm
+            transition-all
+            duration-300
+            hover:rotate-90
+            hover:bg-[#021B2F]
+            hover:text-white
+          "
+        >
+          <X className="h-4 w-4" />
+        </button>
+
+        {/* =================================================
+            CONTENT
+        ================================================= */}
+
         <div
           className="
             relative
-            w-full
-            max-w-xl
-            overflow-hidden
-            rounded-[28px]
-            bg-white
-            shadow-[0_25px_80px_rgba(0,0,0,0.35)]
+            max-h-[calc(100vh-24px)]
+            overflow-y-auto
+            px-5
+            py-7
+            sm:max-h-[calc(100vh-40px)]
+            sm:px-8
+            sm:py-8
+            lg:px-9
           "
         >
-          {/* CLOSE BUTTON */}
+          {/* =================================================
+              HEADER
+          ================================================= */}
 
-          <button
-            onClick={() => setOpen(false)}
-            className="
-              absolute
-              right-4
-              top-4
-              z-50
-              flex
-              h-10
-              w-10
-              items-center
-              justify-center
-              rounded-full
-              bg-[#F3F4F6]
-              text-[#021526]
-              shadow-md
-              transition-all
-              duration-300
-              hover:rotate-90
-            "
-          >
-            <X className="h-5 w-5" />
-          </button>
+          <div className="pr-10">
+            <div
+              className="
+                inline-flex
+                items-center
+                gap-2
+                rounded-full
+                border
+                border-[#0A6EBD]/10
+                bg-[#F1F8FF]
+                px-3
+                py-1.5
+              "
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#63C96A] opacity-50" />
 
-          {/* CONTENT */}
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#63C96A]" />
+              </span>
+
+              <span className="text-[9px] font-black uppercase tracking-[0.18em] text-[#0A6EBD]">
+                Free Consultation
+              </span>
+            </div>
+
+            <h2
+              className="
+                mt-4
+                text-[29px]
+                font-black
+                leading-[1.08]
+                tracking-[-0.04em]
+                text-[#021B2F]
+                sm:text-[38px]
+              "
+            >
+              Planning an Aquaculture
+              <span
+                className="
+                  block
+                  bg-gradient-to-r
+                  from-[#0A6EBD]
+                  to-[#63C96A]
+                  bg-clip-text
+                  text-transparent
+                "
+              >
+                Project?
+              </span>
+            </h2>
+
+            <p className="mt-3 max-w-lg text-[12px] leading-6 text-slate-500 sm:text-[13px]">
+              Share your requirements with ARK AQUATECH and connect
+              directly with our team through WhatsApp.
+            </p>
+          </div>
+
+          {/* =================================================
+              QUICK INFO
+          ================================================= */}
 
           <div
             className="
-              px-5
-              py-8
-              sm:px-10
-              sm:py-10
+              mt-5
+              flex
+              flex-wrap
+              gap-x-5
+              gap-y-2
+              border-y
+              border-slate-100
+              py-3
             "
           >
-            {/* TITLE */}
+            <div className="flex items-center gap-2">
+              <MessageCircle className="h-3.5 w-3.5 text-[#63C96A]" />
 
-            <div className="text-center">
-              <span
-                className="
-                  inline-flex
-                  rounded-full
-                  bg-[#0A6EBD]/10
-                  px-4
-                  py-2
-                  text-[11px]
-                  font-bold
-                  uppercase
-                  tracking-[0.18em]
-                  text-[#0A6EBD]
-                "
-              >
-                Free Consultation
+              <span className="text-[10px] font-semibold text-slate-500">
+                Direct WhatsApp
               </span>
-
-              <h2
-                className="
-                  mt-5
-                  text-[34px]
-                  font-black
-                  leading-[1]
-                  tracking-[-0.05em]
-                  text-[#021526]
-                  sm:text-[48px]
-                "
-              >
-                Let’s Discuss
-                <span className="block text-[#0A6EBD]">
-                  Your Project
-                </span>
-              </h2>
-
-              <p
-                className="
-                  mx-auto
-                  mt-4
-                  max-w-md
-                  text-[14px]
-                  leading-[1.8]
-                  text-[#6B7280]
-                  sm:text-[15px]
-                "
-              >
-                Fill the form and our team will
-                contact you quickly regarding your
-                aquaculture requirements.
-              </p>
             </div>
 
-            {/* FORM */}
+            <div className="flex items-center gap-2">
+              <Phone className="h-3.5 w-3.5 text-[#0A6EBD]" />
 
-          <form onSubmit={handleSubmit} className="mt-8">
-  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-    <input
-      type="text"
-      name="name"
-      value={formData.name}
-      onChange={handleChange}
-      placeholder="Your Name"
-      required
-      className="
-        h-12
-        w-full
-        rounded-2xl
-        border
-        border-[#E5E7EB]
-        bg-[#F8FAFC]
-        px-4
-        text-sm
-        outline-none
-        transition-all
-        duration-300
-        focus:border-[#0A6EBD]
-        focus:bg-white
-      "
-    />
-
-    <input
-      type="text"
-      name="company"
-      value={formData.company}
-      onChange={handleChange}
-      placeholder="Company Name"
-      className="
-        h-12
-        w-full
-        rounded-2xl
-        border
-        border-[#E5E7EB]
-        bg-[#F8FAFC]
-        px-4
-        text-sm
-        outline-none
-        transition-all
-        duration-300
-        focus:border-[#0A6EBD]
-        focus:bg-white
-      "
-    />
-
-    <input
-      type="tel"
-      name="phone"
-      value={formData.phone}
-      onChange={handleChange}
-      placeholder="Phone Number"
-      required
-      className="
-        h-12
-        w-full
-        rounded-2xl
-        border
-        border-[#E5E7EB]
-        bg-[#F8FAFC]
-        px-4
-        text-sm
-        outline-none
-        transition-all
-        duration-300
-        focus:border-[#0A6EBD]
-        focus:bg-white
-      "
-    />
-
-    <input
-      type="email"
-      name="email"
-      value={formData.email}
-      onChange={handleChange}
-      placeholder="Email Address"
-      required
-      className="
-        h-12
-        w-full
-        rounded-2xl
-        border
-        border-[#E5E7EB]
-        bg-[#F8FAFC]
-        px-4
-        text-sm
-        outline-none
-        transition-all
-        duration-300
-        focus:border-[#0A6EBD]
-        focus:bg-white
-      "
-    />
-  </div>
-
-  <div className="mt-4">
-    <textarea
-      rows={4}
-      name="message"
-      value={formData.message}
-      onChange={handleChange}
-      placeholder="Requirement Message"
-      required
-      className="
-        w-full
-        rounded-2xl
-        border
-        border-[#E5E7EB]
-        bg-[#F8FAFC]
-        px-4
-        py-4
-        text-sm
-        outline-none
-        transition-all
-        duration-300
-        focus:border-[#0A6EBD]
-        focus:bg-white
-      "
-    />
-  </div>
-
-  <div className="mt-5">
-    <button
-      type="submit"
-      className="
-        group
-        inline-flex
-        h-12
-        w-full
-        items-center
-        justify-center
-        gap-2
-        rounded-2xl
-        bg-gradient-to-r
-        from-[#0A6EBD]
-        to-[#15176B]
-        px-6
-        text-sm
-        font-semibold
-        text-white
-        shadow-[0_15px_35px_rgba(10,110,189,0.25)]
-        transition-all
-        duration-300
-        hover:-translate-y-1
-      "
-    >
-      Submit Inquiry
-
-      <ArrowRight
-        className="
-          h-4
-          w-4
-          transition-transform
-          duration-300
-          group-hover:translate-x-1
-        "
-      />
-    </button>
-  </div>
-</form>
+              <span className="text-[10px] font-semibold text-slate-500">
+                +91 90632 89228
+              </span>
+            </div>
           </div>
+
+          {/* =================================================
+              FORM
+          ================================================= */}
+
+          <form onSubmit={handleSubmit} className="mt-5">
+            <div className="grid gap-3 sm:grid-cols-2">
+              {/* NAME */}
+
+              <div>
+                <label
+                  htmlFor="popup-name"
+                  className="mb-1.5 block text-[11px] font-bold text-[#021B2F]"
+                >
+                  Your Name
+                </label>
+
+                <div className="relative">
+                  <User
+                    className="
+                      absolute
+                      left-3.5
+                      top-1/2
+                      h-4
+                      w-4
+                      -translate-y-1/2
+                      text-slate-400
+                    "
+                  />
+
+                  <input
+                    id="popup-name"
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Enter your name"
+                    required
+                    className="
+                      h-11
+                      w-full
+                      rounded-xl
+                      border
+                      border-slate-200
+                      bg-[#F8FAFC]
+                      pl-10
+                      pr-3
+                      text-[12px]
+                      text-[#021B2F]
+                      outline-none
+                      transition-all
+                      placeholder:text-slate-400
+                      focus:border-[#0A6EBD]
+                      focus:bg-white
+                      focus:ring-4
+                      focus:ring-[#0A6EBD]/5
+                    "
+                  />
+                </div>
+              </div>
+
+              {/* COMPANY */}
+
+              <div>
+                <label
+                  htmlFor="popup-company"
+                  className="mb-1.5 block text-[11px] font-bold text-[#021B2F]"
+                >
+                  Company
+                  <span className="ml-1 font-normal text-slate-400">
+                    (Optional)
+                  </span>
+                </label>
+
+                <div className="relative">
+                  <Building2
+                    className="
+                      absolute
+                      left-3.5
+                      top-1/2
+                      h-4
+                      w-4
+                      -translate-y-1/2
+                      text-slate-400
+                    "
+                  />
+
+                  <input
+                    id="popup-company"
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Company name"
+                    className="
+                      h-11
+                      w-full
+                      rounded-xl
+                      border
+                      border-slate-200
+                      bg-[#F8FAFC]
+                      pl-10
+                      pr-3
+                      text-[12px]
+                      text-[#021B2F]
+                      outline-none
+                      transition-all
+                      placeholder:text-slate-400
+                      focus:border-[#0A6EBD]
+                      focus:bg-white
+                      focus:ring-4
+                      focus:ring-[#0A6EBD]/5
+                    "
+                  />
+                </div>
+              </div>
+
+              {/* PHONE */}
+
+              <div>
+                <label
+                  htmlFor="popup-phone"
+                  className="mb-1.5 block text-[11px] font-bold text-[#021B2F]"
+                >
+                  Phone Number
+                </label>
+
+                <div className="relative">
+                  <Phone
+                    className="
+                      absolute
+                      left-3.5
+                      top-1/2
+                      h-4
+                      w-4
+                      -translate-y-1/2
+                      text-slate-400
+                    "
+                  />
+
+                  <input
+                    id="popup-phone"
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="10-digit mobile number"
+                    required
+                    inputMode="numeric"
+                    pattern="[0-9]{10}"
+                    maxLength={10}
+                    className="
+                      h-11
+                      w-full
+                      rounded-xl
+                      border
+                      border-slate-200
+                      bg-[#F8FAFC]
+                      pl-10
+                      pr-3
+                      text-[12px]
+                      text-[#021B2F]
+                      outline-none
+                      transition-all
+                      placeholder:text-slate-400
+                      focus:border-[#0A6EBD]
+                      focus:bg-white
+                      focus:ring-4
+                      focus:ring-[#0A6EBD]/5
+                    "
+                  />
+                </div>
+              </div>
+
+              {/* EMAIL */}
+
+              <div>
+                <label
+                  htmlFor="popup-email"
+                  className="mb-1.5 block text-[11px] font-bold text-[#021B2F]"
+                >
+                  Email Address
+                </label>
+
+                <div className="relative">
+                  <Mail
+                    className="
+                      absolute
+                      left-3.5
+                      top-1/2
+                      h-4
+                      w-4
+                      -translate-y-1/2
+                      text-slate-400
+                    "
+                  />
+
+                  <input
+                    id="popup-email"
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Your email address"
+                    required
+                    className="
+                      h-11
+                      w-full
+                      rounded-xl
+                      border
+                      border-slate-200
+                      bg-[#F8FAFC]
+                      pl-10
+                      pr-3
+                      text-[12px]
+                      text-[#021B2F]
+                      outline-none
+                      transition-all
+                      placeholder:text-slate-400
+                      focus:border-[#0A6EBD]
+                      focus:bg-white
+                      focus:ring-4
+                      focus:ring-[#0A6EBD]/5
+                    "
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* REQUIREMENT */}
+
+            <div className="mt-3">
+              <label
+                htmlFor="popup-message"
+                className="mb-1.5 block text-[11px] font-bold text-[#021B2F]"
+              >
+                Project Requirement
+              </label>
+
+              <textarea
+                id="popup-message"
+                rows={3}
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Tell us about your aquaculture project..."
+                required
+                className="
+                  w-full
+                  resize-none
+                  rounded-xl
+                  border
+                  border-slate-200
+                  bg-[#F8FAFC]
+                  px-4
+                  py-3
+                  text-[12px]
+                  leading-5
+                  text-[#021B2F]
+                  outline-none
+                  transition-all
+                  placeholder:text-slate-400
+                  focus:border-[#0A6EBD]
+                  focus:bg-white
+                  focus:ring-4
+                  focus:ring-[#0A6EBD]/5
+                "
+              />
+            </div>
+
+            {/* SUBMIT */}
+
+            <button
+              type="submit"
+              className="
+                group
+                mt-4
+                inline-flex
+                h-12
+                w-full
+                items-center
+                justify-center
+                gap-2.5
+                rounded-xl
+                bg-gradient-to-r
+                from-[#0A6EBD]
+                to-[#15176B]
+                px-6
+                text-[12px]
+                font-bold
+                text-white
+                shadow-[0_12px_30px_rgba(10,110,189,0.22)]
+                transition-all
+                duration-300
+                hover:-translate-y-0.5
+                hover:shadow-[0_16px_35px_rgba(10,110,189,0.3)]
+              "
+            >
+              <MessageCircle className="h-4 w-4" />
+
+              Submit via WhatsApp
+
+              <ArrowRight
+                className="
+                  h-4
+                  w-4
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
+              />
+            </button>
+
+            <p className="mt-3 text-center text-[9px] leading-4 text-slate-400">
+              Clicking submit will open WhatsApp with your enquiry details.
+            </p>
+          </form>
         </div>
       </div>
-    </>
+    </div>
   );
 }
