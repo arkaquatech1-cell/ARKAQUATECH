@@ -2,14 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-
 import {
-  Mail,
-  Phone,
-  MapPin,
   ArrowUpRight,
-  Waves,
   Building2,
+  Mail,
+  MapPin,
+  Phone,
+  Waves,
 } from "lucide-react";
 
 import {
@@ -20,7 +19,7 @@ import {
 } from "react-icons/fa";
 
 /* =========================================================
-   QUICK LINKS
+   DATA
 ========================================================= */
 
 const quickLinks = [
@@ -33,11 +32,7 @@ const quickLinks = [
   { title: "Contact", href: "/contact" },
 ];
 
-/* =========================================================
-   SERVICES
-========================================================= */
-
-const services = [
+const expertise = [
   "Advanced Aquaculture Projects",
   "Industrial Water Management",
   "Smart Hatchery Engineering",
@@ -45,28 +40,24 @@ const services = [
   "Nutrition & Farm Essentials",
 ];
 
-/* =========================================================
-   SOCIAL LINKS
-========================================================= */
-
-const socialLinks = [
+const socials = [
   {
-    icon: <FaFacebookF size={15} />,
+    icon: FaFacebookF,
     href: "#",
     label: "Facebook",
   },
   {
-    icon: <FaInstagram size={15} />,
+    icon: FaInstagram,
     href: "#",
     label: "Instagram",
   },
   {
-    icon: <FaLinkedinIn size={15} />,
+    icon: FaLinkedinIn,
     href: "#",
     label: "LinkedIn",
   },
   {
-    icon: <FaYoutube size={15} />,
+    icon: FaYoutube,
     href: "#",
     label: "YouTube",
   },
@@ -74,220 +65,114 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10">
+    <footer className="relative overflow-hidden bg-[#031D2B] text-white">
       {/* =====================================================
-          VIDEO BACKGROUND
+          BACKGROUND
       ===================================================== */}
 
-      <div className="absolute inset-0 -z-20 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0">
+        {/* VIDEO */}
+
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="
-            absolute
-            inset-0
-            h-full
-            w-full
-            object-cover
-            brightness-[0.30]
-            contrast-[1.1]
-            saturate-[1.2]
-          "
+          className="absolute inset-0 h-full w-full object-cover opacity-[0.08]"
         >
           <source src="/images/file.mp4" type="video/mp4" />
         </video>
 
-        {/* DARK OCEAN OVERLAY */}
+        {/* DARK OVERLAY */}
 
-        <div
-          className="
-            absolute
-            inset-0
-            bg-gradient-to-b
-            from-[#021B2F]/80
-            via-[#021B2F]/75
-            to-[#010E18]/95
-          "
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#071F2E]/95 via-[#031D2B]/95 to-[#01131E]" />
 
-        {/* BLUE GLOW */}
+        {/* LIGHTS */}
 
-        <div
-          className="
-            absolute
-            -left-[120px]
-            -top-[120px]
-            h-[320px]
-            w-[320px]
-            rounded-full
-            bg-cyan-400/20
-            blur-[120px]
-          "
-        />
+        <div className="absolute -left-40 top-0 h-[400px] w-[400px] rounded-full bg-[#0A6EBD]/10 blur-[140px]" />
 
-        {/* GREEN GLOW */}
-
-        <div
-          className="
-            absolute
-            -bottom-[120px]
-            -right-[120px]
-            h-[320px]
-            w-[320px]
-            rounded-full
-            bg-emerald-400/15
-            blur-[120px]
-          "
-        />
-
-        {/* GRID */}
-
-        <div
-          className="absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px)",
-            backgroundSize: "72px 72px",
-          }}
-        />
+        <div className="absolute -right-40 bottom-0 h-[400px] w-[400px] rounded-full bg-[#63C96A]/10 blur-[140px]" />
       </div>
 
-      {/* BLUR */}
-
-      <div
-        className="
-          absolute
-          inset-0
-          -z-10
-          bg-black/10
-          backdrop-blur-[2px]
-        "
-      />
-
       {/* =====================================================
-          MAIN CONTAINER
+          MAIN CONTENT
       ===================================================== */}
 
-      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         {/* ===================================================
-            FOOTER GRID
+            TOP GRID
         =================================================== */}
 
-        <div
-          className="
-            grid
-            gap-12
-            py-16
-            md:grid-cols-2
-            lg:grid-cols-[1.15fr_0.7fr_0.9fr_1.5fr]
-            lg:gap-10
-            lg:py-20
-          "
-        >
+        <div className="grid gap-12 border-b border-white/10 py-14 md:grid-cols-2 lg:grid-cols-12 lg:gap-8 lg:py-16">
           {/* =================================================
-              COMPANY
+              BRAND
           ================================================= */}
 
-          <div>
-            <Link href="/" className="flex items-center gap-4">
-              {/* LOGO */}
-
-              <div
-                className="
-                  relative
-                  h-[72px]
-                  w-[72px]
-                  shrink-0
-                  overflow-hidden
-                  rounded-2xl
-                  border
-                  border-white/10
-                  bg-white/10
-                  shadow-[0_10px_30px_rgba(0,0,0,0.2)]
-                  backdrop-blur-xl
-                "
-              >
+          <div className="lg:col-span-4">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-4"
+            >
+              <div className="relative h-[64px] w-[64px] overflow-hidden rounded-2xl border border-white/10 bg-white/10">
                 <Image
                   src="/logo/logo1.png"
                   alt="ARK AQUATECH"
                   fill
-                  sizes="72px"
+                  sizes="64px"
                   className="object-contain p-2"
                 />
               </div>
 
-              {/* BRAND */}
-
               <div>
-                <h2 className="text-[24px] font-bold tracking-tight text-white">
+                <h2 className="text-[23px] font-black tracking-[-0.03em]">
                   ARK AQUATECH
                 </h2>
 
-                <p
-                  className="
-                    mt-2
-                    text-[10px]
-                    uppercase
-                    tracking-[0.28em]
-                    text-cyan-100/70
-                  "
-                >
+                <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.28em] text-cyan-300/70">
                   Smart Aquaculture
                 </p>
               </div>
             </Link>
 
-            {/* DESCRIPTION */}
-
-            <p
-              className="
-                mt-6
-                max-w-sm
-                text-[14px]
-                leading-[1.9]
-                text-white/70
-              "
-            >
+            <p className="mt-6 max-w-[360px] text-[13px] leading-7 text-white/60">
               Technology-driven aquaculture engineering and infrastructure
-              solutions for modern commercial fish and shrimp farming,
-              combining smart water management, sustainable systems and
-              practical field expertise.
+              solutions for modern commercial fish and shrimp farming.
             </p>
 
             {/* SOCIAL */}
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              {socialLinks.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  aria-label={item.label}
-                  className="
-                    flex
-                    h-11
-                    w-11
-                    items-center
-                    justify-center
-                    rounded-xl
-                    border
-                    border-white/10
-                    bg-white/10
-                    text-white/70
-                    shadow-[0_8px_25px_rgba(0,0,0,0.15)]
-                    backdrop-blur-xl
-                    transition-all
-                    duration-300
-                    hover:scale-105
-                    hover:border-cyan-300/30
-                    hover:bg-white/15
-                    hover:text-white
-                  "
-                >
-                  {item.icon}
-                </Link>
-              ))}
+            <div className="mt-7 flex gap-2.5">
+              {socials.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    aria-label={item.label}
+                    className="
+                      flex
+                      h-10
+                      w-10
+                      items-center
+                      justify-center
+                      rounded-xl
+                      border
+                      border-white/10
+                      bg-white/[0.06]
+                      text-white/60
+                      transition-all
+                      duration-300
+                      hover:-translate-y-1
+                      hover:border-cyan-300/30
+                      hover:bg-cyan-400/10
+                      hover:text-cyan-300
+                    "
+                  >
+                    <Icon size={14} />
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
@@ -295,14 +180,10 @@ export default function Footer() {
               QUICK LINKS
           ================================================= */}
 
-          <div>
-            <h3 className="text-[20px] font-semibold text-white">
-              Quick Links
-            </h3>
+          <div className="lg:col-span-2">
+            <FooterHeading title="Quick Links" />
 
-            <div className="mt-3 h-[2px] w-10 rounded-full bg-cyan-300" />
-
-            <ul className="mt-6 space-y-4">
+            <ul className="mt-6 space-y-3">
               {quickLinks.map((item) => (
                 <li key={item.title}>
                   <Link
@@ -312,24 +193,15 @@ export default function Footer() {
                       inline-flex
                       items-center
                       gap-2
-                      text-sm
-                      text-white/70
+                      text-[13px]
+                      text-white/60
                       transition-all
                       duration-300
                       hover:translate-x-1
-                      hover:text-white
+                      hover:text-cyan-300
                     "
                   >
-                    <ArrowUpRight
-                      className="
-                        h-3.5
-                        w-3.5
-                        text-cyan-300
-                        transition-transform
-                        duration-300
-                        group-hover:rotate-45
-                      "
-                    />
+                    <ArrowUpRight className="h-3 w-3 text-cyan-300" />
 
                     {item.title}
                   </Link>
@@ -339,32 +211,21 @@ export default function Footer() {
           </div>
 
           {/* =================================================
-              SERVICES
+              EXPERTISE
           ================================================= */}
 
-          <div>
-            <h3 className="text-[20px] font-semibold text-white">
-              Our Expertise
-            </h3>
+          <div className="lg:col-span-3">
+            <FooterHeading title="Our Expertise" green />
 
-            <div className="mt-3 h-[2px] w-10 rounded-full bg-emerald-300" />
-
-            <ul className="mt-6 space-y-4">
-              {services.map((service) => (
+            <ul className="mt-6 space-y-3.5">
+              {expertise.map((item) => (
                 <li
-                  key={service}
-                  className="
-                    flex
-                    items-start
-                    gap-2
-                    text-sm
-                    leading-6
-                    text-white/70
-                  "
+                  key={item}
+                  className="flex items-start gap-2.5 text-[13px] leading-6 text-white/60"
                 >
                   <Waves className="mt-1 h-3.5 w-3.5 shrink-0 text-emerald-300" />
 
-                  {service}
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
@@ -374,312 +235,170 @@ export default function Footer() {
               CONTACT
           ================================================= */}
 
-          <div>
-            <h3 className="text-[20px] font-semibold text-white">
-              Contact
-            </h3>
-
-            <div className="mt-3 h-[2px] w-10 rounded-full bg-cyan-300" />
+          <div className="lg:col-span-3">
+            <FooterHeading title="Contact Us" />
 
             <div className="mt-6 space-y-4">
-              {/* =============================================
-                  PHONE NUMBERS
-              ============================================= */}
+              {/* PHONE */}
 
-              <div
-                className="
-                  flex
-                  gap-4
-                  rounded-2xl
-                  border
-                  border-white/10
-                  bg-white/[0.08]
-                  p-4
-                  shadow-[0_8px_25px_rgba(0,0,0,0.15)]
-                  backdrop-blur-xl
-                  transition-all
-                  duration-300
-                  hover:border-cyan-300/20
-                  hover:bg-white/[0.11]
-                "
-              >
-                <div
-                  className="
-                    flex
-                    h-10
-                    w-10
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-xl
-                    bg-cyan-400/10
-                  "
-                >
-                  <Phone className="h-4 w-4 text-cyan-300" />
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300">
+                  <Phone className="h-4 w-4" />
                 </div>
 
                 <div>
-                  <p className="text-xs text-white/45">
-                    Phone Numbers
+                  <p className="text-[10px] uppercase tracking-wider text-white/35">
+                    Call Us
                   </p>
 
-                  <div className="mt-1.5 flex flex-col gap-1">
-                    <Link
-                      href="tel:+919063289228"
-                      className="
-                        text-sm
-                        font-medium
-                        text-white
-                        transition-colors
-                        hover:text-cyan-300
-                      "
-                    >
-                      +91 90632 89228
-                    </Link>
+                  <Link
+                    href="tel:+919063289228"
+                    className="mt-1 block text-[13px] font-semibold text-white/85 hover:text-cyan-300"
+                  >
+                    +91 90632 89228
+                  </Link>
 
-                    <Link
-                      href="tel:+917799399555"
-                      className="
-                        text-sm
-                        font-medium
-                        text-white
-                        transition-colors
-                        hover:text-cyan-300
-                      "
-                    >
-                      +91 77993 99555
-                    </Link>
-                  </div>
+                  <Link
+                    href="tel:+917799399555"
+                    className="mt-1 block text-[13px] font-semibold text-white/85 hover:text-cyan-300"
+                  >
+                    +91 77993 99555
+                  </Link>
                 </div>
               </div>
 
-              {/* =============================================
-                  EMAIL
-              ============================================= */}
+              {/* EMAIL */}
 
-              <div
-                className="
-                  flex
-                  gap-4
-                  rounded-2xl
-                  border
-                  border-white/10
-                  bg-white/[0.08]
-                  p-4
-                  shadow-[0_8px_25px_rgba(0,0,0,0.15)]
-                  backdrop-blur-xl
-                  transition-all
-                  duration-300
-                  hover:border-cyan-300/20
-                  hover:bg-white/[0.11]
-                "
-              >
-                <div
-                  className="
-                    flex
-                    h-10
-                    w-10
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-xl
-                    bg-cyan-400/10
-                  "
-                >
-                  <Mail className="h-4 w-4 text-cyan-300" />
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300">
+                  <Mail className="h-4 w-4" />
                 </div>
 
                 <div className="min-w-0">
-                  <p className="text-xs text-white/45">
+                  <p className="text-[10px] uppercase tracking-wider text-white/35">
                     Email
                   </p>
 
                   <Link
                     href="mailto:info@arkaquatech.com"
-                    className="
-                      mt-1.5
-                      block
-                      break-all
-                      text-sm
-                      font-medium
-                      text-white
-                      transition-colors
-                      hover:text-cyan-300
-                    "
+                    className="mt-1 block break-all text-[13px] font-semibold text-white/85 hover:text-cyan-300"
                   >
                     info@arkaquatech.com
                   </Link>
                 </div>
               </div>
+            </div>
 
-              {/* =============================================
-                  MAIN OFFICE
-              ============================================= */}
+            {/* BUTTON */}
 
-              <div
-                className="
-                  flex
-                  gap-4
-                  rounded-2xl
-                  border
-                  border-white/10
-                  bg-white/[0.08]
-                  p-4
-                  shadow-[0_8px_25px_rgba(0,0,0,0.15)]
-                  backdrop-blur-xl
-                  transition-all
-                  duration-300
-                  hover:border-cyan-300/20
-                  hover:bg-white/[0.11]
-                "
-              >
-                <div
-                  className="
-                    flex
-                    h-10
-                    w-10
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-xl
-                    bg-cyan-400/10
-                  "
-                >
-                  <MapPin className="h-4 w-4 text-cyan-300" />
+           
+          </div>
+        </div>
+
+        {/* ===================================================
+            OFFICE LOCATIONS
+        =================================================== */}
+
+        <div className="py-9">
+          <div className="mb-5 flex items-center gap-3">
+            <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-cyan-300">
+              Our Locations
+            </span>
+
+            <div className="h-px flex-1 bg-white/10" />
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-2">
+            {/* =================================================
+                MAIN OFFICE
+            ================================================= */}
+
+            <div
+              className="
+                group
+                relative
+                overflow-hidden
+                rounded-[22px]
+                border
+                border-white/10
+                bg-white/[0.055]
+                p-5
+                transition-all
+                duration-300
+                hover:border-cyan-300/20
+                hover:bg-white/[0.075]
+                sm:p-6
+              "
+            >
+              <div className="flex items-start gap-4">
+                {/* ICON */}
+
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300">
+                  <MapPin className="h-5 w-5" />
                 </div>
 
-                <div>
-                  <div
-                    className="
-                      inline-flex
-                      rounded-full
-                      bg-cyan-400/10
-                      px-2.5
-                      py-1
-                    "
-                  >
-                    <span
-                      className="
-                        text-[9px]
-                        font-bold
-                        uppercase
-                        tracking-[0.14em]
-                        text-cyan-300
-                      "
-                    >
-                      Main Office
-                    </span>
-                  </div>
+                <div className="min-w-0">
+                  {/* BADGE */}
 
-                  <p className="mt-2 text-sm font-semibold text-white">
+                  <span className="inline-flex rounded-full bg-cyan-400/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.15em] text-cyan-300">
+                    Main Office
+                  </span>
+
+                  <h3 className="mt-2 text-[16px] font-bold text-white">
                     Mangalagiri, Guntur
-                  </p>
+                  </h3>
 
-                  <address
-                    className="
-                      mt-1.5
-                      not-italic
-                      text-[12px]
-                      leading-[1.8]
-                      text-white/65
-                    "
-                  >
-                    Plot No. 12, Autonagar Last Line,
-                    <br />
-                    Near APIIC, Mangalagiri,
-                    <br />
-                    Guntur – 522503,
-                    <br />
-                    Andhra Pradesh
+                  <address className="mt-2 not-italic text-[12px] leading-6 text-white/55 sm:text-[13px]">
+                    Plot No. 12, Autonagar Last Line, Near APIIC,
+                    Mangalagiri, Guntur – 522503, Andhra Pradesh
                   </address>
                 </div>
               </div>
+            </div>
 
-              {/* =============================================
-                  BRANCH OFFICE
-              ============================================= */}
+            {/* =================================================
+                BRANCH OFFICE
+            ================================================= */}
 
-              <div
-                className="
-                  flex
-                  gap-4
-                  rounded-2xl
-                  border
-                  border-white/10
-                  bg-white/[0.08]
-                  p-4
-                  shadow-[0_8px_25px_rgba(0,0,0,0.15)]
-                  backdrop-blur-xl
-                  transition-all
-                  duration-300
-                  hover:border-emerald-300/20
-                  hover:bg-white/[0.11]
-                "
-              >
-                <div
-                  className="
-                    flex
-                    h-10
-                    w-10
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-xl
-                    bg-emerald-400/10
-                  "
-                >
-                  <Building2 className="h-4 w-4 text-emerald-300" />
+            <div
+              className="
+                group
+                relative
+                overflow-hidden
+                rounded-[22px]
+                border
+                border-white/10
+                bg-white/[0.055]
+                p-5
+                transition-all
+                duration-300
+                hover:border-emerald-300/20
+                hover:bg-white/[0.075]
+                sm:p-6
+              "
+            >
+              <div className="flex items-start gap-4">
+                {/* ICON */}
+
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-400/10 text-emerald-300">
+                  <Building2 className="h-5 w-5" />
                 </div>
 
-                <div>
-                  <div
-                    className="
-                      inline-flex
-                      rounded-full
-                      bg-emerald-400/10
-                      px-2.5
-                      py-1
-                    "
-                  >
-                    <span
-                      className="
-                        text-[9px]
-                        font-bold
-                        uppercase
-                        tracking-[0.14em]
-                        text-emerald-300
-                      "
-                    >
-                      Branch Office
-                    </span>
-                  </div>
+                <div className="min-w-0">
+                  {/* BADGE */}
 
-                  <p className="mt-2 text-sm font-semibold text-white">
+                  <span className="inline-flex rounded-full bg-emerald-400/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.15em] text-emerald-300">
+                    Branch Office
+                  </span>
+
+                  <h3 className="mt-2 text-[16px] font-bold text-white">
                     Kukatpally, Hyderabad
-                  </p>
+                  </h3>
 
-                  <address
-                    className="
-                      mt-1.5
-                      not-italic
-                      text-[12px]
-                      leading-[1.8]
-                      text-white/65
-                    "
-                  >
-                    12th Floor, Manjeera Trinity,
-                    <br />
-                    Corporate E-Seva Lane,
-                    <br />
-                    JNTU–Hitech City Road,
-                    <br />
-                    Near Manjeera Mall,
-                    <br />
-                    KPHB Phase 3, Kukatpally,
-                    <br />
-                    Hyderabad – 500072,
-                    <br />
-                    Telangana
+                  <address className="mt-2 not-italic text-[12px] leading-6 text-white/55 sm:text-[13px]">
+                    12th Floor, Manjeera Trinity, Corporate E-Seva Lane,
+                    JNTU–Hitech City Road, Near Manjeera Mall, KPHB Phase 3,
+                    Kukatpally, Hyderabad – 500072, Telangana
                   </address>
                 </div>
               </div>
@@ -688,99 +407,23 @@ export default function Footer() {
         </div>
 
         {/* ===================================================
-            CONTACT STRIP
+            CTA STRIP
         =================================================== */}
 
         <div
-          className="
-            mb-8
-            flex
-            flex-col
-            gap-5
-            rounded-[24px]
-            border
-            border-white/10
-            bg-white/[0.07]
-            px-5
-            py-5
-            backdrop-blur-xl
-            sm:flex-row
-            sm:items-center
-            sm:justify-between
-            lg:px-7
-          "
+         
         >
           <div>
-            <p
-              className="
-                text-[10px]
-                font-bold
-                uppercase
-                tracking-[0.18em]
-                text-emerald-300
-              "
-            >
-              Start Your Aquaculture Project
-            </p>
+          
 
-            <p className="mt-1.5 text-sm font-semibold text-white">
-              Talk to the ARK AQUATECH team today.
-            </p>
+        
           </div>
 
-          <div className="flex flex-col gap-2 sm:flex-row">
-            <Link
-              href="tel:+919063289228"
-              className="
-                inline-flex
-                items-center
-                justify-center
-                gap-2
-                rounded-full
-                bg-white
-                px-5
-                py-2.5
-                text-xs
-                font-bold
-                text-[#021B2F]
-                transition-all
-                duration-300
-                hover:-translate-y-0.5
-              "
-            >
-              <Phone className="h-3.5 w-3.5" />
-              Call Now
-            </Link>
-
-            <Link
-              href="/contact"
-              className="
-                inline-flex
-                items-center
-                justify-center
-                gap-2
-                rounded-full
-                border
-                border-white/15
-                bg-white/10
-                px-5
-                py-2.5
-                text-xs
-                font-bold
-                text-white
-                transition-all
-                duration-300
-                hover:bg-white/15
-              "
-            >
-              Contact Us
-              <ArrowUpRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
+        
         </div>
 
         {/* ===================================================
-            BOTTOM BAR
+            COPYRIGHT
         =================================================== */}
 
         <div
@@ -794,36 +437,24 @@ export default function Footer() {
             border-white/10
             py-6
             text-center
-            md:flex-row
+            sm:flex-row
           "
         >
-          <p className="text-xs text-white/50">
+          <p className="text-[11px] text-white/40">
             © 2026 ARK AQUATECH. All Rights Reserved.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-5">
+          <div className="flex items-center gap-5">
             <Link
               href="/privacy-policy"
-              className="
-                text-xs
-                text-white/50
-                transition-all
-                duration-300
-                hover:text-white
-              "
+              className="text-[11px] text-white/40 transition-colors hover:text-white"
             >
               Privacy Policy
             </Link>
 
             <Link
               href="/terms"
-              className="
-                text-xs
-                text-white/50
-                transition-all
-                duration-300
-                hover:text-white
-              "
+              className="text-[11px] text-white/40 transition-colors hover:text-white"
             >
               Terms & Conditions
             </Link>
@@ -831,5 +462,31 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+/* =========================================================
+   FOOTER HEADING
+========================================================= */
+
+function FooterHeading({
+  title,
+  green = false,
+}: {
+  title: string;
+  green?: boolean;
+}) {
+  return (
+    <div>
+      <h3 className="text-[16px] font-bold text-white">
+        {title}
+      </h3>
+
+      <div
+        className={`mt-3 h-[2px] w-8 rounded-full ${
+          green ? "bg-emerald-300" : "bg-cyan-300"
+        }`}
+      />
+    </div>
   );
 }
