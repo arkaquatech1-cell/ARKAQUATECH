@@ -8,6 +8,7 @@ import FAQSection from "@/app/components/FAQSection";
 import GallerySection from "@/app/components/GallerySection";
 
 import HeroSection from "@/app/components/HeroSection";
+import OurExpertiseSection from "@/app/components/OurExpertiseSection";
 
 
 
@@ -104,7 +105,7 @@ export default function HomePage() {
 
       {/* PROCESS */}
 
-   
+   <OurExpertiseSection/>
 
 
 

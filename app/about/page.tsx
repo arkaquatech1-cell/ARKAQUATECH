@@ -2,7 +2,8 @@ import AboutHeroSection from "./AboutHeroSection";
 import CompanyIntroSection from "./CompanyIntroSection";
 import CoreServicesSection from "./CoreServicesSection";
 import FAQSection from "./FAQSection";
-import IndustriesSection from "./IndustriesSection";
+import KeyHighlightsSection from "./KeyHighlightsSection";
+
 import MissionVisionSection from "./MissionVisionSection";
 import ProcessSection from "./ProcessSection";
 import ProjectsGallerySection from "./ProjectsGallerySection";
@@ -79,7 +80,7 @@ export default function AboutPage() {
 
       {/* INDUSTRIES */}
 
-      <IndustriesSection />
+   <KeyHighlightsSection/>
 
       {/* TECHNOLOGY */}
 

@@ -1,425 +1,231 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
-  ShieldCheck,
-  Cpu,
+  CheckCircle2,
+  Droplets,
+  Fish,
   Leaf,
-  Users,
-  Sparkles,
-  BadgeCheck,
+  Settings2,
+  ShieldCheck,
 } from "lucide-react";
 
-const features = [
+const benefits = [
   {
-    icon: ShieldCheck,
-    title: "Trusted Engineering Expertise",
+    icon: Settings2,
+    title: "Precision Engineering",
     description:
-      "Professional aquaculture engineering solutions with advanced technical knowledge and industry expertise.",
+      "Engineering-focused aquaculture systems designed for reliable commercial performance.",
   },
-
   {
-    icon: Cpu,
-    title: "Smart Automation Systems",
+    icon: Droplets,
+    title: "Smart Water Management",
     description:
-      "IoT-enabled aquaculture automation with smart monitoring, oxygen management, and remote control systems.",
+      "Intelligent water infrastructure designed to support efficient aquatic production.",
   },
-
   {
     icon: Leaf,
-    title: "Sustainable Infrastructure",
+    title: "Sustainable Practices",
     description:
-      "Eco-friendly Biofloc systems and sustainable water management technologies for long-term efficiency.",
+      "Resource-conscious solutions focused on efficient and responsible aquaculture.",
   },
-
   {
-    icon: Users,
-    title: "Dedicated Technical Support",
+    icon: Fish,
+    title: "Practical Field Expertise",
     description:
-      "Complete installation, maintenance, consulting, and technical support for aquaculture projects.",
+      "Solutions developed around real-world fish and shrimp farming requirements.",
   },
 ];
 
-const stats = [
-  {
-    value: "250+",
-    label: "Projects Completed",
-  },
-
-  {
-    value: "12+",
-    label: "Years Experience",
-  },
-
-  {
-    value: "100%",
-    label: "Client Satisfaction",
-  },
-
-  {
-    value: "24/7",
-    label: "Technical Support",
-  },
+const strengths = [
+  "Commercial Fish & Shrimp Farming",
+  "Advanced Water Engineering",
+  "Scalable Aquaculture Infrastructure",
+  "Long-Term Operational Efficiency",
 ];
 
 export default function WhyChooseUsSection() {
   return (
-    <section
-      className="
-        relative
-        overflow-hidden
-        bg-white
-        py-20
-        sm:py-24
-      "
-    >
-      {/* BACKGROUND */}
+    <section className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28">
+      {/* BACKGROUND DECORATION */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-40 top-10 h-[420px] w-[420px] rounded-full bg-[#0A6EBD]/10 blur-[140px]" />
 
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        {/* GLOW */}
+        <div className="absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-[#63C96A]/10 blur-[140px]" />
 
         <div
-          className="
-            absolute
-            left-[-180px]
-            top-[-180px]
-            h-[420px]
-            w-[420px]
-            rounded-full
-            bg-[#0A6EBD]/10
-            blur-[140px]
-          "
-        />
-
-        <div
-          className="
-            absolute
-            bottom-[-180px]
-            right-[-180px]
-            h-[420px]
-            w-[420px]
-            rounded-full
-            bg-[#63C96A]/10
-            blur-[140px]
-          "
-        />
-
-        {/* GRID */}
-
-        <div
-          className="
-            absolute
-            inset-0
-            opacity-[0.03]
-          "
+          className="absolute inset-0 opacity-[0.025]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(10,110,189,0.08) 1px, transparent 1px), linear-gradient(to right, rgba(10,110,189,0.08) 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
+              "linear-gradient(rgba(10,110,189,0.15) 1px, transparent 1px), linear-gradient(to right, rgba(10,110,189,0.15) 1px, transparent 1px)",
+            backgroundSize: "70px 70px",
           }}
         />
       </div>
 
-      {/* CONTAINER */}
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
+          {/* =====================================================
+              LEFT CONTENT
+          ===================================================== */}
 
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-20 lg:grid-cols-2">
-          {/* LEFT */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7 }}
+          >
+            {/* LABEL */}
 
-          <div>
-            {/* BADGE */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#0A6EBD]/10 bg-[#F4F9FD] px-5 py-2">
+              <span className="h-2 w-2 rounded-full bg-[#63C96A]" />
 
-            <div
-              className="
-                inline-flex
-                items-center
-                gap-2
-                rounded-full
-                border
-                border-[#0A6EBD]/10
-                bg-[#F4F8FF]
-                px-5
-                py-2.5
-              "
-            >
-              <Sparkles className="h-4 w-4 text-[#0A6EBD]" />
-
-              <span
-                className="
-                  text-[11px]
-                  font-semibold
-                  uppercase
-                  tracking-[0.22em]
-                  text-[#021B2F]
-                "
-              >
-                Why Choose Us
+              <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#0A6EBD]">
+                Why ARK AQUATECH
               </span>
             </div>
 
-            {/* TITLE */}
+            {/* HEADING */}
 
-            <h2
-              className="
-                mt-8
-                text-[40px]
-                font-black
-                leading-[0.95]
-                tracking-[-0.05em]
-                text-[#021B2F]
-                sm:text-[56px]
-                lg:text-[72px]
-              "
-            >
-              Smart Engineering
-
-              <span
-                className="
-                  mt-3
-                  block
-                  bg-gradient-to-r
-                  from-[#63C96A]
-                  via-[#0A6EBD]
-                  to-[#15176B]
-                  bg-clip-text
-                  text-transparent
-                "
-              >
-                Sustainable Solutions
+            <h2 className="mt-6 text-[38px] font-black leading-[1.08] tracking-[-0.04em] text-[#021B2F] sm:text-[48px] lg:text-[56px]">
+              Why Choose
+              <span className="block bg-gradient-to-r from-[#0A6EBD] to-[#63C96A] bg-clip-text text-transparent">
+                ARK AQUATECH
               </span>
             </h2>
 
-            {/* DESCRIPTION */}
+            {/* SUB HEADING */}
 
-            <p
-              className="
-                mt-8
-                text-[16px]
-                leading-[2]
-                text-[#4B5563]
-              "
-            >
-              ARK AQUATECH provides advanced
-              aquaculture engineering,
-              industrial water management,
-              smart automation,
-              and sustainable infrastructure
-              solutions designed for long-term
-              efficiency and commercial success.
+            <h3 className="mt-7 max-w-xl text-xl font-bold leading-[1.5] text-[#021B2F] sm:text-[23px]">
+              Engineering Smart Aquaculture for Sustainable Commercial Farming
+            </h3>
+
+            <div className="mt-6 h-[3px] w-20 rounded-full bg-gradient-to-r from-[#0A6EBD] to-[#63C96A]" />
+
+            {/* EXACT CONTENT */}
+
+            <p className="mt-7 max-w-xl text-[15px] leading-8 text-slate-600 sm:text-base">
+              ARK AQUATECH delivers intelligent aquaculture infrastructure and
+              advanced water engineering solutions designed for modern fish
+              and shrimp farming. Our systems combine precision engineering,
+              sustainable practices, and practical field expertise to support
+              high-efficiency aquatic production.
             </p>
 
-            {/* FEATURES */}
+            {/* STRENGTHS */}
 
-            <div className="mt-14 space-y-7">
-              {features.map((item, index) => {
-                const Icon = item.icon;
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {strengths.map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-[#F8FAFC] px-4 py-4"
+                >
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-[#63C96A]" />
 
-                return (
-                  <div
-                    key={index}
-                    className="
-                      flex
-                      gap-5
-                      rounded-[28px]
-                      border
-                      border-[#E5E7EB]
-                      bg-white
-                      p-6
-                      shadow-[0_10px_35px_rgba(0,0,0,0.05)]
-                      transition-all
-                      duration-500
-                      hover:-translate-y-1
-                      hover:shadow-[0_20px_50px_rgba(10,110,189,0.10)]
-                    "
-                  >
-                    {/* ICON */}
+                  <span className="text-[13px] font-bold leading-5 text-[#021B2F]">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
-                    <div
-                      className="
-                        flex
-                        h-14
-                        w-14
-                        min-w-[56px]
-                        items-center
-                        justify-center
-                        rounded-2xl
-                        bg-gradient-to-r
-                        from-[#0A6EBD]
-                        to-[#15176B]
-                        shadow-lg
-                      "
+          {/* =====================================================
+              RIGHT PREMIUM CARDS
+          ===================================================== */}
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7 }}
+            className="relative"
+          >
+            {/* DARK CONTAINER */}
+
+            <div className="relative overflow-hidden rounded-[38px] bg-[#021B2F] p-5 shadow-[0_30px_80px_rgba(2,27,47,0.18)] sm:p-7 lg:p-8">
+              {/* LIGHTS */}
+
+              <div className="absolute -right-24 -top-24 h-[280px] w-[280px] rounded-full bg-[#0A6EBD]/30 blur-[100px]" />
+
+              <div className="absolute -bottom-28 -left-20 h-[280px] w-[280px] rounded-full bg-[#63C96A]/15 blur-[100px]" />
+
+              {/* TOP */}
+
+              <div className="relative mb-6 flex items-center justify-between">
+                <div>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#63C96A]">
+                    Our Advantage
+                  </p>
+
+                  <h3 className="mt-2 text-xl font-black text-white sm:text-2xl">
+                    Engineered for Performance
+                  </h3>
+                </div>
+
+                <div className="flex h-14 w-14 items-center justify-center rounded-[18px] border border-white/10 bg-white/10 text-[#63C96A]">
+                  <ShieldCheck className="h-6 w-6" />
+                </div>
+              </div>
+
+              {/* BENEFIT CARDS */}
+
+              <div className="relative grid gap-4 sm:grid-cols-2">
+                {benefits.map((item, index) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <motion.div
+                      key={item.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.5,
+                        delay: index * 0.08,
+                      }}
+                      whileHover={{
+                        y: -5,
+                      }}
+                      className="group rounded-[25px] border border-white/10 bg-white/[0.06] p-6 backdrop-blur-sm transition-colors duration-300 hover:bg-white/[0.1]"
                     >
-                      <Icon className="h-7 w-7 text-white" />
-                    </div>
+                      {/* ICON */}
 
-                    {/* TEXT */}
+                      <div className="flex h-12 w-12 items-center justify-center rounded-[16px] bg-white/10 text-[#63C96A] transition-all duration-300 group-hover:bg-[#0A6EBD] group-hover:text-white">
+                        <Icon className="h-5 w-5" />
+                      </div>
 
-                    <div>
-                      <h3
-                        className="
-                          text-[24px]
-                          font-bold
-                          tracking-[-0.03em]
-                          text-[#021B2F]
-                        "
-                      >
+                      <h4 className="mt-5 text-[16px] font-black text-white">
                         {item.title}
-                      </h3>
+                      </h4>
 
-                      <p
-                        className="
-                          mt-3
-                          text-[15px]
-                          leading-[1.9]
-                          text-[#6B7280]
-                        "
-                      >
+                      <p className="mt-3 text-[13px] leading-6 text-slate-300">
                         {item.description}
                       </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
 
-          {/* RIGHT CARD */}
-
-          <div
-            className="
-              relative
-              overflow-hidden
-              rounded-[36px]
-              border
-              border-[#E5E7EB]
-              bg-white
-              p-8
-              shadow-[0_20px_80px_rgba(0,0,0,0.08)]
-              sm:p-10
-            "
-          >
-            {/* BACKGROUND */}
-
-            <div
-              className="
-                absolute
-                inset-0
-                bg-gradient-to-br
-                from-[#0A6EBD]/5
-                to-[#63C96A]/5
-              "
-            />
-
-            {/* CONTENT */}
-
-            <div className="relative z-10">
-              {/* ICON */}
-
-              <div
-                className="
-                  flex
-                  h-20
-                  w-20
-                  items-center
-                  justify-center
-                  rounded-3xl
-                  bg-gradient-to-r
-                  from-[#0A6EBD]
-                  to-[#15176B]
-                  shadow-xl
-                "
-              >
-                <BadgeCheck className="h-10 w-10 text-white" />
+                      <div className="mt-5 h-[2px] w-8 bg-[#63C96A] transition-all duration-500 group-hover:w-full" />
+                    </motion.div>
+                  );
+                })}
               </div>
 
-              {/* TITLE */}
+              {/* BOTTOM */}
 
-              <h3
-                className="
-                  mt-8
-                  text-[38px]
-                  font-black
-                  leading-[0.95]
-                  tracking-[-0.05em]
-                  text-[#021B2F]
-                "
-              >
-                Trusted By
+              <div className="relative mt-5 rounded-[22px] border border-white/10 bg-white/[0.05] px-5 py-4">
+                <div className="flex items-center gap-3">
+                  <span className="relative flex h-3 w-3">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#63C96A] opacity-50" />
+                    <span className="relative inline-flex h-3 w-3 rounded-full bg-[#63C96A]" />
+                  </span>
 
-                <span
-                  className="
-                    mt-2
-                    block
-                    bg-gradient-to-r
-                    from-[#63C96A]
-                    to-[#0A6EBD]
-                    bg-clip-text
-                    text-transparent
-                  "
-                >
-                  Industries Across India
-                </span>
-              </h3>
-
-              {/* DESCRIPTION */}
-
-              <p
-                className="
-                  mt-6
-                  text-[15px]
-                  leading-[2]
-                  text-[#6B7280]
-                "
-              >
-                From Biofloc fish farming
-                and RAS aquaculture systems
-                to industrial water treatment
-                and smart marine engineering,
-                ARK AQUATECH delivers
-                high-performance engineering
-                solutions for sustainable growth.
-              </p>
-
-              {/* STATS */}
-
-              <div className="mt-12 grid grid-cols-2 gap-5">
-                {stats.map((item, index) => (
-                  <div
-                    key={index}
-                    className="
-                      rounded-[28px]
-                      border
-                      border-[#E5E7EB]
-                      bg-white
-                      p-6
-                      shadow-sm
-                    "
-                  >
-                    <h4
-                      className="
-                        text-[36px]
-                        font-black
-                        tracking-[-0.04em]
-                        text-[#021B2F]
-                      "
-                    >
-                      {item.value}
-                    </h4>
-
-                    <p
-                      className="
-                        mt-2
-                        text-sm
-                        leading-[1.8]
-                        text-[#6B7280]
-                      "
-                    >
-                      {item.label}
-                    </p>
-                  </div>
-                ))}
+                  <p className="text-xs font-semibold leading-6 text-slate-300 sm:text-sm">
+                    Smart engineering for efficient and sustainable commercial
+                    aquaculture.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
