@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-
 const partners = [
   {
     name: "CIBA",
-    logo: "/partners/CIBA.jpg",
+    logo: "/partners/ciba.jpg",
   },
   {
     name: "COCA COLA",
@@ -13,15 +12,15 @@ const partners = [
   },
   {
     name: "NFDB",
-    logo: "/partners/NFDB.jpg",
+    logo: "/partners/nfdb.jpg",
   },
   {
     name: "ICAR",
-    logo: "/partners/ICAR.jpg",
+    logo: "/partners/icar.jpg",
   },
   {
     name: "RGCA",
-    logo: "/partners/RGCA.jpg",
+    logo: "/partners/rgca.jpg",
   },
   {
     name: "FWI",
@@ -33,10 +32,9 @@ const partners = [
   },
   {
     name: "VARUN HOSPITALITY",
-    logo: "/partners/VARUN.jpg"
+    logo: "/partners/varun.jpg",
   },
 ];
-
 export default function TrustedPartnersSection() {
   return (
     <section
