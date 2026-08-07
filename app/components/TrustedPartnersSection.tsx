@@ -30,10 +30,7 @@ const partners = [
     name: "AIIMS",
     logo: "/partners/AIIMS.jpg",
   },
-  {
-    name: "VARUN HOSPITALITY",
-    logo: "/partners/varun.jpg",
-  },
+ 
 ];
 export default function TrustedPartnersSection() {
   return (

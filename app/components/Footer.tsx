@@ -65,7 +65,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#031D2B] text-white">
+    <footer className="relative overflow-hidden bg-[#dde4e8] text-white">
       {/* =====================================================
           BACKGROUND
       ===================================================== */}
@@ -85,7 +85,7 @@ export default function Footer() {
 
         {/* DARK OVERLAY */}
 
-        <div className="absolute inset-0 bg-gradient-to-b from-[#071F2E]/95 via-[#031D2B]/95 to-[#01131E]" />
+        <div className="absolute inset-0 bg-[#086aa3]" />
 
         {/* LIGHTS */}
 
@@ -113,14 +113,17 @@ export default function Footer() {
               href="/"
               className="inline-flex items-center gap-4"
             >
-              <div className="relative h-[64px] w-[64px] overflow-hidden rounded-2xl border border-white/10 bg-white/10">
-                <Image
-                  src="/logo/logo1.png"
-                  alt="ARK AQUATECH"
-                  fill
-                  sizes="64px"
-                  className="object-contain p-2"
-                />
+              <div className="relative h-[90px] w-[90px] overflow-hidden rounded-xl">
+               <div className="relative h-[90px] w-[90px]">
+  <Image
+    src="/logo/logo1.png"
+    alt="ARK AQUATECH"
+    fill
+    priority
+    sizes="90px"
+    className="object-contain"
+  />
+</div>
               </div>
 
               <div>
@@ -158,9 +161,9 @@ export default function Footer() {
                       justify-center
                       rounded-xl
                       border
-                      border-white/10
-                      bg-white/[0.06]
-                      text-white/60
+                      border-white
+                    
+                      text-white
                       transition-all
                       duration-300
                       hover:-translate-y-1
@@ -194,7 +197,7 @@ export default function Footer() {
                       items-center
                       gap-2
                       text-[13px]
-                      text-white/60
+                      text-white
                       transition-all
                       duration-300
                       hover:translate-x-1
@@ -221,7 +224,7 @@ export default function Footer() {
               {expertise.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-2.5 text-[13px] leading-6 text-white/60"
+                  className="flex items-start gap-2.5 text-[13px] leading-6 text-white"
                 >
                   <Waves className="mt-1 h-3.5 w-3.5 shrink-0 text-emerald-300" />
 
@@ -348,7 +351,7 @@ export default function Footer() {
                     Mangalagiri, Guntur
                   </h3>
 
-                  <address className="mt-2 not-italic text-[12px] leading-6 text-white/55 sm:text-[13px]">
+                  <address className="mt-2 not-italic text-[12px] leading-6 text-white sm:text-[13px]">
                     Plot No. 12, Autonagar Last Line, Near APIIC,
                     Mangalagiri, Guntur – 522503, Andhra Pradesh
                   </address>
@@ -395,7 +398,7 @@ export default function Footer() {
                     Kukatpally, Hyderabad
                   </h3>
 
-                  <address className="mt-2 not-italic text-[12px] leading-6 text-white/55 sm:text-[13px]">
+                  <address className="mt-2 not-italic text-[12px] leading-6 text-white sm:text-[13px]">
                     12th Floor, Manjeera Trinity, Corporate E-Seva Lane,
                     JNTU–Hitech City Road, Near Manjeera Mall, KPHB Phase 3,
                     Kukatpally, Hyderabad – 500072, Telangana
@@ -440,21 +443,21 @@ export default function Footer() {
             sm:flex-row
           "
         >
-          <p className="text-[11px] text-white/40">
+          <p className="text-[11px] text-white">
             © 2026 ARK AQUATECH. All Rights Reserved.
           </p>
 
           <div className="flex items-center gap-5">
             <Link
               href="/privacy-policy"
-              className="text-[11px] text-white/40 transition-colors hover:text-white"
+              className="text-[11px] text-white transition-colors hover:text-white"
             >
               Privacy Policy
             </Link>
 
             <Link
               href="/terms"
-              className="text-[11px] text-white/40 transition-colors hover:text-white"
+              className="text-[11px] text-white transition-colors hover:text-white"
             >
               Terms & Conditions
             </Link>
