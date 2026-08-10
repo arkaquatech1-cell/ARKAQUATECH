@@ -5,18 +5,20 @@
 import { motion } from "framer-motion";
 
 const galleryImages = [
-  "/Gallery/gallery1.png",
-  "/Gallery/gallery2.png",
-  "/Gallery/gallery3.jpg",
-  "/Gallery/gallery4.png",
-  "/Gallery/gallery5.png",
-  "/Gallery/gallery6.jpg",
-  "/Gallery/gallery10.jpg",
-  "/Gallery/gallery11.jpg",
-  "/Gallery/gallery12.jpg",
-  "/Gallery/gallery13.jpg",
-  "/Gallery/gallery14.jpg",
-  "/Gallery/gallery15.jpg",
+  "/Services/bi7.png",
+  "/Services/bi3.jpg",
+  "/Services/ras2.jpg",
+  "/Services/ras3.jpg",
+  "/Services/sh1.jpg",
+  "/Services/sh4.jpg",
+    "/Services/sh3.jpg",
+  "/Services/ha1.jpg",
+  "/Services/ha2.jpg",
+  "/Services/ras3.jpg",
+  "/Services/sh1.jpg",
+  "/Services/sh4.jpg",
+
+ 
 ];
 
 export default function GalleryPage() {

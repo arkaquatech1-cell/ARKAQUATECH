@@ -9,20 +9,21 @@ import {
   Settings2,
   Building2,
 } from "lucide-react";
+import Link from "next/link";
 
 export const metadata = {
   title: "Aquaculture Services | ARK AQUATECH",
   description:
     "Explore advanced aquaculture services including Biofloc systems, RAS farming, industrial water treatment, marine engineering, and sustainable fish farming solutions.",
 };
-
 const services = [
   {
     icon: Fish,
     title: "Biofloc Fish Farming",
     description:
       "Complete Biofloc tank design, aeration systems, filtration setup, and sustainable fish farming infrastructure solutions.",
-    image: "/Services/services1.jpg",
+    image: "/Services/bi1.jpg",
+    link: "/services/biofloc-fish-farming",
   },
 
   {
@@ -30,7 +31,8 @@ const services = [
     title: "RAS Systems",
     description:
       "Advanced Recirculatory Aquaculture Systems engineered for high productivity, oxygenation, and water efficiency.",
-    image: "/Services/services2.jpg",
+    image: "/Services/ras2.jpg",
+    link: "/services/ras-aquaculture-systems",
   },
 
   {
@@ -38,31 +40,35 @@ const services = [
     title: "Industrial Water Treatment",
     description:
       "RO plants, WTP, STP, ETP systems, filtration technologies, and smart water management engineering.",
-    image: "/Services/services3.png",
+    image: "/Services/wtp3.jpg",
+    link: "/services/industrial-water-treatment-solutions",
   },
 
   {
     icon: Cpu,
-    title: "Smart IoT Automation",
+    title: "Shrimp Farming Setup",
     description:
-      "Real-time pH, DO, salinity monitoring with automated feeders, aerators, and mobile-based farm control systems.",
+      "Complete shrimp farming solutions with advanced pond lining, aerators, feeders, oxygen systems, and water management for high-yield aquaculture production.",
     image: "/Services/services4.jpg",
+    link: "/services/shrimp-farming-setup",
   },
 
   {
     icon: Settings2,
-    title: "Aeration & Aquaculture Equipment",
+    title: "Advanced Aquaculture Systems",
     description:
-      "High-performance blowers, paddle wheel aerators, diffusers, pumps, feeders, and complete aquaculture accessories.",
-    image: "/Services/services5.jpg",
+      "Smart aquaculture engineering, aeration systems, HDPE pond lining, automation, oxygen management, and sustainable aquatic infrastructure.",
+    image: "/Services/eq1.jpg",
+    link: "/services/advanced-aquaculture-systems",
   },
 
   {
     icon: Building2,
-    title: "Marine Infrastructure",
+    title: "Hatchery Design Solutions",
     description:
-      "Civil engineering, pond development, HDPE lining, water storage tanks, and aquaculture infrastructure construction.",
+      "Modern hatchery design solutions for fish breeding, filtration systems, water circulation technology, and sustainable hatchery infrastructure.",
     image: "/Services/services6.jpg",
+    link: "/services/hatchery-design-solutions",
   },
 ];
 
@@ -228,7 +234,7 @@ export default function ServicesPage() {
               "
             >
               <Image
-                src="/Gallery/gallery1.png"
+                src="/Services/bi8.png"
                 alt="ARK AQUATECH Services"
                 width={1400}
                 height={800}
@@ -341,32 +347,33 @@ export default function ServicesPage() {
                     >
                       {service.description}
                     </p>
+<Link
+  href={service.link}
+  className="
+    mt-8
+    inline-flex
+    items-center
+    gap-2
+    text-cyan-600
+    font-semibold
+    hover:text-emerald-500
+    transition-all
+    duration-300
+  "
+>
+  Explore Service
 
-                    <button
-                      className="
-                        mt-8
-                        inline-flex
-                        items-center
-                        gap-2
-                        text-cyan-600
-                        font-semibold
-                        hover:text-emerald-500
-                        transition-all
-                        duration-300
-                      "
-                    >
-                      Explore Service
+  <span
+    className="
+      group-hover:translate-x-2
+      transition-all
+      duration-300
+  "
+  >
+    →
+  </span>
+</Link>
 
-                      <span
-                        className="
-                          group-hover:translate-x-2
-                          transition-all
-                          duration-300
-                        "
-                      >
-                        →
-                      </span>
-                    </button>
                   </div>
                 </div>
               );
@@ -579,7 +586,7 @@ export default function ServicesPage() {
               <div className="relative min-h-[500px]">
 
                 <Image
-                  src="/Gallery/gallery4.png"
+                  src="/Services/ras8.png"
                   alt="Why Choose Us"
                   fill
                   className="object-cover"

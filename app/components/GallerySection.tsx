@@ -4,15 +4,25 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const galleryImages = [
-  "/Gallery/gallery1.png",
-  "/Gallery/gallery2.png",
-  "/Gallery/gallery3.jpg",
-  "/Gallery/gallery4.png",
-  "/Gallery/gallery5.png",
-  "/Gallery/gallery6.jpg",
+  // "/Gallery/gallery1.png",
+  // "/Gallery/gallery2.png",
+  // "/Gallery/gallery3.jpg",
+  // "/Gallery/gallery4.png",
+  // "/Gallery/gallery5.png",
+  // "/Gallery/gallery6.jpg",
   // "/Gallery/gallery7.jpg",
   // "/Gallery/gallery8.jpg",
   // "/Gallery/gallery9.jpg",
+
+
+  "/Services/bi7.png",
+  "/Services/bi3.jpg",
+  "/Services/ras2.jpg",
+  "/Services/ras3.jpg",
+  "/Services/sh1.jpg",
+  "/Services/sh4.jpg",
+  "/Services/ha1.jpg,"
+
 ];
 
 export default function GallerySection() {

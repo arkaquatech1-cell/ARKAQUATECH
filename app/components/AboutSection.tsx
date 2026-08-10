@@ -103,7 +103,7 @@ export default function AboutSection() {
               "
             >
               <Image
-                src="/images/about.png"
+                src="/Services/bi8.png"
                 alt="ARK Aquatech Smart Aquaculture Engineering Solutions India"
                 width={900}
                 height={1000}

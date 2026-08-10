@@ -14,8 +14,8 @@ import {
 const projects = [
   {
     title: "Advanced Aquaculture Projects",
-    location: "Andhra Pradesh, India",
-    image: "/images/services1.png",
+  
+      image: "/Services/bi2.jpg",
 
     desc:
       "Commercial aquaculture infrastructure projects with smart Biofloc systems, sustainable fish farming technology, and intelligent aquatic ecosystem engineering.",
@@ -23,8 +23,8 @@ const projects = [
 
   {
     title: "Industrial Water Management Solutions",
-    location: "Telangana, India",
-    image: "/images/services2.jpg",
+  
+    image: "/Services/wtp1.jpg",
 
     desc:
       "Industrial water treatment plants, RO systems, wastewater recycling, smart filtration, and sustainable water management engineering solutions.",
@@ -32,8 +32,8 @@ const projects = [
 
   {
     title: "Smart Hatchery Engineering Systems",
-    location: "Tamil Nadu, India",
-    image: "/images/services3.png",
+ 
+    image: "/Services/ha1.jpg",
 
     desc:
       "Modern hatchery infrastructure with automated water circulation, oxygen systems, breeding technology, and intelligent hatchery management solutions.",
@@ -41,8 +41,8 @@ const projects = [
 
   {
     title: "Aquaculture Equipment Solutions",
-    location: "Kerala, India",
-    image: "/images/services10.jpg",
+  
+  image: "/Services/eq1.jpg",
 
     desc:
       "Advanced aquaculture equipment including aerators, feeders, pumps, oxygen systems, filtration units, and commercial farming essentials.",
@@ -50,7 +50,7 @@ const projects = [
 
   {
     title: "Nutrition & Farm Essentials",
-    location: "Odisha, India",
+
     image: "/images/services12.jpg",
 
     desc:
@@ -59,7 +59,7 @@ const projects = [
 
   {
     title: "Aquaculture Training & Operational Support",
-    location: "Karnataka, India",
+
     image: "/images/services11.jpg",
 
     desc:
@@ -299,19 +299,11 @@ export default function ProjectsClient() {
                     backdrop-blur-xl
                   "
                 >
-                  <MapPin className="h-3.5 w-3.5 text-cyan-500" />
+                 
 
-                  <span
-                    className="
-                      text-xs
-                      font-semibold
-                      text-[#0F172A]
-                    "
-                  >
-                    {project.location}
-                  </span>
+                
                 </div>
-              </div>
+        </div>
 
               {/* CONTENT */}
 

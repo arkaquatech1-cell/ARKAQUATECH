@@ -522,13 +522,13 @@ export default function ShrimpFarmingSetupPage() {
             </table>
           </div>
 
-          <p className="text-[15px] leading-[1.85] text-[#4B5563]">
+          {/* <p className="text-[15px] leading-[1.85] text-[#4B5563]">
             Government subsidies under PMMSY (Pradhan Mantri Matsya Sampada Yojana) and Coastal
             Aquaculture Authority (CAA) registration support can cover a portion of{" "}
             <strong>shrimp farming setup</strong> capital costs for eligible farmers. ARK
             AQUATECH assists clients in preparing subsidy application documentation and bankable
             project reports (DPR) to access available funding.
-          </p>
+          </p> */}
 
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
