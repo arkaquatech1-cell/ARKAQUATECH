@@ -107,25 +107,33 @@ try {
     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
   );
 
-  const slug = createSlug(title);
+  const baseSlug = createSlug(title);
 
-  /*
-   * 1. Check duplicate slug
-   */
-  const { data: existingBlog } = await supabase
-    .from("blogs")
-    .select("id")
-    .eq("slug", slug)
-    .maybeSingle();
+let slug = baseSlug;
+let counter = 2;
 
-  if (existingBlog) {
-    setError(
-      "A blog with this title already exists. Please use a different title."
-    );
-    setLoading(false);
-    return;
+/*
+ * Generate unique slug
+ */
+while (true) {
+  const { data: existingBlog, error: slugCheckError } =
+    await supabase
+      .from("blogs")
+      .select("id")
+      .eq("slug", slug)
+      .maybeSingle();
+
+  if (slugCheckError) {
+    throw slugCheckError;
   }
 
+  if (!existingBlog) {
+    break;
+  }
+
+  slug = `${baseSlug}-${counter}`;
+  counter++;
+}
   /*
    * 2. Upload image
    */

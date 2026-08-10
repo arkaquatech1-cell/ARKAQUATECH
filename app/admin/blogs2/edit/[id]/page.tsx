@@ -35,17 +35,19 @@ export default function EditBlogPage() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
 
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
-  );
-
   /*
    * Load blog
    */
   useEffect(() => {
     const loadBlog = async () => {
+      if (!id) return;
+
       try {
+        const supabase = createBrowserClient(
+          process.env.NEXT_PUBLIC_SUPABASE_URL!,
+          process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
+        );
+
         const { data, error } = await supabase
           .from("blogs")
           .select("*")
@@ -71,6 +73,8 @@ export default function EditBlogPage() {
         setImageUrl(data.image_url || "");
         setImagePreview(data.image_url || "");
       } catch (err) {
+        console.error(err);
+
         setError(
           err instanceof Error
             ? err.message
@@ -81,9 +85,7 @@ export default function EditBlogPage() {
       }
     };
 
-    if (id) {
-      loadBlog();
-    }
+    loadBlog();
   }, [id]);
 
   /*
@@ -152,6 +154,11 @@ export default function EditBlogPage() {
 
     try {
       setSaving(true);
+
+      const supabase = createBrowserClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
+      );
 
       const slug = createSlug(title);
 
@@ -359,29 +366,12 @@ export default function EditBlogPage() {
                     }
                     className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none focus:border-[#0A6EBD]"
                   >
-                    <option>
-                      Biofloc Technology
-                    </option>
-
-                    <option>
-                      RAS Systems
-                    </option>
-
-                    <option>
-                      Water Management
-                    </option>
-
-                    <option>
-                      Shrimp Farming
-                    </option>
-
-                    <option>
-                      Hatchery Engineering
-                    </option>
-
-                    <option>
-                      Sustainability
-                    </option>
+                    <option>Biofloc Technology</option>
+                    <option>RAS Systems</option>
+                    <option>Water Management</option>
+                    <option>Shrimp Farming</option>
+                    <option>Hatchery Engineering</option>
+                    <option>Sustainability</option>
                   </select>
                 </div>
 

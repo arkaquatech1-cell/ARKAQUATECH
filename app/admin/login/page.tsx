@@ -13,35 +13,47 @@ export default function AdminLoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
-  );
-
   const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setLoading(true);
     setError("");
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+    try {
+      const supabase = createBrowserClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
+      );
 
-    if (error) {
-      setError(error.message);
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (error) {
+        setError(error.message);
+        setLoading(false);
+        return;
+      }
+
+      router.push("/admin/blogs");
+      router.refresh();
+    } catch (err) {
+      console.error(err);
+
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong while logging in."
+      );
+
       setLoading(false);
-      return;
     }
-
-    router.push("/admin/blogs");
-    router.refresh();
   };
 
   return (
-    <main className="min-h-screen bg-[#031A2B] px-4 py-10">
-      <div className="flex min-h-[calc(100vh-80px)] items-center justify-center">
+    <main className="min-h-screen bg-[#031A2B] px-4 py-10 sm:px-6">
+      <div className="flex min-h-[calc(100vh-5rem)] items-center justify-center">
         <div className="w-full max-w-md">
 
           {/* Logo / Brand */}
