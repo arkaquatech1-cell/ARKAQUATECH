@@ -21,7 +21,7 @@ const galleryImages = [
   "/Services/ras3.jpg",
   "/Services/sh1.jpg",
   "/Services/sh4.jpg",
-  "/Services/ha1.jpg,"
+ 
 
 ];
 
