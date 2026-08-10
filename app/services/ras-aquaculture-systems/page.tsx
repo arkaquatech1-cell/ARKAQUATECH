@@ -280,7 +280,7 @@ export default function RASAquacultureSystemsPage() {
           {/* IMAGE */}
           <div className="overflow-hidden rounded-[40px] border border-[#E5E7EB] bg-white shadow-[0_20px_80px_rgba(0,0,0,0.08)]">
             <Image
-              src="/Services/services1.jpg"
+              src="/Services/ras7.png"
               alt="RAS Aquaculture System Tank Setup by ARK AQUATECH India"
               width={1200}
               height={1200}
@@ -440,7 +440,7 @@ export default function RASAquacultureSystemsPage() {
 
           <div className="overflow-hidden rounded-[32px] border border-[#E5E7EB] shadow-lg">
             <Image
-              src="/Services/services1.jpg"
+              src="/Services/ras8.png"
               alt="RAS Tank Circular Recirculating Aquaculture Setup by ARK AQUATECH"
               width={900}
               height={700}

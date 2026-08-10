@@ -268,7 +268,7 @@ export default function HatcheryDesignSolutionsPage() {
           {/* IMAGE */}
           <div className="overflow-hidden rounded-[40px] border border-[#E5E7EB] bg-white shadow-[0_20px_80px_rgba(0,0,0,0.08)]">
             <Image
-              src="/Services/services6.jpg"
+              src="/Services/ha7.png"
               alt="Modern Fish Hatchery Design and Setup by ARK AQUATECH India"
               width={1200}
               height={1200}
@@ -449,7 +449,7 @@ export default function HatcheryDesignSolutionsPage() {
           <div className="space-y-6">
             <div className="overflow-hidden rounded-[32px] border border-[#E5E7EB] shadow-lg">
               <Image
-                src="/Services/services6.jpg"
+                src="/Services/ha8.png"
                 alt="Fish hatchery larval rearing tanks and breeding infrastructure by ARK AQUATECH"
                 width={900}
                 height={600}

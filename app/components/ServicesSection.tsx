@@ -4,7 +4,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-
+import { useEffect, useState } from "react";
 import {
   Waves,
   Fish,
@@ -17,40 +17,72 @@ import {
 } from "lucide-react";
 const services = [
   {
-    image: "/Services/services1.jpg",
+    images: [
+      "/Services/bi1.jpg",
+      "/Services/bi2.jpg",
+      "/Services/bi3.jpg",
+      "/Services/bi4.jpg",
+    ],
     title: "Biofloc Fish Farming",
     description:
       "Advanced Biofloc fish farming systems for sustainable aquaculture production, oxygen balancing, and smart aquatic ecosystem management.",
   },
 
   {
-    image: "/Services/services2.jpg",
+    images: [
+      "/Services/ras1.jpg",
+      "/Services/ras2.jpg",
+      "/Services/ras3.jpg",
+      "/Services/ras4.jpg",
+    ],
     title: "RAS Aquaculture Systems",
     description:
       "Modern RAS aquaculture technology with intelligent filtration systems, water recycling, and commercial fish farming infrastructure.",
   },
 
   {
-    image: "/Services/services3.png",
+    images: [
+      "/Services/wtp1.jpg",
+      "/Services/wtp2.jpg",
+      "/Services/wtp3.jpg",
+      "/Services/wtp4.jpg",
+    ],
     title: "Industrial Water Treatment Solutions",
     description:
       "Industrial RO plants, wastewater treatment systems, ETP, STP, filtration plants, and smart water purification engineering solutions.",
   },
 
   {
-    image: "/Services/services4.jpg",
+    images: [
+      "/Services/ad1.jpg",
+      "/Services/ad2.jpg",
+      "/Services/ad3.jpg",
+      "/Services/ad4.jpg",
+    ],
     title: "Advanced Aquaculture Systems",
     description:
       "Smart aquaculture engineering, aeration systems, HDPE pond lining, automation, oxygen management, and sustainable aquatic infrastructure.",
   },
 
   {
-  image: "/Services/services5.jpg",
-  title: "Shrimp Farming Setup",
-  description:
-    "Complete shrimp farming solutions with advanced pond lining, aerators, feeders, oxygen systems, and water management for high-yield aquaculture production.",},
+    images: [
+      "/Services/sh1.jpg",
+      "/Services/sh2.jpg",
+      "/Services/sh3.jpg",
+      "/Services/sh4.jpg",
+    ],
+    title: "Shrimp Farming Setup",
+    description:
+      "Complete shrimp farming solutions with advanced pond lining, aerators, feeders, oxygen systems, and water management for high-yield aquaculture production.",
+  },
+
   {
-    image: "/Services/services6.jpg",
+    images: [
+      "/Services/ha1.jpg",
+      "/Services/ha2.jpg",
+      "/Services/ha3.jpg",
+      "/Services/ha4.jpg",
+    ],
     title: "Hatchery Design Solutions",
     description:
       "Modern hatchery design solutions for fish breeding, filtration systems, water circulation technology, and sustainable hatchery infrastructure.",
@@ -58,6 +90,22 @@ const services = [
 ];
 
 export default function ServicesSection() {
+  const [activeImages, setActiveImages] = useState<number[]>(
+  services.map(() => 0)
+);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setActiveImages((prev) =>
+      prev.map(
+        (currentIndex, serviceIndex) =>
+          (currentIndex + 1) % services[serviceIndex].images.length
+      )
+    );
+  }, 3000);
+
+  return () => clearInterval(interval);
+}, []);
   return (
     <section
       className="
@@ -269,18 +317,58 @@ export default function ServicesSection() {
       {/* IMAGE */}
 
       <div className="relative overflow-hidden">
-        <img
-          src={service.image}
-          alt={service.title}
-          className="
-            h-[240px]
-            w-full
-            object-cover
-            transition-transform
-            duration-700
-            group-hover:scale-[1.08]
-          "
-        />
+       {/* IMAGE SLIDER */}
+
+<div className="relative h-[240px] overflow-hidden">
+
+  {service.images.map((image, imageIndex) => (
+    <motion.img
+      key={imageIndex}
+      src={image}
+      alt={`${service.title} - ${imageIndex + 1}`}
+      initial={false}
+      animate={{
+        x:
+          imageIndex === activeImages[index]
+            ? "0%"
+            : imageIndex < activeImages[index]
+            ? "-100%"
+            : "100%",
+        opacity: imageIndex === activeImages[index] ? 1 : 0,
+      }}
+      transition={{
+        duration: 0.7,
+        ease: "easeInOut",
+      }}
+      className="
+        absolute
+        inset-0
+        h-full
+        w-full
+        object-cover
+      "
+    />
+  ))}
+
+  {/* OVERLAY */}
+
+  <div
+    className="
+      absolute
+      inset-0
+      bg-gradient-to-t
+      from-[#15176B]/70
+      via-transparent
+      to-transparent
+      pointer-events-none
+    "
+  />
+
+  {/* SLIDE INDICATORS */}
+
+ 
+
+</div>
 
         {/* OVERLAY */}
 

@@ -281,7 +281,7 @@ export default function IndustrialWaterTreatmentPage() {
           {/* IMAGE */}
           <div className="overflow-hidden rounded-[40px] border border-[#E5E7EB] bg-white shadow-[0_20px_80px_rgba(0,0,0,0.08)]">
             <Image
-              src="/Services/services1.jpg"
+              src="/Services/wtp7.png"
               alt="Industrial Water Treatment Plant Setup by ARK AQUATECH India"
               width={1200}
               height={1200}
@@ -443,7 +443,7 @@ export default function IndustrialWaterTreatmentPage() {
 
           <div className="overflow-hidden rounded-[32px] border border-[#E5E7EB] shadow-lg">
             <Image
-              src="/Services/services1.jpg"
+              src="/Services/wtp8.png"
               alt="Industrial Water Treatment Plant ETP Setup by ARK AQUATECH"
               width={900}
               height={700}
