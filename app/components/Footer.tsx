@@ -43,22 +43,22 @@ const expertise = [
 const socials = [
   {
     icon: FaFacebookF,
-    href: "#",
+    href: "https://www.facebook.com/ark.aquatech.5",
     label: "Facebook",
   },
   {
     icon: FaInstagram,
-    href: "#",
+    href: "https://www.instagram.com/arkaquatech",
     label: "Instagram",
   },
   {
     icon: FaLinkedinIn,
-    href: "#",
+    href: "https://www.linkedin.com/in/rajeshravuri/",
     label: "LinkedIn",
   },
   {
     icon: FaYoutube,
-    href: "#",
+    href: "https://www.youtube.com/@Arkaquatech",
     label: "YouTube",
   },
 ];

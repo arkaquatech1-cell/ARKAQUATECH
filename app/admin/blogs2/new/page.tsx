@@ -3,6 +3,12 @@
 import { FormEvent, useState } from "react";
 import { createBrowserClient } from "@supabase/ssr";
 import { useRouter } from "next/navigation";
+
+
+
+
+
+
 import {
   ArrowLeft,
   Upload,
@@ -32,10 +38,7 @@ export default function NewBlogPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
-  );
+
 
   const createSlug = (value: string) => {
     return value
@@ -96,109 +99,111 @@ export default function NewBlogPage() {
       setError("Please upload a blog image.");
       return;
     }
+try {
+  setLoading(true);
 
-    try {
-      setLoading(true);
+  const supabase = createBrowserClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
+  );
 
-      const slug = createSlug(title);
+  const slug = createSlug(title);
 
-      /*
-       * 1. Check duplicate slug
-       */
-      const { data: existingBlog } = await supabase
-        .from("blogs")
-        .select("id")
-        .eq("slug", slug)
-        .maybeSingle();
+  /*
+   * 1. Check duplicate slug
+   */
+  const { data: existingBlog } = await supabase
+    .from("blogs")
+    .select("id")
+    .eq("slug", slug)
+    .maybeSingle();
 
-      if (existingBlog) {
-        setError(
-          "A blog with this title already exists. Please use a different title."
-        );
-        setLoading(false);
-        return;
-      }
+  if (existingBlog) {
+    setError(
+      "A blog with this title already exists. Please use a different title."
+    );
+    setLoading(false);
+    return;
+  }
 
-      /*
-       * 2. Upload image
-       */
-      const fileExtension =
-        image.name.split(".").pop() || "jpg";
+  /*
+   * 2. Upload image
+   */
+  const fileExtension =
+    image.name.split(".").pop() || "jpg";
 
-      const fileName = `${Date.now()}-${Math.random()
-        .toString(36)
-        .substring(2)}.${fileExtension}`;
+  const fileName = `${Date.now()}-${Math.random()
+    .toString(36)
+    .substring(2)}.${fileExtension}`;
 
-      const filePath = `blogs/${fileName}`;
+  const filePath = `blogs/${fileName}`;
 
-      const { error: uploadError } = await supabase.storage
-        .from("blog-images")
-        .upload(filePath, image, {
-          cacheControl: "3600",
-          upsert: false,
-        });
+  const { error: uploadError } = await supabase.storage
+    .from("blog-images")
+    .upload(filePath, image, {
+      cacheControl: "3600",
+      upsert: false,
+    });
 
-      if (uploadError) {
-        throw new Error(uploadError.message);
-      }
+  if (uploadError) {
+    throw new Error(uploadError.message);
+  }
 
-      /*
-       * 3. Get public image URL
-       */
-      const { data: publicUrlData } = supabase.storage
-        .from("blog-images")
-        .getPublicUrl(filePath);
+  /*
+   * 3. Get public image URL
+   */
+  const { data: publicUrlData } = supabase.storage
+    .from("blog-images")
+    .getPublicUrl(filePath);
 
-      const imageUrl = publicUrlData.publicUrl;
+  const imageUrl = publicUrlData.publicUrl;
 
-      /*
-       * 4. Save blog
-       */
-      const { error: insertError } = await supabase
-        .from("blogs")
-        .insert({
-          title: title.trim(),
-          slug,
-          description: description.trim(),
-          category,
-          published_date: date,
-          read_time: readTime,
-          image_url: imageUrl,
-          content: content.trim(),
-          featured,
-          published,
-        });
+  /*
+   * 4. Save blog
+   */
+  const { error: insertError } = await supabase
+    .from("blogs")
+    .insert({
+      title: title.trim(),
+      slug,
+      description: description.trim(),
+      category,
+      published_date: date,
+      read_time: readTime,
+      image_url: imageUrl,
+      content: content.trim(),
+      featured,
+      published,
+    });
 
-      if (insertError) {
-        /*
-         * If database insert fails,
-         * remove uploaded image.
-         */
-        await supabase.storage
-          .from("blog-images")
-          .remove([filePath]);
+  if (insertError) {
+    await supabase.storage
+      .from("blog-images")
+      .remove([filePath]);
 
-        throw new Error(insertError.message);
-      }
+    throw new Error(insertError.message);
+  }
 
-      /*
-       * 5. Success
-       */
-      router.push("/admin/blogs");
-      router.refresh();
-    } catch (err) {
-      console.error(err);
+  /*
+   * 5. Success
+   */
+  router.push("/admin/blogs");
+  router.refresh();
 
-      setError(
-        err instanceof Error
-          ? err.message
-          : "Something went wrong while publishing the blog."
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
+} catch (err) {
+  console.error(err);
 
+  setError(
+    err instanceof Error
+      ? err.message
+      : "Something went wrong while publishing the blog."
+  );
+
+} finally {
+  setLoading(false);
+}
+
+  }
   return (
     <main className="min-h-screen bg-[#F7FAFC]">
 
