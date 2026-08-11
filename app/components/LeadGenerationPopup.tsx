@@ -402,7 +402,7 @@ export default function LeadGenerationPopup() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setOpen(true);
-    }, 6000);
+    }, 10000);
 
     return () => clearTimeout(timer);
   }, []);
