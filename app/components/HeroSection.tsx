@@ -367,8 +367,8 @@ export default function HeroSection() {
   const [videoIndex, setVideoIndex] = useState(0);
 
 const videos = [
-  "/herosection/seavideo.mp4",
   "/herosection/seavideo2.mp4",
+  "/herosection/seavideo.mp4",
   "/herosection/seavideo1.mp4",
 ];
 
