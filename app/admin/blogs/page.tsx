@@ -38,10 +38,12 @@ export default function AdminBlogsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
-  );
+  // Create Supabase client only when needed
+  const getSupabase = () =>
+    createBrowserClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
+    );
 
   useEffect(() => {
     checkUserAndLoadBlogs();
@@ -49,6 +51,9 @@ export default function AdminBlogsPage() {
 
   const checkUserAndLoadBlogs = async () => {
     setLoading(true);
+
+    const supabase = getSupabase();
+
     setError("");
 
     try {
@@ -93,6 +98,8 @@ export default function AdminBlogsPage() {
 
     if (!confirmed) return;
 
+    const supabase = getSupabase();
+
     try {
       const { error } = await supabase
         .from("blogs")
@@ -117,6 +124,8 @@ export default function AdminBlogsPage() {
     id: string,
     currentStatus: boolean | null
   ) => {
+    const supabase = getSupabase();
+
     try {
       const newStatus = !currentStatus;
 
@@ -150,7 +159,10 @@ export default function AdminBlogsPage() {
   };
 
   const handleLogout = async () => {
+    const supabase = getSupabase();
+
     await supabase.auth.signOut();
+
     router.push("/admin/login");
     router.refresh();
   };
@@ -323,8 +335,7 @@ export default function AdminBlogsPage() {
                       )}
                     </div>
                   </div>
-
-                  {/* ACTIONS */}
+                                    {/* ACTIONS */}
                   <div className="flex flex-wrap items-center gap-2 md:justify-end">
                     {blog.published && (
                       <Link
