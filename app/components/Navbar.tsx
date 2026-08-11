@@ -1073,24 +1073,24 @@ export default function Navbar() {
                     key={item.title}
                     className="group relative shrink-0"
                   >
-                    <Link
-                      href={item.href}
-                      className="
-                        relative
-                        flex
-                        items-center
-                        gap-1
-                        whitespace-nowrap
-                        py-3
-                        text-[13px]
-                        font-semibold
-                        text-[#374151]
-                        transition-colors
-                        duration-300
-                        hover:text-[#0A6EBD]
-                        2xl:text-[14px]
-                      "
-                    >
+                    <a
+  href={item.href}
+  className="
+    relative
+    flex
+    items-center
+    gap-1
+    whitespace-nowrap
+    py-3
+    text-[13px]
+    font-semibold
+    text-[#374151]
+    transition-colors
+    duration-300
+    hover:text-[#0A6EBD]
+    2xl:text-[14px]
+  "
+>
                       {item.title}
 
                       {item.dropdown && (
@@ -1123,7 +1123,7 @@ export default function Navbar() {
                           group-hover:w-full
                         "
                       />
-                    </Link>
+                </a>
 
                     {/* =========================================
                         SERVICES DROPDOWN
