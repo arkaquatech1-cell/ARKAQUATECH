@@ -361,9 +361,7 @@
 
 
 
-
-
-
+"use client";
 
 import Link from "next/link";
 import {
@@ -378,7 +376,7 @@ import {
   Leaf,
 } from "lucide-react";
 
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@supabase/supabase-js";
 
 export const dynamic = "force-dynamic";
 
@@ -400,16 +398,22 @@ function getCategoryIcon(category: string) {
   switch (category) {
     case "Biofloc Technology":
       return Fish;
+
     case "RAS Systems":
       return Waves;
+
     case "Water Management":
       return Droplets;
+
     case "Shrimp Farming":
       return FlaskConical;
+
     case "Hatchery Engineering":
       return Factory;
+
     case "Sustainability":
       return Leaf;
+
     default:
       return Fish;
   }
@@ -426,7 +430,10 @@ function formatDate(date: string) {
 }
 
 export default async function BlogsPage() {
-  const supabase = await createClient();
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
+  );
 
   const { data: blogs, error } = await supabase
     .from("blogs")
@@ -461,7 +468,9 @@ export default async function BlogsPage() {
     publishedBlogs[0];
 
   const otherBlogs = featuredBlog
-    ? publishedBlogs.filter((blog) => blog.id !== featuredBlog.id)
+    ? publishedBlogs.filter(
+        (blog) => blog.id !== featuredBlog.id
+      )
     : [];
 
   return (
@@ -470,6 +479,7 @@ export default async function BlogsPage() {
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#031A2B] pb-24 pt-44 sm:pb-28 sm:pt-48">
         <div className="absolute inset-0">
+
           <div className="absolute -left-32 top-10 h-[400px] w-[400px] rounded-full bg-[#0A6EBD]/20 blur-[130px]" />
 
           <div className="absolute -right-32 bottom-0 h-[400px] w-[400px] rounded-full bg-[#63C96A]/10 blur-[130px]" />
@@ -497,6 +507,7 @@ export default async function BlogsPage() {
 
             <h1 className="mt-7 text-4xl font-black leading-[1.08] tracking-[-0.04em] text-white sm:text-5xl lg:text-7xl">
               Aquaculture
+
               <span className="block bg-gradient-to-r from-[#54B5FF] to-[#63C96A] bg-clip-text text-transparent">
                 Knowledge Hub
               </span>
@@ -607,6 +618,7 @@ export default async function BlogsPage() {
                       className="mt-9 inline-flex w-fit items-center gap-3 rounded-full bg-gradient-to-r from-[#0A6EBD] to-[#15176B] px-7 py-4 text-sm font-bold text-white shadow-[0_15px_35px_rgba(10,110,189,0.2)] transition-all duration-300 hover:-translate-y-1"
                     >
                       Read Full Article
+
                       <ArrowRight className="h-4 w-4" />
                     </Link>
 
@@ -743,6 +755,7 @@ export default async function BlogsPage() {
 
               <h2 className="mt-5 text-3xl font-black leading-tight text-white sm:text-4xl lg:text-5xl">
                 Planning Your Next
+
                 <span className="block text-[#54B5FF]">
                   Aquaculture Project?
                 </span>
@@ -759,6 +772,7 @@ export default async function BlogsPage() {
                 className="mt-9 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-sm font-bold text-[#021B2F] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
               >
                 Discuss Your Project
+
                 <ArrowRight className="h-4 w-4" />
               </Link>
 
