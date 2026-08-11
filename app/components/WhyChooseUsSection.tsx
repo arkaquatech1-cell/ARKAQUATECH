@@ -876,7 +876,7 @@ export default function WhyChooseUsSection() {
                 "
               >
                 Since 2019,
-                ARK AQUATECH has delivered
+                ARK AQUATECH has delivered High
                 advanced aquaculture engineering,
                 industrial water management,
                 smart automation,
@@ -918,7 +918,7 @@ export default function WhyChooseUsSection() {
                     duration-300
                   "
                 >
-                  Contact Experts
+                  Contact Experts 
 
                   <ArrowRight className="h-4 w-4" />
                 </Link>
