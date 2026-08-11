@@ -364,6 +364,22 @@ const slides = [
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
 
+  const [videoIndex, setVideoIndex] = useState(0);
+
+const videos = [
+  "/herosection/seavideo.mp4",
+  "/herosection/seavideo2.mp4",
+  "/herosection/seavideo1.mp4",
+];
+
+useEffect(() => {
+  const videoTimer = setInterval(() => {
+    setVideoIndex((prev) => (prev + 1) % videos.length);
+  }, 30000); // 30 seconds
+
+  return () => clearInterval(videoTimer);
+}, []);
+
   useEffect(() => {
     const slider = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -377,11 +393,11 @@ export default function HeroSection() {
       {/* BACKGROUND VIDEO */}
 
      <video
+  key={videoIndex}
   autoPlay
   muted
-  loop
   playsInline
-  preload="metadata"
+  preload="auto"
   disablePictureInPicture
   className="
     absolute
@@ -392,7 +408,7 @@ export default function HeroSection() {
   "
 >
   <source
-    src="/herosection/seavideo.mp4"
+    src={videos[videoIndex]}
     type="video/mp4"
   />
 </video>
@@ -520,8 +536,8 @@ export default function HeroSection() {
                   text-white
                   sm:mt-8
                   sm:text-[65px]
-                  md:text-[80px]
-                  lg:text-[90px]
+                  md:text-[60px]
+                  lg:text-[70px]
                 "
               >
                 {slides[current].title1}
@@ -706,5 +722,4 @@ export default function HeroSection() {
     </section>
   );
 }
-
 
