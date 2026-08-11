@@ -375,7 +375,7 @@ const videos = [
 useEffect(() => {
   const videoTimer = setInterval(() => {
     setVideoIndex((prev) => (prev + 1) % videos.length);
-  }, 30000); // 30 seconds
+  }, 20000); // 30 seconds
 
   return () => clearInterval(videoTimer);
 }, []);
