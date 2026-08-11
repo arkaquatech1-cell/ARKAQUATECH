@@ -793,7 +793,7 @@ const navLinks: NavLink[] = [
   },
   {
     title: "Blogs",
-    href: "/blogs",
+    href: "/blogs1",
   },
   {
     title: "Contact",
