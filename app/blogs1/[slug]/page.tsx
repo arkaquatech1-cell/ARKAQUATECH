@@ -126,13 +126,13 @@ export default async function BlogDetailPage({
           )}
 
           <div className="mt-12 border-t border-slate-200 pt-8">
-            <Link
-              href="/blogs1"
-              className="inline-flex items-center gap-2 rounded-full bg-[#0A6EBD] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#075a9c]"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Back to All Blogs
-            </Link>
+           <a
+  href="/blogs1"
+  className="inline-flex items-center gap-2 rounded-full bg-[#0A6EBD] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#075a9c]"
+>
+  <ArrowLeft className="h-4 w-4" />
+  Back to All Blogs
+</a>
           </div>
         </div>
       </article>
