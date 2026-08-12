@@ -4,7 +4,7 @@
 
 import Link from "next/link";
 import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+
 
 import {
   Phone,
@@ -27,36 +27,54 @@ export default function ContactClient() {
   ========================================================= */
 
   const sendEmail = async (
-    e: React.FormEvent<HTMLFormElement>
-  ) => {
-    e.preventDefault();
+  e: React.FormEvent<HTMLFormElement>
+) => {
+  e.preventDefault();
 
-    if (!form.current || isSending) return;
+  if (!form.current || isSending) return;
 
-    try {
-      setIsSending(true);
+  try {
+    setIsSending(true);
 
-      await emailjs.sendForm(
-        "service_60tnen7",
-        "template_vx135mi",
-        form.current,
-        "QFLRLgmnV8AeJqhgu"
+    const formData = new FormData(form.current);
+
+    const data = {
+      user_name: formData.get("user_name"),
+      user_email: formData.get("user_email"),
+      phone: formData.get("phone"),
+      project_type: formData.get("project_type"),
+      message: formData.get("message"),
+    };
+
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(
+        result.message || "Failed to send enquiry"
       );
-
-      alert("Message Sent Successfully!");
-
-      form.current.reset();
-    } catch (error) {
-      console.error("EmailJS Error:", error);
-
-      alert(
-        "Failed to send your message. Please try again."
-      );
-    } finally {
-      setIsSending(false);
     }
-  };
 
+    alert("Message Sent Successfully!");
+
+    form.current.reset();
+  } catch (error) {
+    console.error("Contact form error:", error);
+
+    alert(
+      "Failed to send your message. Please try again."
+    );
+  } finally {
+    setIsSending(false);
+  }
+};
   return (
   <main className="relative min-h-screen overflow-hidden bg-[#F7FAFC]">
     {/* BACKGROUND */}
@@ -265,14 +283,14 @@ export default function ContactClient() {
         {/* =================================================
             FORM
         ================================================= */}
-        <div className="rounded-[28px] bg-[#021B2F] p-5 shadow-[0_25px_70px_rgba(2,27,47,0.18)] sm:p-7 lg:p-8">
+        <div className="rounded-[28px] bg-[#055291] p-5 shadow-[0_25px_70px_rgba(2,27,47,0.18)] sm:p-7 lg:p-8">
           <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#63C96A]">
             Project Enquiry
           </span>
 
           <h2 className="mt-2 text-[30px] font-black tracking-[-0.03em] text-white sm:text-[36px]">
             Tell Us About
-            <span className="block text-[#63C96A]">
+            <span className="block text-white">
               Your Project
             </span>
           </h2>
@@ -358,7 +376,7 @@ export default function ContactClient() {
                 id="project_type"
                 name="project_type"
                 defaultValue=""
-                className="w-full rounded-xl border border-white/10 bg-[#0B3044] px-4 py-3.5 text-[13px] text-white outline-none focus:border-[#63C96A]/60"
+                className="w-full rounded-xl border border-white/10 bg-[#0a6da1] px-4 py-3.5 text-[13px] text-white outline-none focus:border-[#63C96A]/60"
               >
                 <option value="" disabled>
                   Select your requirement
@@ -409,7 +427,7 @@ export default function ContactClient() {
             <button
               type="submit"
               disabled={isSending}
-              className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#63C96A] px-6 py-4 text-[13px] font-black text-[#021B2F] transition-all hover:-translate-y-0.5 hover:bg-[#72D879] disabled:cursor-not-allowed disabled:opacity-60"
+              className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#63C96A] px-6 py-4 text-[13px] font-black text-[#021B2F] transition-all hover:-translate-y-0.5 hover:bg-[#72D879] disabled:cursor-not-allowed disabled:opacity-60 hover:cursor-pointer"
             >
               {isSending ? (
                 <>
