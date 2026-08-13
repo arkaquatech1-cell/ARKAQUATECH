@@ -371,7 +371,7 @@ export default async function BlogDetailPage({
               className="inline-flex items-center gap-2 rounded-full bg-[#0A6EBD] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#075a9c]"
             >
               <ArrowLeft className="h-4 w-4" />
-              Back to  Blogs 
+              Back to All Blogs 
             </Link>
 
           </div>
