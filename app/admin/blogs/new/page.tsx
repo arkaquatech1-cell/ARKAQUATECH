@@ -1029,7 +1029,7 @@ if (file.size > 50 * 1024 * 1024) {
                   Blog Title
                 </label>
 
-                <input
+                {/* <input
                   type="text"
                   value={title}
                   onChange={(e) =>
@@ -1038,15 +1038,22 @@ if (file.size > 50 * 1024 * 1024) {
                   placeholder="Enter blog title"
                   className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none transition focus:border-[#0A6EBD] focus:bg-white focus:ring-4 focus:ring-[#0A6EBD]/10"
                   required
-                />
+                /> */}
               </div>
-
+<input
+  type="text"
+  value={title}
+  onChange={(e) => setTitle(e.target.value)}
+  placeholder="Enter blog title"
+  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-[#0A6EBD] focus:bg-white focus:ring-4 focus:ring-[#0A6EBD]/10"
+  required
+/>
               <div>
                 <label className="mb-2 block text-sm font-bold text-[#021B2F]">
                   Short Description
                 </label>
 
-                <textarea
+                {/* <textarea
                   value={description}
                   onChange={(e) =>
                     setDescription(e.target.value)
@@ -1055,7 +1062,16 @@ if (file.size > 50 * 1024 * 1024) {
                   rows={4}
                   className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none transition focus:border-[#0A6EBD] focus:bg-white focus:ring-4 focus:ring-[#0A6EBD]/10"
                   required
-                />
+                /> */}
+
+                <textarea
+  value={description}
+  onChange={(e) => setDescription(e.target.value)}
+  placeholder="Write a short description for the blog..."
+  rows={4}
+  className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-gray-900 placeholder:text-gray-400 outline-none transition focus:border-[#0A6EBD] focus:bg-white focus:ring-4 focus:ring-[#0A6EBD]/10"
+  required
+/>
               </div>
 
               <div className="grid gap-5 md:grid-cols-2">
@@ -1065,13 +1081,19 @@ if (file.size > 50 * 1024 * 1024) {
                     Category
                   </label>
 
-                  <select
+                  {/* <select
                     value={category}
                     onChange={(e) =>
                       setCategory(e.target.value)
                     }
                     className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none focus:border-[#0A6EBD]"
-                  >
+                  > */}
+
+                  <select
+  value={category}
+  onChange={(e) => setCategory(e.target.value)}
+  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-gray-900 outline-none focus:border-[#0A6EBD]"
+>
                     <option>Biofloc Technology</option>
                     <option>RAS Systems</option>
                     <option>Water Management</option>
@@ -1086,14 +1108,21 @@ if (file.size > 50 * 1024 * 1024) {
                     Published Date
                   </label>
 
-                  <input
+                  {/* <input
                     type="date"
                     value={date}
                     onChange={(e) =>
                       setDate(e.target.value)
                     }
                     className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none focus:border-[#0A6EBD]"
-                  />
+                  /> */}
+
+                  <input
+  type="date"
+  value={date}
+  onChange={(e) => setDate(e.target.value)}
+  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-gray-900 outline-none focus:border-[#0A6EBD]"
+/>
                 </div>
 
               </div>
@@ -1103,7 +1132,7 @@ if (file.size > 50 * 1024 * 1024) {
                   Read Time
                 </label>
 
-                <input
+                {/* <input
                   type="text"
                   value={readTime}
                   onChange={(e) =>
@@ -1111,7 +1140,16 @@ if (file.size > 50 * 1024 * 1024) {
                   }
                   placeholder="8 min read"
                   className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm outline-none focus:border-[#0A6EBD]"
-                />
+                /> */}
+
+
+                <input
+  type="text"
+  value={readTime}
+  onChange={(e) => setReadTime(e.target.value)}
+  placeholder="8 min read"
+  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-[#0A6EBD]"
+/>
               </div>
 
             </div>
@@ -1328,7 +1366,7 @@ if (file.size > 50 * 1024 * 1024) {
               Write the complete article here.
             </p>
 
-            <textarea
+            {/* <textarea
               value={content}
               onChange={(e) =>
                 setContent(e.target.value)
@@ -1337,7 +1375,16 @@ if (file.size > 50 * 1024 * 1024) {
               rows={18}
               className="mt-6 w-full resize-y rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm leading-7 outline-none transition focus:border-[#0A6EBD] focus:bg-white focus:ring-4 focus:ring-[#0A6EBD]/10"
               required
-            />
+            /> */}
+
+            <textarea
+  value={content}
+  onChange={(e) => setContent(e.target.value)}
+  placeholder="Write your complete blog content..."
+  rows={18}
+  className="mt-6 w-full resize-y rounded-xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm text-gray-900 placeholder:text-gray-400 leading-7 outline-none transition focus:border-[#0A6EBD] focus:bg-white focus:ring-4 focus:ring-[#0A6EBD]/10"
+  required
+/>
 
           </div>
 
