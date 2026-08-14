@@ -301,114 +301,125 @@ export default function Footer() {
         {/* ===================================================
             OFFICE LOCATIONS
         =================================================== */}
+<div className="py-9">
+  <div className="mb-5 flex items-center gap-3">
+    <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-cyan-300">
+      Our Locations
+    </span>
 
-        <div className="py-9">
-          <div className="mb-5 flex items-center gap-3">
-            <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-cyan-300">
-              Our Locations
-            </span>
+    <div className="h-px flex-1 bg-white/10" />
+  </div>
 
-            <div className="h-px flex-1 bg-white/10" />
-          </div>
+  <div className="grid gap-4 lg:grid-cols-2">
+    {/* =================================================
+        MAIN OFFICE
+    ================================================= */}
 
-          <div className="grid gap-4 lg:grid-cols-2">
-            {/* =================================================
-                MAIN OFFICE
-            ================================================= */}
-
-            <div
-              className="
-                group
-                relative
-                overflow-hidden
-                rounded-[22px]
-                border
-                border-white/10
-                bg-white/[0.055]
-                p-5
-                transition-all
-                duration-300
-                hover:border-cyan-300/20
-                hover:bg-white/[0.075]
-                sm:p-6
-              "
-            >
-              <div className="flex items-start gap-4">
-                {/* ICON */}
-
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300">
-                  <MapPin className="h-5 w-5" />
-                </div>
-
-                <div className="min-w-0">
-                  {/* BADGE */}
-
-                  <span className="inline-flex rounded-full bg-cyan-400/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.15em] text-cyan-300">
-                    Main Office
-                  </span>
-
-                  <h3 className="mt-2 text-[16px] font-bold text-white">
-                    Mangalagiri, Guntur
-                  </h3>
-
-                  <address className="mt-2 not-italic text-[12px] leading-6 text-white sm:text-[13px]">
-                    Plot No. 12, Autonagar Last Line, Near APIIC,
-                    Mangalagiri, Guntur – 522503, Andhra Pradesh
-                  </address>
-                </div>
-              </div>
-            </div>
-
-            {/* =================================================
-                BRANCH OFFICE
-            ================================================= */}
-
-            <div
-              className="
-                group
-                relative
-                overflow-hidden
-                rounded-[22px]
-                border
-                border-white/10
-                bg-white/[0.055]
-                p-5
-                transition-all
-                duration-300
-                hover:border-emerald-300/20
-                hover:bg-white/[0.075]
-                sm:p-6
-              "
-            >
-              <div className="flex items-start gap-4">
-                {/* ICON */}
-
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-400/10 text-emerald-300">
-                  <Building2 className="h-5 w-5" />
-                </div>
-
-                <div className="min-w-0">
-                  {/* BADGE */}
-
-                  <span className="inline-flex rounded-full bg-emerald-400/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.15em] text-emerald-300">
-                    Branch Office
-                  </span>
-
-                  <h3 className="mt-2 text-[16px] font-bold text-white">
-                    Kukatpally, Hyderabad
-                  </h3>
-
-                  <address className="mt-2 not-italic text-[12px] leading-6 text-white sm:text-[13px]">
-                    12th Floor, Manjeera Trinity, Corporate E-Seva Lane,
-                    JNTU–Hitech City Road, Near Manjeera Mall, KPHB Phase 3,
-                    Kukatpally, Hyderabad – 500072, Telangana
-                  </address>
-                </div>
-              </div>
-            </div>
-          </div>
+    <a
+      href="https://www.google.com/maps/search/?api=1&query=ARK+AQUATECH,+Plot+No+12,+Near+APIIC+Building,+Autonagar,+Mangalagiri,+Chinnakakani,+Andhra+Pradesh+522503"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View ARK AQUATECH Mangalagiri location on Google Maps"
+      className="
+        group
+        relative
+        block
+        overflow-hidden
+        rounded-[22px]
+        border
+        border-white/10
+        bg-white/[0.055]
+        p-5
+        transition-all
+        duration-300
+        hover:border-cyan-300/20
+        hover:bg-white/[0.075]
+        sm:p-6
+      "
+    >
+      <div className="flex items-start gap-4">
+        {/* ICON */}
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300">
+          <MapPin className="h-5 w-5" />
         </div>
 
+        <div className="min-w-0">
+          {/* BADGE */}
+          <span className="inline-flex rounded-full bg-cyan-400/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.15em] text-cyan-300">
+            Main Office
+          </span>
+
+          <h3 className="mt-2 text-[16px] font-bold text-white">
+            Mangalagiri, Guntur
+          </h3>
+
+          <address className="mt-2 not-italic text-[12px] leading-6 text-white sm:text-[13px]">
+            Plot No. 12, Autonagar Last Line, Near APIIC,
+            Mangalagiri, Guntur – 522503, Andhra Pradesh
+          </address>
+
+          <p className="mt-3 text-[11px] font-semibold text-cyan-300 transition-colors group-hover:text-cyan-200">
+  View Location on Google Maps →
+</p>
+        </div>
+      </div>
+    </a>
+
+    {/* =================================================
+        BRANCH OFFICE
+    ================================================= */}
+
+    <a
+      href="https://share.google/0s8Z7dJ0AIGWuKfa1"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="View ARK AQUATECH Kukatpally location on Google Maps"
+      className="
+        group
+        relative
+        block
+        overflow-hidden
+        rounded-[22px]
+        border
+        border-white/10
+        bg-white/[0.055]
+        p-5
+        transition-all
+        duration-300
+        hover:border-emerald-300/20
+        hover:bg-white/[0.075]
+        sm:p-6
+      "
+    >
+      <div className="flex items-start gap-4">
+        {/* ICON */}
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-400/10 text-emerald-300">
+          <Building2 className="h-5 w-5" />
+        </div>
+
+        <div className="min-w-0">
+          {/* BADGE */}
+          <span className="inline-flex rounded-full bg-emerald-400/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.15em] text-emerald-300">
+            Branch Office
+          </span>
+
+          <h3 className="mt-2 text-[16px] font-bold text-white">
+            Kukatpally, Hyderabad
+          </h3>
+
+          <address className="mt-2 not-italic text-[12px] leading-6 text-white sm:text-[13px]">
+            12th Floor, Manjeera Trinity, Corporate E-Seva Lane,
+            JNTU–Hitech City Road, Near Manjeera Mall, KPHB Phase 3,
+            Kukatpally, Hyderabad – 500072, Telangana
+          </address>
+          <p className="mt-3 text-[11px] font-semibold text-cyan-300 transition-colors group-hover:text-cyan-200">
+  View Location on Google Maps →
+</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
         {/* ===================================================
             CTA STRIP
         =================================================== */}

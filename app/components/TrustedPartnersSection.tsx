@@ -30,6 +30,11 @@ const partners = [
     name: "AIIMS",
     logo: "/partners/AIIMS.jpg",
   },
+  {
+    name: "CIFA",
+    logo: "/partners/CIFA.jpg",
+  },
+ 
  
 ];
 export default function TrustedPartnersSection() {
